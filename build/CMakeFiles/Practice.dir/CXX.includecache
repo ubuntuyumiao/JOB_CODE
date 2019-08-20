@@ -125,10 +125,22 @@ iostream
 -
 stdio.h
 -
+
+/home/robotyu/Music/VScode2/Practice/nowcoder.cpp
 iostream
+-
+cstdio
 -
 vector
 -
-
-/home/robotyu/Music/VScode2/Practice/nowcoder.cpp
+math.h
+-
+algorithm
+-
+set
+-
+stack
+-
+queue
+-
 

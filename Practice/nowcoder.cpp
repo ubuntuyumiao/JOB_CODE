@@ -2053,656 +2053,656 @@
 
 
 
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include <math.h>
-// #include <algorithm>
-// #include <set>
-// #include <stack>
-// #include <queue>
-// using namespace std;
-// class Solution {
-// public:
-// /* ----------- 剑指offer 0～n十进制 1出现的次数 ----------------*/
-//     int NumberOf1Between1AndN_Solution(int n)
-//     {
-//         int cnt=0;
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <math.h>
+#include <algorithm>
+#include <set>
+#include <stack>
+#include <queue>
+using namespace std;
+class Solution {
+public:
+/* ----------- 剑指offer 0～n十进制 1出现的次数 ----------------*/
+    int NumberOf1Between1AndN_Solution(int n)
+    {
+        int cnt=0;
 
-//         // 硬算
-//         // 
-//         // for(int i=1;i<=n;i++)
-//         // {
-//         //     int num=i;
-//         //     while(num!=0)
-//         //     {
-//         //         if(num%10==1) cnt++ ;
-//         //         num = num / 10;
-//         //     }
-//         // }
+        // 硬算
+        // 
+        // for(int i=1;i<=n;i++)
+        // {
+        //     int num=i;
+        //     while(num!=0)
+        //     {
+        //         if(num%10==1) cnt++ ;
+        //         num = num / 10;
+        //     }
+        // }
 
 
         
 
-//         return cnt;
-//     }
+        return cnt;
+    }
 
-// /* ----------- 剑指offer 把数组排成最小的数 ----------------*/
-// // 本质是个排序问题 又走了弯路。。。
-//     static bool cmp(string a1,string b1)  //true： 替换a1
-//     {
-//        int len = ((a1.size() > b1.size())?: b1.size(),a1.size());
-//        int i;
+/* ----------- 剑指offer 把数组排成最小的数 ----------------*/
+// 本质是个排序问题 又走了弯路。。。
+    static bool cmp(string a1,string b1)  //true： 替换a1
+    {
+       int len = ((a1.size() > b1.size())?: b1.size(),a1.size());
+       int i;
 
-//        for(i=0;i<len;i++)
-//        {
-//            if(a1[i] > b1[i]) 
-//            { 
-//                return false;
-//            }
-//        }
-//        while(i<b1.size())  
-//        {
-//            if(b1[i]<b1[0]) return false;
-//            i++;
-//        }     
+       for(i=0;i<len;i++)
+       {
+           if(a1[i] > b1[i]) 
+           { 
+               return false;
+           }
+       }
+       while(i<b1.size())  
+       {
+           if(b1[i]<b1[0]) return false;
+           i++;
+       }     
            
-//        return true;
-//     }
+       return true;
+    }
 
-//     string PrintMinNumber(vector<int> numbers) {
-//         if(numbers.empty()) return "";
-//         vector<string> str_array;
+    string PrintMinNumber(vector<int> numbers) {
+        if(numbers.empty()) return "";
+        vector<string> str_array;
 
-//         for(int i=0;i<numbers.size();i++)
-//         {
-//             str_array.push_back(to_string(numbers[i]));
-//         }
-
-
-//         if(str_array.size()==1) return str_array[0];
-//         string res;
-//         sort(str_array.begin(),str_array.end(),cmp);
-
-//         for(auto&data:str_array)
-//             res +=data;
+        for(int i=0;i<numbers.size();i++)
+        {
+            str_array.push_back(to_string(numbers[i]));
+        }
 
 
-//          // 牛客网解法 
+        if(str_array.size()==1) return str_array[0];
+        string res;
+        sort(str_array.begin(),str_array.end(),cmp);
 
-//     //  static bool cmp(int a,int b){
-//     //      string A="";
-//     //      string B="";
-//     //      A+=to_string(a);
-//     //      A+=to_string(b);
-//     //      B+=to_string(b);
-//     //      B+=to_string(a);
+        for(auto&data:str_array)
+            res +=data;
+
+
+         // 牛客网解法 
+
+    //  static bool cmp(int a,int b){
+    //      string A="";
+    //      string B="";
+    //      A+=to_string(a);
+    //      A+=to_string(b);
+    //      B+=to_string(b);
+    //      B+=to_string(a);
           
-//     //      return A<B;
-//     //  }
-//     //  string PrintMinNumber(vector<int> numbers) {
-//     //      string  answer="";
-//     //      sort(numbers.begin(),numbers.end(),cmp);
-//     //      for(int i=0;i<numbers.size();i++){
-//     //          answer+=to_string(numbers[i]);
-//     //      }
-//     //      return answer;
-//     //  }
+    //      return A<B;
+    //  }
+    //  string PrintMinNumber(vector<int> numbers) {
+    //      string  answer="";
+    //      sort(numbers.begin(),numbers.end(),cmp);
+    //      for(int i=0;i<numbers.size();i++){
+    //          answer+=to_string(numbers[i]);
+    //      }
+    //      return answer;
+    //  }
 
-//         //第一次写出的程序：
-//         // while(str_array.size()!=1)
-//         // {
-//         //     string suit = str_array[0];
-//         //     int del=0;
-//         //     for(int i=1;i<str_array.size();i++)
-//         //     {
-//         //      if(cmp(suit,str_array[i]))
-//         //      {
-//         //          del = i ;
-//         //          suit = str_array[i];
-//         //      } 
-//         //     }
-//         //     res += suit;
-//         //     str_array.erase(str_array.begin()+del);
-//         // }
-//         // res += str_array[0];
-//         return res;
-//     }
+        //第一次写出的程序：
+        // while(str_array.size()!=1)
+        // {
+        //     string suit = str_array[0];
+        //     int del=0;
+        //     for(int i=1;i<str_array.size();i++)
+        //     {
+        //      if(cmp(suit,str_array[i]))
+        //      {
+        //          del = i ;
+        //          suit = str_array[i];
+        //      } 
+        //     }
+        //     res += suit;
+        //     str_array.erase(str_array.begin()+del);
+        // }
+        // res += str_array[0];
+        return res;
+    }
 
-// /* ----------- 剑指offer 丑数 ----------------*/
-// //暴力求解 自己的方法空间造成浪费 复杂度也非最优
-//      int GetUglyNumber_Solution(int index) {
-//         if(index==0) return 0;
-//         set<int> seq;
-//         seq.insert(1);
-//         int ugly[3]={2,3,5};
-//         int k=0;
-//         set<int>::iterator it = seq.begin();
-//         while(it!=seq.end())
-//         {
-//             k++;
-//             for(int i=0;i<3;i++)
-//             {
-//                 if(seq.count((*it)*ugly[i])==0)
-//                     {
-//                         seq.insert((*it)*ugly[i]);  
-//                     }
-//             }
-//             if(k==index) 
-//             {
-//                 for(auto &da:seq )
-//                     std::cout << da << std::endl;
-//                 return *it;
-//             }
-//             it++;
-//         }
+/* ----------- 剑指offer 丑数 ----------------*/
+//暴力求解 自己的方法空间造成浪费 复杂度也非最优
+     int GetUglyNumber_Solution(int index) {
+        if(index==0) return 0;
+        set<int> seq;
+        seq.insert(1);
+        int ugly[3]={2,3,5};
+        int k=0;
+        set<int>::iterator it = seq.begin();
+        while(it!=seq.end())
+        {
+            k++;
+            for(int i=0;i<3;i++)
+            {
+                if(seq.count((*it)*ugly[i])==0)
+                    {
+                        seq.insert((*it)*ugly[i]);  
+                    }
+            }
+            if(k==index) 
+            {
+                for(auto &da:seq )
+                    std::cout << da << std::endl;
+                return *it;
+            }
+            it++;
+        }
 
-//         return 1;
-//     }
-//     /* ----------- 剑指offer 字符串找到第一个只出现一次的字符 ----------------*/
-//     int FirstNotRepeatingChar(string str) {
-//         //用map是不是会更快 ？ ？ ？
-//         for(int i=0;i<str.size();i++)
-//         {
-//             if(str.find(str[i])==str.rfind(str[i]))
-//                 return i;
-//         }
-//         return -1;
-//     }
-//     /* ----------- 剑指offer 数组中的逆序对 对1000000007取模的结果输出----------------*/
-//     int InversePairs(vector<int> data) {
-//         int cnt=0;
-//             for(int j=data.size()-2;j>=0;j--)
-//             {
-//                 if(data[j]>data[j+1])
-//                 {
-//                     if(cnt==0)
-//                     {
-//                         for(int i=j+1;i<data.size();i++)
-//                         {
-//                             if(data[j]>=data[i])
-//                             {
-//                                 break;
-//                             }
-//                             else
-//                             {
-//                                 cnt++;
-//                                 // if(cnt==1000000007) cnt=0;
-//                             }
+        return 1;
+    }
+    /* ----------- 剑指offer 字符串找到第一个只出现一次的字符 ----------------*/
+    int FirstNotRepeatingChar(string str) {
+        //用map是不是会更快 ？ ？ ？
+        for(int i=0;i<str.size();i++)
+        {
+            if(str.find(str[i])==str.rfind(str[i]))
+                return i;
+        }
+        return -1;
+    }
+    /* ----------- 剑指offer 数组中的逆序对 对1000000007取模的结果输出----------------*/
+    int InversePairs(vector<int> data) {
+        int cnt=0;
+            for(int j=data.size()-2;j>=0;j--)
+            {
+                if(data[j]>data[j+1])
+                {
+                    if(cnt==0)
+                    {
+                        for(int i=j+1;i<data.size();i++)
+                        {
+                            if(data[j]>=data[i])
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                cnt++;
+                                // if(cnt==1000000007) cnt=0;
+                            }
                             
-//                         }  
-//                     }
-//                     else
-//                     {
-//                         for(int i=j+1;i<data.size();i++)
-//                         {
-//                             if(data[j]>data[i])
-//                             {
-//                                 cnt++;
-//                                 // if(cnt==1000000007) cnt=0;
-//                             }
-//                         }
-//                     }
+                        }  
+                    }
+                    else
+                    {
+                        for(int i=j+1;i<data.size();i++)
+                        {
+                            if(data[j]>data[i])
+                            {
+                                cnt++;
+                                // if(cnt==1000000007) cnt=0;
+                            }
+                        }
+                    }
                     
-//                 }
-//                 else if(data[j]==data[j+1])
-//                 {
-//                     int temp = cnt;
-//                     cnt ++;
-//                     // if(cnt==1000000007) cnt=0;
-//                 }
-//                 else
-//                 {
-//                     for(int i=j+2;i<data.size();i++)
-//                     {
-//                         if(data[j]>data[i])
-//                         {
-//                             cnt++;
-//                             // if(cnt==1000000007) cnt=0;
-//                         }
-//                     }
-//                 }
-//             }
-//         return (cnt%1000000007);
-//     }
+                }
+                else if(data[j]==data[j+1])
+                {
+                    int temp = cnt;
+                    cnt ++;
+                    // if(cnt==1000000007) cnt=0;
+                }
+                else
+                {
+                    for(int i=j+2;i<data.size();i++)
+                    {
+                        if(data[j]>data[i])
+                        {
+                            cnt++;
+                            // if(cnt==1000000007) cnt=0;
+                        }
+                    }
+                }
+            }
+        return (cnt%1000000007);
+    }
 
-//     /* ----------- 剑指offer 两个链表的第一个公共节点 ----------------*/
-//     struct ListNode {
-// 	int val;
-// 	struct ListNode *next;
-// 	ListNode(int x) :
-// 			val(x), next(NULL) {
-// 	}
-//     };
-//     ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
-//     // 自己写的 非最优查找
+    /* ----------- 剑指offer 两个链表的第一个公共节点 ----------------*/
+    struct ListNode {
+	int val;
+	struct ListNode *next;
+	ListNode(int x) :
+			val(x), next(NULL) {
+	}
+    };
+    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
+    // 自己写的 非最优查找
 
-//     // 长度相同有公共结点，第一次就遍历到；没有公共结点，走到尾部NULL相遇，返回NULL
-//     // 长度不同有公共结点，第一遍差值就出来了，第二遍一起到公共结点；没有公共，一起到结尾NULL。
+    // 长度相同有公共结点，第一次就遍历到；没有公共结点，走到尾部NULL相遇，返回NULL
+    // 长度不同有公共结点，第一遍差值就出来了，第二遍一起到公共结点；没有公共，一起到结尾NULL。
 
-//         ListNode* p1 = pHead1;
+        ListNode* p1 = pHead1;
 
-//         while(p1!=nullptr)
-//         {
-//             ListNode* p2 = pHead2;
-//             while(p2!=nullptr)
-//             {
-//                 if(p1->val == p2->val) return p2;
+        while(p1!=nullptr)
+        {
+            ListNode* p2 = pHead2;
+            while(p2!=nullptr)
+            {
+                if(p1->val == p2->val) return p2;
 
-//                 p2 = p2->next ;
-//             }
-//             p1 = p1->next;
-//         }
-//         return nullptr;
-//     }
+                p2 = p2->next ;
+            }
+            p1 = p1->next;
+        }
+        return nullptr;
+    }
 
-//     /* ----------- 剑指offer 统计一个数字在排序数组中出现的次数----------------*/
-//     int GetNumberOfK(vector<int> data ,int k) {
-//         int left= 0;
-//         int right = data.size()-1;
+    /* ----------- 剑指offer 统计一个数字在排序数组中出现的次数----------------*/
+    int GetNumberOfK(vector<int> data ,int k) {
+        int left= 0;
+        int right = data.size()-1;
         
-//         while(left<=right)
-//         {
-//             int mid=(left+right)/2;
+        while(left<=right)
+        {
+            int mid=(left+right)/2;
             
-//             if(data[mid]==k){
-//                left = right = mid;
-//                for(int i=1;;i++)
-//                 {
-//                     if((mid+i)<data.size())
-//                     {
-//                         if(data[mid+i]==k) 
-//                             right ++;
-//                     }
-//                     if(mid - i>=0)
-//                     {
-//                         if(data[mid-i]==k) 
-//                             left --;
-//                     }
-//                 if(((mid+i)>=data.size())&&(mid-i<0))   break;
-//                 }
+            if(data[mid]==k){
+               left = right = mid;
+               for(int i=1;;i++)
+                {
+                    if((mid+i)<data.size())
+                    {
+                        if(data[mid+i]==k) 
+                            right ++;
+                    }
+                    if(mid - i>=0)
+                    {
+                        if(data[mid-i]==k) 
+                            left --;
+                    }
+                if(((mid+i)>=data.size())&&(mid-i<0))   break;
+                }
 
-//                break;
-//             }   
-//             else if(data[mid]>k)  right = mid - 1; 
-//             else if(data[mid]<k)  left = mid + 1;
-//         }
+               break;
+            }   
+            else if(data[mid]>k)  right = mid - 1; 
+            else if(data[mid]<k)  left = mid + 1;
+        }
 
-//         if(left>right) return 0;
-//         return (right-left+1); 
-//     }
+        if(left>right) return 0;
+        return (right-left+1); 
+    }
 
-//     /* ----------- 剑指offer 输入一棵二叉树，求该树的深度 （最长路径的长度）----------------*/
-//     struct TreeNode {
-//         int val;
-//         struct TreeNode *left;
-//         struct TreeNode *right;
-//         TreeNode(int x) :
-//                 val(x), left(NULL), right(NULL) {
-//         }
-//     };
+    /* ----------- 剑指offer 输入一棵二叉树，求该树的深度 （最长路径的长度）----------------*/
+    struct TreeNode {
+        int val;
+        struct TreeNode *left;
+        struct TreeNode *right;
+        TreeNode(int x) :
+                val(x), left(NULL), right(NULL) {
+        }
+    };
     
-//     int TreeDepth(TreeNode* pRoot)
-//     {
+    int TreeDepth(TreeNode* pRoot)
+    {
 
-//         if(pRoot == nullptr) return 0;
+        if(pRoot == nullptr) return 0;
         
-//         queue<TreeNode*> seq;
-//         seq.push(pRoot);
-//         int depth=0,layer_count=1,count=0;
-//         while(!seq.empty())
-//         {
-//             count++;
-//             if(seq.front()->left!=nullptr) 
-//                 seq.push(seq.front()->left);
+        queue<TreeNode*> seq;
+        seq.push(pRoot);
+        int depth=0,layer_count=1,count=0;
+        while(!seq.empty())
+        {
+            count++;
+            if(seq.front()->left!=nullptr) 
+                seq.push(seq.front()->left);
 
-//             if(seq.front()->right!=nullptr) 
-//                 seq.push(seq.front()->right);
+            if(seq.front()->right!=nullptr) 
+                seq.push(seq.front()->right);
 
-//             seq.pop();
-//             if(count==layer_count)
-//             {
-//                 count =0;
-//                 depth ++;
-//                 layer_count = seq.size();
-//             }
-//         }
+            seq.pop();
+            if(count==layer_count)
+            {
+                count =0;
+                depth ++;
+                layer_count = seq.size();
+            }
+        }
 
-//         return depth;
-//     }
-//     /* ----------- 剑指offer 数组中有两个数字只出现一次，其他数字则出现了两次，找出这两个数----------------*/
-//     bool FindNumsAppearOnce(vector<int> data) {
-//         int res=data[0];
-//         for(int i=1;i<data.size();i++){   
-//             res = res ^ data[i];
-//         }
-//         int k=0;
-//         while(res!=0){
-//             k++;
-//             res = res/2 ;
-//         }
-//         int check = 1<<(k-1);
+        return depth;
+    }
+    /* ----------- 剑指offer 数组中有两个数字只出现一次，其他数字则出现了两次，找出这两个数----------------*/
+    bool FindNumsAppearOnce(vector<int> data) {
+        int res=data[0];
+        for(int i=1;i<data.size();i++){   
+            res = res ^ data[i];
+        }
+        int k=0;
+        while(res!=0){
+            k++;
+            res = res/2 ;
+        }
+        int check = 1<<(k-1);
 
-//         int num1=0,num2=0;
-//         for(int i=0;i<data.size();i++){
-//             if((data[i]&check)==check) 
-//                 num1 ^= data[i];
-//             else
-//                 num2 ^= data[i];
-//         }
-//         cout << num1 <<" " <<num2 <<endl;
-//         return true;
-//     }
+        int num1=0,num2=0;
+        for(int i=0;i<data.size();i++){
+            if((data[i]&check)==check) 
+                num1 ^= data[i];
+            else
+                num2 ^= data[i];
+        }
+        cout << num1 <<" " <<num2 <<endl;
+        return true;
+    }
 
-//     /* ----------- 剑指offer 判断一颗二叉树是否是平衡二叉树----------------*/
-//     // 自己的思路： 所有叶节点高度差 不超过2
-//     // 最优思路： 后序遍历
-//     bool check_leaf(TreeNode* node)
-//     {
-//         if((node->left==nullptr)&&(node->right==nullptr)) return true;
-//         return false;
-//     }
-//     bool IsBalanced_Solution(TreeNode* pRoot) {
+    /* ----------- 剑指offer 判断一颗二叉树是否是平衡二叉树----------------*/
+    // 自己的思路： 所有叶节点高度差 不超过2
+    // 最优思路： 后序遍历
+    bool check_leaf(TreeNode* node)
+    {
+        if((node->left==nullptr)&&(node->right==nullptr)) return true;
+        return false;
+    }
+    bool IsBalanced_Solution(TreeNode* pRoot) {
 
-//         if(pRoot==nullptr) return true;
-//         vector<int> layers;
-//         queue<TreeNode*> node;
-//         node.push(pRoot);
-//         int depth=0,layer_count=1,count=0;
-//         while(!node.empty())
-//         {
-//             count++;
-//             if(node.front()->left!=nullptr) 
-//                 node.push(node.front()->left);
+        if(pRoot==nullptr) return true;
+        vector<int> layers;
+        queue<TreeNode*> node;
+        node.push(pRoot);
+        int depth=0,layer_count=1,count=0;
+        while(!node.empty())
+        {
+            count++;
+            if(node.front()->left!=nullptr) 
+                node.push(node.front()->left);
 
-//             if(node.front()->right!=nullptr) 
-//                 node.push(node.front()->right);
+            if(node.front()->right!=nullptr) 
+                node.push(node.front()->right);
 
-//             if(check_leaf(node.front()))
-//                 layers.push_back(depth);
+            if(check_leaf(node.front()))
+                layers.push_back(depth);
 
-//             node.pop();
-//             if(count==layer_count)
-//             {
-//                 count =0;
-//                 depth ++;
-//                 layer_count = node.size();
-//             }
-//         }
-//         sort(layers.begin(),layers.end());
-//         if(layers.size()==1)
-//         {
-//             if(depth==2) return true;
-//             else return false;
-//         }
-//         if(abs(*layers.end() - layers[0])>=2) return false;    
-//         return true;
-//     }
-//     /*----------- 剑指offer 和为S 的正数序列 -----------*/
-//     //写的有点累赘  用双指针思想最好
-//     vector<vector<int> > FindContinuousSequence(int sum) {
-//         const int start=(sum-1)/2;
-//         volatile int s1=1;
-//         vector<vector<int>> res;
+            node.pop();
+            if(count==layer_count)
+            {
+                count =0;
+                depth ++;
+                layer_count = node.size();
+            }
+        }
+        sort(layers.begin(),layers.end());
+        if(layers.size()==1)
+        {
+            if(depth==2) return true;
+            else return false;
+        }
+        if(abs(*layers.end() - layers[0])>=2) return false;    
+        return true;
+    }
+    /*----------- 剑指offer 和为S 的正数序列 -----------*/
+    //写的有点累赘  用双指针思想最好
+    vector<vector<int> > FindContinuousSequence(int sum) {
+        const int start=(sum-1)/2;
+        volatile int s1=1;
+        vector<vector<int>> res;
 
-//         volatile int i=2;
-//         while(s1<=start)
-//         {
-//             int add_sum = ((2*s1+i-1)*i/2) ;
-//             if(add_sum==sum)
-//             {
-//                  vector<int>temp;
-//                 for(int p=0;p<i;p++)
-//                     temp.push_back(s1+p);
-//                 res.push_back(temp);
-//                 if((++s1)>start) break;
-//                 else 
-//                 {   
-//                     i=2;
-//                     continue;
-//                 }
-//             }
-//             else if(add_sum>sum) 
-//             {
-//                 if((++s1)>start) break;
-//                 else 
-//                 {
-//                     i=2;
-//                     continue;
-//                 }
-//             }
-//             else i++;
-//         }
-//     return res;
-//     }
-//     /*----------- 剑指offer 和为S 的两个数字 -----------*/
-//     // 证明 相隔越远 乘积越小！！！！
-//     vector<int> FindNumbersWithSum(vector<int> array,int sum) {
-//         if(array.size()<=1) return vector<int>();
+        volatile int i=2;
+        while(s1<=start)
+        {
+            int add_sum = ((2*s1+i-1)*i/2) ;
+            if(add_sum==sum)
+            {
+                 vector<int>temp;
+                for(int p=0;p<i;p++)
+                    temp.push_back(s1+p);
+                res.push_back(temp);
+                if((++s1)>start) break;
+                else 
+                {   
+                    i=2;
+                    continue;
+                }
+            }
+            else if(add_sum>sum) 
+            {
+                if((++s1)>start) break;
+                else 
+                {
+                    i=2;
+                    continue;
+                }
+            }
+            else i++;
+        }
+    return res;
+    }
+    /*----------- 剑指offer 和为S 的两个数字 -----------*/
+    // 证明 相隔越远 乘积越小！！！！
+    vector<int> FindNumbersWithSum(vector<int> array,int sum) {
+        if(array.size()<=1) return vector<int>();
 
-//         vector<int>res;
-//         int left =0 ,right = array.size()-1,min=10000;
-//         while(left<right)
-//         {
-//             int add = array[left]+array[right] ;
-//             if(add==sum)
-//             {
-//                 // if((array[left] * array[right])<min)
-//                 {
-//                     // min = array[left] * array[right];
-//                     res.resize(2);
-//                     res[0]= array[left] ;
-//                     res[1] = array[right];
-//                 }
-//                 break;
-//                 // --left;--right;
-//             }
-//             else if(add>sum) --right;
-//             else ++left;
-//         }
-//         return res;
-//     }
-//     /*----------- 剑指offer 左旋转字符串 -----------*/
-//     string LeftRotateString(string str, int n) {
-//         string res;
-//         int spe = n%str.size();
-//         for(int i=spe;i<str.size();i++)
-//             res+=str[i];
-//         for(int i=0;i<spe;i++)
-//             res+=str[i];
-//         return res;
-//     }
-//     /*----------- 剑指offer 翻转单词顺序列 ----------- */
-//     string ReverseSentence(string str) {
-//         if(str.empty()) return str;
-//         string ori_str=str;
-//         int ori_size=str.size();
-//         int right=str.size();
-//         for(int i=ori_size-1;i>=0;i--)
-//         {
-//             if(ori_str[i]==' ')
-//                 {
-//                     //
-//                     str+= (ori_str.substr(i+1,right-i-1));
-//                     str+=' ';
-//                     right = i;  
-//                 }
-//         }
-//         str+= ori_str.substr(0,right);   
-//         str+='\n';
-//      return    str.substr(ori_size,ori_size);
-//     }
-//     /*----------- 剑指offer 判断是否是顺子 ----------- */
-//     // 不用开辟一个桶！！！！！ 可以用移位实现存储
-//     bool IsContinuous( vector<int> numbers ) {
-//         if(numbers.size()!=5) return false;
-//         vector<int> tong(14);
-//         int min=20,max=-20;
-//         for(int i=0;i<numbers.size();i++)
-//         {
-//             if(numbers[i]!=0)
-//             {
-//                 if(tong[numbers[i]]==1 ) return false;
+        vector<int>res;
+        int left =0 ,right = array.size()-1,min=10000;
+        while(left<right)
+        {
+            int add = array[left]+array[right] ;
+            if(add==sum)
+            {
+                // if((array[left] * array[right])<min)
+                {
+                    // min = array[left] * array[right];
+                    res.resize(2);
+                    res[0]= array[left] ;
+                    res[1] = array[right];
+                }
+                break;
+                // --left;--right;
+            }
+            else if(add>sum) --right;
+            else ++left;
+        }
+        return res;
+    }
+    /*----------- 剑指offer 左旋转字符串 -----------*/
+    string LeftRotateString(string str, int n) {
+        string res;
+        int spe = n%str.size();
+        for(int i=spe;i<str.size();i++)
+            res+=str[i];
+        for(int i=0;i<spe;i++)
+            res+=str[i];
+        return res;
+    }
+    /*----------- 剑指offer 翻转单词顺序列 ----------- */
+    string ReverseSentence(string str) {
+        if(str.empty()) return str;
+        string ori_str=str;
+        int ori_size=str.size();
+        int right=str.size();
+        for(int i=ori_size-1;i>=0;i--)
+        {
+            if(ori_str[i]==' ')
+                {
+                    //
+                    str+= (ori_str.substr(i+1,right-i-1));
+                    str+=' ';
+                    right = i;  
+                }
+        }
+        str+= ori_str.substr(0,right);   
+        str+='\n';
+     return    str.substr(ori_size,ori_size);
+    }
+    /*----------- 剑指offer 判断是否是顺子 ----------- */
+    // 不用开辟一个桶！！！！！ 可以用移位实现存储
+    bool IsContinuous( vector<int> numbers ) {
+        if(numbers.size()!=5) return false;
+        vector<int> tong(14);
+        int min=20,max=-20;
+        for(int i=0;i<numbers.size();i++)
+        {
+            if(numbers[i]!=0)
+            {
+                if(tong[numbers[i]]==1 ) return false;
                 
-//                 if(numbers[i]<min) min=numbers[i];
-//                 else if(numbers[i]>max) max=numbers[i];
-//             }
-//             tong[numbers[i]]++;
-//         }
-//         if(max-min <=4) return true;
-//         return false;
-//     }
-//     /*----------- 剑指offer 围圈数数 最后剩下的那个 ----------- */
-//     // 
-//     int LastRemaining_Solution(int n, int m)
-//     {
+                if(numbers[i]<min) min=numbers[i];
+                else if(numbers[i]>max) max=numbers[i];
+            }
+            tong[numbers[i]]++;
+        }
+        if(max-min <=4) return true;
+        return false;
+    }
+    /*----------- 剑指offer 围圈数数 最后剩下的那个 ----------- */
+    // 
+    int LastRemaining_Solution(int n, int m)
+    {
         
-//     }
-//     /*----------- 剑指offer 最简 求阶乘  ----------- */
+    }
+    /*----------- 剑指offer 最简 求阶乘  ----------- */
     
-//     int Sum_Solution(int n) {
+    int Sum_Solution(int n) {
 
-//         //最简：
-//         int ans=n;
-//         ans && (ans+=Sum_Solution(ans-1));
-//         return ans;
+        //最简：
+        int ans=n;
+        ans && (ans+=Sum_Solution(ans-1));
+        return ans;
 
-//         // static int res=0;
-//         // res+=n;
-//         // int ans = (n>1 && Sum_Solution(n-1));
-//         // return res;
-//     }
-//     /*----------- 剑指offer 不用加减乘除做加法 ----------- */
-//     int Add(int num1, int num2)
-//     {   
-//         //递归 最简洁
-//         // return num2 ? Add(num1^num2, (num1&num2)<<1) : num1;
+        // static int res=0;
+        // res+=n;
+        // int ans = (n>1 && Sum_Solution(n-1));
+        // return res;
+    }
+    /*----------- 剑指offer 不用加减乘除做加法 ----------- */
+    int Add(int num1, int num2)
+    {   
+        //递归 最简洁
+        // return num2 ? Add(num1^num2, (num1&num2)<<1) : num1;
 
-//         //迭代 逻辑性最好
+        //迭代 逻辑性最好
 
-//         // while (num2!=0) {
-//         //     int temp = num1^num2;
-//         //     num2 = (num1&num2)<<1;
-//         //     num1 = temp;
-//         // }
-//         // return num1;
+        // while (num2!=0) {
+        //     int temp = num1^num2;
+        //     num2 = (num1&num2)<<1;
+        //     num1 = temp;
+        // }
+        // return num1;
 
-//         int temp = 1,res=0;
-//         bool add_flag=false;
-//         while(true)
-//         {
-//                 if( (num1&temp)==temp && (num2&temp) ==temp)  // 1 1
-//                     (add_flag)?res|=temp:(res|=0,add_flag=!add_flag) ;
-//                 else if (((num1&temp)|(num2&temp))==temp)       // 0 1
-//                     (add_flag)?res|=0:res|=temp  ;
-//                 else                                           //0 0
-//                     (add_flag)?(res|=temp,add_flag=!add_flag):res|=0 ;
-//             if(temp&(1<<31)) break;
-//             temp = (temp <<1); 
-//         }
-//         return res;
-//     }
-//     /*----------- 剑指offer 转字符串为数字 ----------- */
-//     int StrToInt(string str) {
-//         long long res=0; //long long 为64位
-//         for(int i=str.size()-1;i>=0;i--)
-//         {
-//             if(str[i]<=57 && str[i]>=48)
-//             {
-//                 res += ((str[i]-48)* pow(10,str.size()-i-1));
-//             }
-//             else if(str[i]=='+'||str[i]=='-')
-//             {
-//                 if(i!=0) return 0;
-//                 if(str[i]=='-') return (0-res);
-//                 return res;
-//             }
-//             else return 0;
-//         }
-//         return res;
-//     }
-//     /*----------- 剑指offer 数组中重复的数字 ----------- */
-//     // 桶排序
-//     bool duplicate(int numbers[], int length, int* duplication) {
+        int temp = 1,res=0;
+        bool add_flag=false;
+        while(true)
+        {
+                if( (num1&temp)==temp && (num2&temp) ==temp)  // 1 1
+                    (add_flag)?res|=temp:(res|=0,add_flag=!add_flag) ;
+                else if (((num1&temp)|(num2&temp))==temp)       // 0 1
+                    (add_flag)?res|=0:res|=temp  ;
+                else                                           //0 0
+                    (add_flag)?(res|=temp,add_flag=!add_flag):res|=0 ;
+            if(temp&(1<<31)) break;
+            temp = (temp <<1); 
+        }
+        return res;
+    }
+    /*----------- 剑指offer 转字符串为数字 ----------- */
+    int StrToInt(string str) {
+        long long res=0; //long long 为64位
+        for(int i=str.size()-1;i>=0;i--)
+        {
+            if(str[i]<=57 && str[i]>=48)
+            {
+                res += ((str[i]-48)* pow(10,str.size()-i-1));
+            }
+            else if(str[i]=='+'||str[i]=='-')
+            {
+                if(i!=0) return 0;
+                if(str[i]=='-') return (0-res);
+                return res;
+            }
+            else return 0;
+        }
+        return res;
+    }
+    /*----------- 剑指offer 数组中重复的数字 ----------- */
+    // 桶排序
+    bool duplicate(int numbers[], int length, int* duplication) {
 
-//         for(int i=0;i<length;i++)
-//         {
-//             if(i!=numbers[i]) 
-//             {
-//                 if(numbers[numbers[i]]==numbers[i])
-//                 {
-//                     (*duplication) = numbers[i];
-//                     return true;
-//                 }
-//                 swap(numbers[numbers[i]],numbers[i]) ;
-//             }
-//         }
-//         return false;
-//     }
-//     /*----------- 剑指offer 构建乘积数组 ----------- */
+        for(int i=0;i<length;i++)
+        {
+            if(i!=numbers[i]) 
+            {
+                if(numbers[numbers[i]]==numbers[i])
+                {
+                    (*duplication) = numbers[i];
+                    return true;
+                }
+                swap(numbers[numbers[i]],numbers[i]) ;
+            }
+        }
+        return false;
+    }
+    /*----------- 剑指offer 构建乘积数组 ----------- */
 
-//     int beh(vector<vector<int>>&st,int k)
-//     {
-//         if(st[k][2]==-1)
-//             st[k][2] = st[k+1][1]*beh(st,k+1);
+    int beh(vector<vector<int>>&st,int k)
+    {
+        if(st[k][2]==-1)
+            st[k][2] = st[k+1][1]*beh(st,k+1);
         
-//         return st[k][2];
-//     }
-//     int fro(vector<vector<int>>&st,int k)
-//     {
-//         if(st[k][0]==-1)
-//             st[k][0] = st[k-1][1]*fro(st,k-1);
+        return st[k][2];
+    }
+    int fro(vector<vector<int>>&st,int k)
+    {
+        if(st[k][0]==-1)
+            st[k][0] = st[k-1][1]*fro(st,k-1);
 
-//         return st[k][0];
-//     }
-//     vector<int> multiply(const vector<int>& A) {
-//     if(A.empty()) return A;
-//     vector<vector<int>>store(A.size(),vector<int>(3));
+        return st[k][0];
+    }
+    vector<int> multiply(const vector<int>& A) {
+    if(A.empty()) return A;
+    vector<vector<int>>store(A.size(),vector<int>(3));
     
-//     for(int i=0;i<A.size();i++){
-//         store[i][0]=store[i][2]=-1;
-//         store[i][1] = A[i];
-//     }
-//     store[0][0]=store[A.size()-1][2]=1;
+    for(int i=0;i<A.size();i++){
+        store[i][0]=store[i][2]=-1;
+        store[i][1] = A[i];
+    }
+    store[0][0]=store[A.size()-1][2]=1;
     
-//     beh(store,0);
-//     fro(store,(A.size()-1));
-//     vector<int> res(A.size());
+    beh(store,0);
+    fro(store,(A.size()-1));
+    vector<int> res(A.size());
 
-//     for(int i=0;i<store.size();i++)
-//         res[i]=store[i][0]*store[i][2];
-//     return res;
-//     }
-//     /*----------- 剑指offer 匹配正则表达式 ----------- */
-//     /* 逻辑设计 与 递归 ！ */
-//     bool match(char* str, char* pattern)
-//     {
+    for(int i=0;i<store.size();i++)
+        res[i]=store[i][0]*store[i][2];
+    return res;
+    }
+    /*----------- 剑指offer 匹配正则表达式 ----------- */
+    /* 逻辑设计 与 递归 ！ */
+    bool match(char* str, char* pattern)
+    {
 
-//     }
-//     /*----------- 剑指offer 用来判断字符串是否表示数值（包括整数和小数） ----------- */
+    }
+    /*----------- 剑指offer 用来判断字符串是否表示数值（包括整数和小数） ----------- */
     
-//     bool isNumeric(char* string)
-//     {
+    bool isNumeric(char* string)
+    {
         
-//     }
-//     /*----------- 剑指offer 找出字符流中第一个只出现一次的字符 ----------- */
-//   //Insert one char from stringstream
-//     string stream='\0';
-//     void Insert(char ch)
-//     {
- 
-//     }
-//   //return the first appearence once char in current stringstream
-//     char FirstAppearingOnce()
-//     {
-//         return (stream[0]=='\0'?'#':stream[0]);
-//     }
-// };
-// int main(void)
-// {
-//     Solution solu;
+    }
+    /*----------- 剑指offer 找出字符流中第一个只出现一次的字符 ----------- */
+  //Insert one char from stringstream
+    string stream='\0';
+    void Insert(char ch)
+    {
+        
+    }
+  //return the first appearence once char in current stringstream
+    char FirstAppearingOnce()
+    {
+        
+    }
+};
+int main(void)
+{
+    Solution solu;
     
     
     
-//     return 0;
-// }
+    return 0;
+}

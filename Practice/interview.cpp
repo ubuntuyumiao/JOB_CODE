@@ -342,9 +342,9 @@ int main(void)
 
 
 
+/* */
+
 /* 
-
-
 #include <iostream>
 #include <stdio.h>
 
@@ -367,10 +367,10 @@ int main(int argc, const char** argv) {
         cout << num << endl;
     }
     return 0;
-}
+} */
 
 
- */
+ 
 
 
 
