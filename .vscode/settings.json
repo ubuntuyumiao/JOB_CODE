@@ -46,6 +46,13 @@
         "cstdarg": "cpp",
         "memory": "cpp",
         "queue": "cpp",
-        "hash_map": "cpp"
+        "hash_map": "cpp",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "algorithm": "cpp",
+        "iomanip": "cpp",
+        "cfenv": "cpp",
+        "newstdvector": "cpp",
+        "stdvector": "cpp"
     }
 }

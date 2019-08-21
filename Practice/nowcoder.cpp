@@ -1,2708 +1,2735 @@
 
-// /* ------------------ STL-- map  ----------------------------
-// #include <iostream>
-// #include <algorithm>
-// #include <list>
-// #include <map>
+// // /* ------------------ STL-- map  ----------------------------
+// // #include <iostream>
+// // #include <algorithm>
+// // #include <list>
+// // #include <map>
 
-// using namespace std;
+// // using namespace std;
 
-// int main(void)
-// {
-//         vector<int> array;
-//         list<int> arr;
-//         map<string, string> namemap;
+// // int main(void)
+// // {
+// //         vector<int> array;
+// //         list<int> arr;
+// //         map<string, string> namemap;
  
-//         namemap["岳不群"]="华山派掌门人，人称君子剑";
-//         namemap["张三丰"]="武当掌门人，太极拳创始人";
-//         namemap["东方不败"]="第一高手，葵花宝典";
+// //         namemap["岳不群"]="华山派掌门人，人称君子剑";
+// //         namemap["张三丰"]="武当掌门人，太极拳创始人";
+// //         namemap["东方不败"]="第一高手，葵花宝典";
 
-//         for(int i=0;i<100;i++)
-//         {
-//             arr.push_back(i);
-//         }
-//         if(namemap.find("岳不群") != namemap.end()){
-//             std::cout << namemap["岳不群"] << '\n';
-//            } 
-//         printf("%d",*arr.begin());
+// //         for(int i=0;i<100;i++)
+// //         {
+// //             arr.push_back(i);
+// //         }
+// //         if(namemap.find("岳不群") != namemap.end()){
+// //             std::cout << namemap["岳不群"] << '\n';
+// //            } 
+// //         printf("%d",*arr.begin());
 
-//     return 0;
-// }*/
+// //     return 0;
+// // }*/
 
-// /* ------------------ STL-- map  ----------------------------
-// #include <iostream>
-// #include <algorithm>
-// #include <list>
-// #include <map>
+// // /* ------------------ STL-- map  ----------------------------
+// // #include <iostream>
+// // #include <algorithm>
+// // #include <list>
+// // #include <map>
 
-// using namespace std;
+// // using namespace std;
 
-// int main(void)
-// {
-//         vector<int> array;
-//         list<int> arr;
-//         map<string, string> namemap;
+// // int main(void)
+// // {
+// //         vector<int> array;
+// //         list<int> arr;
+// //         map<string, string> namemap;
  
-//         namemap["岳不群"]="华山派掌门人，人称君子剑";
-//         namemap["张三丰"]="武当掌门人，太极拳创始人";
-//         namemap["东方不败"]="第一高手，葵花宝典";
+// //         namemap["岳不群"]="华山派掌门人，人称君子剑";
+// //         namemap["张三丰"]="武当掌门人，太极拳创始人";
+// //         namemap["东方不败"]="第一高手，葵花宝典";
 
-//         for(int i=0;i<100;i++)
-//         {
-//             arr.push_back(i);
-//         }
-//         if(namemap.find("岳不群") != namemap.end()){
-//             std::cout << namemap["岳不群"] << '\n';
-//            } 
-//         printf("%d",*arr.begin());
+// //         for(int i=0;i<100;i++)
+// //         {
+// //             arr.push_back(i);
+// //         }
+// //         if(namemap.find("岳不群") != namemap.end()){
+// //             std::cout << namemap["岳不群"] << '\n';
+// //            } 
+// //         printf("%d",*arr.begin());
 
-//     return 0;
-// }*/
+// //     return 0;
+// // }*/
 
-// /* ------------------  2间隔删除元素 直到只剩一个 输出  ----------------------------
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include<string>
-// #include<unistd.h>
-// #include<queue>
-// using namespace std;
+// // /* ------------------  2间隔删除元素 直到只剩一个 输出  ----------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include<string>
+// // #include<unistd.h>
+// // #include<queue>
+// // using namespace std;
 
-// class Solution {
-// public:
+// // class Solution {
+// // public:
 
-//     void solution(queue<int> array) {
-//                int count;
-//        while(array.size()>1)
-//        {
-//             if(count!=2)
-//             {
-//                 int temp=array.front();
-//                 array.pop();
-//                 array.push(temp);
-//                 count++;
-//             }
-//             else
-//             {
-//                 count=0;
+// //     void solution(queue<int> array) {
+// //                int count;
+// //        while(array.size()>1)
+// //        {
+// //             if(count!=2)
+// //             {
+// //                 int temp=array.front();
+// //                 array.pop();
+// //                 array.push(temp);
+// //                 count++;
+// //             }
+// //             else
+// //             {
+// //                 count=0;
 
-//                 array.pop();
-//             }
+// //                 array.pop();
+// //             }
             
-//        }
-//        std::cout << array.front() << '\n';
-//     }
+// //        }
+// //        std::cout << array.front() << '\n';
+// //     }
 
 
-// };
-// int main(void)
-// {
-//     Solution solu;
-//     int n;
-//     int input;
-//     while(scanf("%d",&n)!=EOF)
-//     {
-//         queue<int> array;
-//         vector<int> out;
-//         for(int i=0;i<n;i++)
-//             {
-//                 // cin >> input;
-//                 array.push(i);
-//             }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     int n;
+// //     int input;
+// //     while(scanf("%d",&n)!=EOF)
+// //     {
+// //         queue<int> array;
+// //         vector<int> out;
+// //         for(int i=0;i<n;i++)
+// //             {
+// //                 // cin >> input;
+// //                 array.push(i);
+// //             }
 
-//         solu.solution(array);
-//     }
+// //         solu.solution(array);
+// //     }
             
-// //6 -1 0 1 2 -1 -4 
-//     return 0;
-// } */
+// // //6 -1 0 1 2 -1 -4 
+// //     return 0;
+// // } */
 
 
-// /* ------------------  Dijkstra(贪心) 算法  ----------------------------
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include <string>
-// #include <unistd.h>
-// #include <queue>
-// #include<math.h>
-// #include<stack>
-// using namespace std;
-// #define V 7 
-// #define INF 0x3f3f3f3f  
+// // /* ------------------  Dijkstra(贪心) 算法  ----------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include <string>
+// // #include <unistd.h>
+// // #include <queue>
+// // #include<math.h>
+// // #include<stack>
+// // using namespace std;
+// // #define V 7 
+// // #define INF 0x3f3f3f3f  
 
-// struct graph
-// {
-//     int cost[V][V];
-//     char sig[V]={'A','B','C','D','E','F','G'};
-//     void init()
-//     {
-//         for(int i=0;i<V;i++)
-//             for(int j=0;j<V;j++)
-//                  cost[i][j]=INF;
+// // struct graph
+// // {
+// //     int cost[V][V];
+// //     char sig[V]={'A','B','C','D','E','F','G'};
+// //     void init()
+// //     {
+// //         for(int i=0;i<V;i++)
+// //             for(int j=0;j<V;j++)
+// //                  cost[i][j]=INF;
 
-//     cost[0][1] = cost[1][0] = 4;
-//     cost[0][2] = cost[2][0] = 5; 
-//     cost[0][3] = cost[3][0] = 2;
-//     cost[1][3] = cost[3][1] = 1;
-//     cost[1][4] = cost[4][1] = 2;
-//     cost[2][3] = cost[3][2] = 8;
-//     cost[2][6] = cost[6][2] = 1;
-//     cost[3][4] = cost[4][3] = 3;
-//     cost[3][5] = cost[5][3] = 7;
-//     cost[3][6] = cost[6][3] = 4;
-//     cost[4][5] = cost[5][4] = 10;
-//     cost[5][6] = cost[6][5] = 2;
-//     }
-//     int findminvtx(int* dist,int* visited)
-//     {
-//         int minvtx=0,min=INF;
-//         for(int i=0;i<V;i++)
-//         {
-//             if(visited[i]==0  && dist[i]<min)
-//             {
-//                 minvtx=i;
-//                 min = dist[i];
-//             }
-//         }
+// //     cost[0][1] = cost[1][0] = 4;
+// //     cost[0][2] = cost[2][0] = 5; 
+// //     cost[0][3] = cost[3][0] = 2;
+// //     cost[1][3] = cost[3][1] = 1;
+// //     cost[1][4] = cost[4][1] = 2;
+// //     cost[2][3] = cost[3][2] = 8;
+// //     cost[2][6] = cost[6][2] = 1;
+// //     cost[3][4] = cost[4][3] = 3;
+// //     cost[3][5] = cost[5][3] = 7;
+// //     cost[3][6] = cost[6][3] = 4;
+// //     cost[4][5] = cost[5][4] = 10;
+// //     cost[5][6] = cost[6][5] = 2;
+// //     }
+// //     int findminvtx(int* dist,int* visited)
+// //     {
+// //         int minvtx=0,min=INF;
+// //         for(int i=0;i<V;i++)
+// //         {
+// //             if(visited[i]==0  && dist[i]<min)
+// //             {
+// //                 minvtx=i;
+// //                 min = dist[i];
+// //             }
+// //         }
 
-//         return minvtx;
-//     }
-//     int first_adj(int v)
-//     {
-//         for(int i=0;i<V;i++)
-//         {
-//             if(v==i) continue;
-//             if(cost[v][i]!=INF) return i;
-//         }
-//         return -1;
-//     }
-//     int next_adj(int v,int first_adj)
-//     {
-//         for(int i=first_adj+1;i<V;i++)
-//         {
-//             if(v==i) continue;
-//             if(cost[v][i]!=INF) return i;
-//         }
-//         return -1;
-//     }
-//     void dijkstra(int start)
-//     {
-//         int* dist=new int[V];
-//         int* visited=new int[V];
-//         int* path=new int[V];
+// //         return minvtx;
+// //     }
+// //     int first_adj(int v)
+// //     {
+// //         for(int i=0;i<V;i++)
+// //         {
+// //             if(v==i) continue;
+// //             if(cost[v][i]!=INF) return i;
+// //         }
+// //         return -1;
+// //     }
+// //     int next_adj(int v,int first_adj)
+// //     {
+// //         for(int i=first_adj+1;i<V;i++)
+// //         {
+// //             if(v==i) continue;
+// //             if(cost[v][i]!=INF) return i;
+// //         }
+// //         return -1;
+// //     }
+// //     void dijkstra(int start)
+// //     {
+// //         int* dist=new int[V];
+// //         int* visited=new int[V];
+// //         int* path=new int[V];
  
-//         for(int i=0;i<V;i++)
-//         {
-//             visited[i]=0;
-//             dist[i]=cost[start][i];
-//             if(cost[start][i]!=INF) path[i]=start;
-//                 else path[i]=-1;
-//         }
+// //         for(int i=0;i<V;i++)
+// //         {
+// //             visited[i]=0;
+// //             dist[i]=cost[start][i];
+// //             if(cost[start][i]!=INF) path[i]=start;
+// //                 else path[i]=-1;
+// //         }
 
-//         visited[start]=1;
+// //         visited[start]=1;
 
-//        for(int i=0;i<V;i++)
-//         {
-//             int w=findminvtx(dist,visited);
+// //        for(int i=0;i<V;i++)
+// //         {
+// //             int w=findminvtx(dist,visited);
   
-//             visited[w]=1;
+// //             visited[w]=1;
  
-//             for(int j=0;j<V;j++)
-//             {
-//                 if((visited[j]==0)&&(dist[j]>(dist[w]+cost[w][j])))
-//                 {
-//                     path[j]= w;
-//                     dist[j]= dist[w]+cost[w][j];
-//                 }
+// //             for(int j=0;j<V;j++)
+// //             {
+// //                 if((visited[j]==0)&&(dist[j]>(dist[w]+cost[w][j])))
+// //                 {
+// //                     path[j]= w;
+// //                     dist[j]= dist[w]+cost[w][j];
+// //                 }
                 
-//             }
-//             for(int k=0;k<V;k++)
-//                 std::cout << dist[k] << ' ';
-//                 cout<< '\n';
-//         }
+// //             }
+// //             for(int k=0;k<V;k++)
+// //                 std::cout << dist[k] << ' ';
+// //                 cout<< '\n';
+// //         }
 
 
-//         cout<<'\n';cout<<'\n';
-//         for(int i=0;i<V;i++)
-//         {
-//             cout<<"Vertex "<< sig[start] << " ->"<<"Vertex "<< sig[i]
-//                     <<": "<< dist[i] <<" ";
-//             cout<<'\n';
-//         } 
+// //         cout<<'\n';cout<<'\n';
+// //         for(int i=0;i<V;i++)
+// //         {
+// //             cout<<"Vertex "<< sig[start] << " ->"<<"Vertex "<< sig[i]
+// //                     <<": "<< dist[i] <<" ";
+// //             cout<<'\n';
+// //         } 
             
-//             stack<int> s;
-//             //这个循环以由叶子结点到根结点的顺序将其入栈
-//             for(int i=0;i<V;i++)
-//             {
-//                 int to=i;
-//                 while(path[to] != -1){
-//                 s.push(to);
-//                 // cout << sig[path[to]] <<' ';   
-//                 to = path[to];
-//             } 
-//             s.push(to);
+// //             stack<int> s;
+// //             //这个循环以由叶子结点到根结点的顺序将其入栈
+// //             for(int i=0;i<V;i++)
+// //             {
+// //                 int to=i;
+// //                 while(path[to] != -1){
+// //                 s.push(to);
+// //                 // cout << sig[path[to]] <<' ';   
+// //                 to = path[to];
+// //             } 
+// //             s.push(to);
 
-//             while(!s.empty()){
-//                 cout << sig[s.top()] <<' ';
-//                 s.pop();
-//             }
-//             std::cout << '\n';
-//             }
+// //             while(!s.empty()){
+// //                 cout << sig[s.top()] <<' ';
+// //                 s.pop();
+// //             }
+// //             std::cout << '\n';
+// //             }
 
-//     }
-// };
+// //     }
+// // };
 
-// int main(void)
-// {
-//     graph dijk_g;
-//     dijk_g.init();
-//     // for(int j=0;j<V;j++)
-//     // {
-//         dijk_g.dijkstra(0);
-//         std::cout << "-  -  -  -  -" << '\n';
-//     // }
-// //6 -1 0 1 2 -1 -4 
-//     return 0;
-// } */
+// // int main(void)
+// // {
+// //     graph dijk_g;
+// //     dijk_g.init();
+// //     // for(int j=0;j<V;j++)
+// //     // {
+// //         dijk_g.dijkstra(0);
+// //         std::cout << "-  -  -  -  -" << '\n';
+// //     // }
+// // //6 -1 0 1 2 -1 -4 
+// //     return 0;
+// // } */
 
-// /* ------------------  反转链表 （单向链表）  ----------------------------
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include<string>
-// #include<unistd.h>
-// #include<queue>
-// using namespace std;
-// struct ListNode {
-// 	int val;
-// 	struct ListNode *next;
-// 	ListNode(int x) :
-// 			val(x), next(NULL) {
-// 	}
-// };
-// class Solution {
-// public:
-//     ListNode* ReverseList(ListNode* pHead) {
+// // /* ------------------  反转链表 （单向链表）  ----------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include<string>
+// // #include<unistd.h>
+// // #include<queue>
+// // using namespace std;
+// // struct ListNode {
+// // 	int val;
+// // 	struct ListNode *next;
+// // 	ListNode(int x) :
+// // 			val(x), next(NULL) {
+// // 	}
+// // };
+// // class Solution {
+// // public:
+// //     ListNode* ReverseList(ListNode* pHead) {
         
-//         ListNode* node = pHead;
-//         ListNode* pre = nullptr;
-//         while(node!=nullptr)
-//         {
-//              ListNode* next= node->next;
+// //         ListNode* node = pHead;
+// //         ListNode* pre = nullptr;
+// //         while(node!=nullptr)
+// //         {
+// //              ListNode* next= node->next;
              
-//              node->next = pre;
-//              if(next == nullptr) break;
-//              pre= node ;
-//              node = next;
-//         }
-//         return node;
-//     }
-// };
-// int main(void)
-// {
-//     Solution solu;
+// //              node->next = pre;
+// //              if(next == nullptr) break;
+// //              pre= node ;
+// //              node = next;
+// //         }
+// //         return node;
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
 
-//     ListNode head(3);
-//     ListNode node1(7);
-//     ListNode node2(4);
-//     ListNode node3(10);
-//     ListNode rear(9);
+// //     ListNode head(3);
+// //     ListNode node1(7);
+// //     ListNode node2(4);
+// //     ListNode node3(10);
+// //     ListNode rear(9);
 
-//     head.next = & node1;
-//     node1.next = & node2;
-//     node2.next = & node3;
-//     node3.next = & rear;
-//     ListNode* result;
-//     result = solu.ReverseList(&head);
+// //     head.next = & node1;
+// //     node1.next = & node2;
+// //     node2.next = & node3;
+// //     node3.next = & rear;
+// //     ListNode* result;
+// //     result = solu.ReverseList(&head);
     
-//     while(result!=nullptr)
-//     {
-//         std::cout <<result->val << '\n';
-//         result = result->next ;
-//     }
-// //6 -1 0 1 2 -1 -4 
-//     return 0;
-// }  */
+// //     while(result!=nullptr)
+// //     {
+// //         std::cout <<result->val << '\n';
+// //         result = result->next ;
+// //     }
+// // //6 -1 0 1 2 -1 -4 
+// //     return 0;
+// // }  */
 
 
-// /* ------------------（迭代）  合成两个有序链表为一个有序链表 ----------------------------
+// // /* ------------------（迭代）  合成两个有序链表为一个有序链表 ----------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include<string>
+// // #include<unistd.h>
+// // #include<queue>
+// // using namespace std;
+// // struct ListNode {
+// // 	int val;
+// // 	struct ListNode *next;
+// // 	ListNode(int x) :
+// // 			val(x), next(NULL) {
+// // 	}
+// // };
+// // class Solution {
+// // public:
+// //     ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
+// //         if(pHead1==nullptr)  return pHead2;
+// //         else if(pHead2==nullptr)  return pHead1;
+        
+// //         ListNode* out_head=nullptr;
+// //         ListNode* out_pre=nullptr;
+        
+// //         ListNode* node1 = pHead1;
+// //         ListNode* node2 = pHead2;
+
+// //         while(node1!=nullptr && node2!=nullptr)
+// //         {
+// //             if(node2->val>node1->val)
+// //             {
+// //                 if(out_pre!=nullptr)
+// //                 {
+// //                     out_pre->next = node1;
+// //                     out_pre = out_pre->next;
+// //                 }
+// //                 else
+// //                 {
+// //                     out_pre= node1;
+// //                     out_head= out_pre;
+// //                 }
+// //                 node1 = node1->next;
+// //             }
+// //             else
+// //             {
+// //                 if(out_pre!=nullptr)
+// //                 {
+// //                     out_pre->next = node2;
+// //                     out_pre = out_pre->next;
+// //                 }
+// //                 else
+// //                 {
+// //                     out_pre= node2;
+// //                     out_head= out_pre;
+// //                 }
+// //                 node2 =node2->next;
+// //             }
+// //         }
+// //         if(node1 == nullptr)
+// //         {
+// //             while(node2!=nullptr)
+// //             {
+// //                 out_pre->next = node2;
+// //                 out_pre = out_pre->next;
+// //                 node2= node2->next;
+// //             }
+// //         }
+// //         if(node2 == nullptr)
+// //         {
+// //             while(node1!=nullptr)
+// //             {
+// //                 out_pre->next = node1;
+// //                 out_pre = out_pre->next;
+// //                 node1= node1->next;
+// //             }
+// //         }
+// //         return out_head;
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+
+// //     ListNode head(6);
+// //     ListNode node1(7);
+// //     ListNode node2(8);
+// //     ListNode node3(9);
+// //     ListNode rear(10);
+
+// //     ListNode head1(5);
+// //     ListNode node11(8);
+// //     ListNode node21(9);
+// //     ListNode node210(10);
+// //     ListNode node211(12);
+// //     ListNode node31(13);
+// //     ListNode rear1(16);
+
+// //     head.next = & node1;
+// //     node1.next = & node2;
+// //     node2.next = & node3;
+// //     node3.next = & rear;
+
+// //     head1.next = & node11;
+// //     node11.next = & node21;
+// //     node21.next = & node210;
+// //     node210.next = & node211;
+// //     node211.next = & node31;
+// //     node31.next = & rear1;
+
+// //     ListNode* result;
+// //     result = solu.Merge(&head,&head1);
+    
+// //     while(result!=nullptr)
+// //     {
+// //         std::cout <<result->val << '\n';
+// //         result = result->next ;
+// //     }
+// // //6 -1 0 1 2 -1 -4 
+// //     return 0;
+// // } */
+
+
+// // /* ------------------（递归）  合成两个有序链表为一个有序链表 ----------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include<string>
+// // #include<unistd.h>
+// // #include<queue>
+// // using namespace std;
+// // struct TreeNode {
+// // 	int val;
+// // 	struct TreeNode *left;
+// // 	struct TreeNode *right;
+// // 	TreeNode(int x) :
+// // 			val(x), left(NULL), right(NULL) {
+// // 	}
+// // };
+// // class Solution {
+// // public:
+// //     TreeNode* reConstructBinaryTree(vector<int> pre,vector<int> vin) {
+// //         if(pre.empty()) return NULL;
+// //         TreeNode* root =new TreeNode(pre[0]);
+
+// //         int offset=0;
+// //         for(auto& data:vin)
+// //         {
+// //             if(data==root->val) break;
+// //             offset++;
+// //         }
+// //         vector<int> left_vin(vin.begin(),vin.begin()+offset);
+// //         vector<int> right_vin(vin.begin()+offset+1,vin.end());
+
+// //         vector<int> left_pre(pre.begin()+1,pre.begin()+offset+1);
+// //         vector<int> right_pre(pre.begin()+offset+1,pre.end());
+
+// //          root->left = reConstructBinaryTree(left_pre,left_vin);
+// //          root->right = reConstructBinaryTree(right_pre,right_vin);
+
+// //         return root;
+// //     }
+
+
+// //     bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
+// //     {
+// //         if(pRoot2==nullptr) return false;
+// //         return true;
+// //     }
+// // };
+
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     vector<int> pre={1,2,4,7,3,5,6,8};
+// //     vector<int> vin={4,7,2,1,5,3,8,6};
+
+// //     vector<int> pre2={1,2,4,7,3,5,6,8};
+// //     vector<int> vin2={4,7,2,1,5,3,8,6};
+
+// //     TreeNode* tree1 = solu.reConstructBinaryTree(pre,vin);
+// //     TreeNode* tree2 = solu.reConstructBinaryTree(pre2,vin2);
+// //     cout << solu.HasSubtree(tree1,tree2) << '\n';
+// // //6 -1 0 1 2 -1 -4 
+// //     return 0;
+// // } */
+
+
+// // /* ------------------ 输入两个二叉树链表A、B 判断子树  ----------------------------
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // struct TreeNode {
+// // 	int val;
+// // 	struct TreeNode *left;
+// // 	struct TreeNode *right;
+// // 	TreeNode(int x) :
+// // 			val(x), left(NULL), right(NULL) {
+// // 	}
+// // };
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
+// //     {
+// //         if(pRoot2==nullptr) return false;
+// //         if(pRoot1==nullptr) return false;
+
+// //         TreeNode* p1 = pRoot1;
+// //         TreeNode* p2 = pRoot2;
+// //         queue<TreeNode*> ver;
+// //         ver.push(p1);
+// //         while(!ver.empty())
+// //         {
+// //             TreeNode* cur = ver.front();
+// //             cout<< cur->val << ' ';
+// //             if(cur->val==p2->val)
+// //             {
+// //                //左子树 右子树也重合  则输出true
+// //                 if (((p2->left==nullptr) || HasSubtree(cur->left,p2->left))
+// //                        && ((p2->right==nullptr) || HasSubtree(cur->right,p2->right)))
+// //                     return true;
+// //             }
+// //             if(cur->left!=nullptr) ver.push(cur->left);
+// //             if(cur->right!=nullptr) ver.push(cur->right);
+// //             ver.pop();
+// //         }
+
+// //         return false;
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
+    
+// //     p1.left=&n1; p1.right=&n2;
+// //     n1.left=&n3;n1.right=&n4;
+// //     n3.left=&n7;
+
+// //     n2.left=&n5;n2.right=&n6;
+// //     n5.right=&n8;
+
+
+// //     TreeNode p2(5),n_1(2);
+// //     p2.right=&n_1;
+// //     std::cout << '\n' << solu.HasSubtree(&p1,&p2) << '\n';
+
+// //     return 0;
+// // } */
+
+// // /* ------------------  将二叉树链表镜像输出  ----------------------------
+
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // struct TreeNode {
+// // 	int val;
+// // 	struct TreeNode *left;
+// // 	struct TreeNode *right;
+// // 	TreeNode(int x) :
+// // 			val(x), left(NULL), right(NULL) {
+// // 	}
+// // };
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// // public:
+// //     void Mirror(TreeNode *pRoot) {
+// //         if((pRoot == nullptr) ) return;
+
+// //         swap(pRoot->left,pRoot->right);
+        
+// //         Mirror(pRoot->left);
+// //         Mirror(pRoot->right);
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
+    
+// //     p1.left=&n1; p1.right=&n2;
+// //     n1.left=&n3;n1.right=&n4;
+// //     n3.left=&n7;
+
+// //     n2.left=&n5;n2.right=&n6;
+// //     n5.right=&n8;
+
+
+// //     TreeNode p2(5),n_1(2);
+// //     p2.right=&n_1;
+// //     solu.Mirror(&p1) ;
+// //     std::cout << n2.right->val << '\n';
+// //     return 0;
+// // }  */
+
+
+// // /* ------------------  顺时针打印矩阵  好tm无聊的题目 ----------------------------
+
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     vector<int> printMatrix(vector<vector<int>>& matrix) {
+// //        vector<int> out ;
+
+// //        if(matrix.empty()) return out;
+
+// //         int row = matrix.size();
+// //         int col = matrix[0].size();
+// //         int left_i=0,left_j=0;
+// //         int right_i=row-1,right_j=col-1;
+       
+// //     while((left_i<=right_i)&&(left_j<=right_j))
+// //     {
+// //        for( int k=left_j;k<=right_j;k++)
+// //         out.push_back(matrix[left_i][k]);
+        
+// //         if(left_i==right_i) return out;
+        
+// //        for( int k=left_i+1;k<=right_i;k++)
+// //         out.push_back(matrix[k][right_j]);
+
+// //        if(left_j==right_j) return out;
+
+// //        for( int k=right_j-1;k>=left_j;k--)
+// //         out.push_back(matrix[right_i][k]);
+
+// //        for( int k=right_i-1;k>left_i;k--)
+// //         out.push_back(matrix[k][left_j]);
+            
+// //        left_i ++; left_j ++;
+// //        right_i--; right_j--;
+// //     }
+// //     return out;
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     int dim;
+// //    while(~scanf("%d",&dim)!=EOF)
+// //    {
+// //           int num=0;
+// //        vector<vector<int>> mat;
+// //        vector<int> res;
+// //        for(int i=0;i<dim;i++)
+// //        {
+// //         vector<int> row;
+// //          for(int k=0;k<dim;k++)
+// //             {
+// //                 num++;
+// //                 row.push_back(num);
+// //             }
+// //             mat.push_back(row);
+// //        }
+
+// //      res =  solu.printMatrix(mat);
+// //      for(auto&data:res)
+// //         std::cout << data << '\n';
+// //    }
+    
+// //     return 0;
+// // }*/
+
+// // /* ------------------  包含min功能的栈 有点简单 ----------------------------
+
+// // #include<iostream>
+// // #include <stdio.h>
+// // #include<stack>
+// // class Solution {
+// // public:
+// //     std::stack<int> min_st;
+// //     std::stack<int> st2;
+// //     void push(int value) {
+// //         st2.push(value);
+// //         if(min_st.empty())
+// //         {
+// //             min_st.push(value);
+// //         }
+// //         else
+// //         {
+// //             if(value<=min_st.top())
+// //                 {
+// //                     min_st.push(value);
+// //                 }
+// //         }
+// //     }
+// //     void pop() {
+// //         //若弹出最小数据
+// //         if(!min_st.empty()) 
+// //             if(st2.top()==min_st.top())
+// //                  min_st.pop();
+// //         st2.pop();
+// //     }
+// //     int top() {
+// //         return st2.top();
+// //     }
+// //     int min() {
+// //         return min_st.top();
+// //     }
+// // };  
+// // int main(int argc, char* argv[])  
+// // {  
+// //     Solution solu;
+
+
+
+// //     return 0;  
+// // }  */
+
+// // /* ------------------  判断 栈的压入、弹出序列 自己的写法好蠢，没考虑逆向思维----------------------------
+
+// // #include<iostream>
+// // #include <stdio.h>
+// // #include<stack>
+// // #include<vector>
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     bool IsPopOrder(vector<int> pushV,vector<int> popV) {
+// //         if(popV.empty()) return false;
+// //         if(popV.size()!=pushV.size()) return false;
+// //         vector<int> vis;
+// //         int i,pos_pre=-1;
+// //         for( i=0;i<pushV.size();i++)
+// //         {
+// //             vis.push_back(0);
+// //             if(popV[0]==pushV[i]) 
+// //             {
+// //                 pos_pre=i;
+// //                 vis[i]=1;
+// //             }
+// //         }
+// //         if(pos_pre==-1) return false;
+
+// //         for(int k=1;k<popV.size();k++)
+// //         {
+// //             int i;
+// //             bool left_find=false;
+// //             for(i=pos_pre-1;i>=0;i--)
+// //             {
+// //               if(vis[i]==0)
+// //               {
+// //                   if(popV[k]==pushV[i])
+// //                   {
+// //                       vis[i]=1;
+// //                       pos_pre = i;
+// //                       left_find=true;
+// //                       break;
+// //                   }
+// //                   break;
+// //               }
+// //             }
+// //             if(left_find) continue;
+            
+// //             for(i=pos_pre+1;i<pushV.size();i++)
+// //             {
+// //                 if(popV[k]==pushV[i])
+// //                 {
+// //                     pos_pre = i;
+// //                     vis[i]=1;
+// //                     break;
+// //                 }
+// //             }
+// //             if(i!=pushV.size()) continue;
+// //             else 
+// //                 return false;
+// //         }
+// //         return true;
+// //     }
+// // }; 
+// // int main(int argc, char* argv[])  
+// // {  
+// //     Solution solu;
+// //     cout << solu.IsPopOrder({1,2,3,4,5},{3,5,4,2,1});
+
+
+// //     return 0;  
+// // } */
+
+// // /* ------------------  层序遍历 （迭代方法）----------------------------
+
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // struct TreeNode {
+// // 	int val;
+// // 	struct TreeNode *left;
+// // 	struct TreeNode *right;
+// // 	TreeNode(int x) :
+// // 			val(x), left(NULL), right(NULL) {
+// // 	}
+// // };
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     vector<int> PrintFromTopToBottom(TreeNode* root) {
+// //         vector<int> out;
+// //         queue<TreeNode*> ver;
+// //         ver.push(root);
+// //         while(!ver.empty())
+// //         {
+// //             out.push_back(ver.front()->val) ;
+// //             if(ver.front()->left!=nullptr) ver.push(ver.front()->left);
+// //             if(ver.front()->right!=nullptr) ver.push(ver.front()->right);
+// //             ver.pop();
+// //         }
+
+// //         return out;
+// //     }
+// // };
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
+    
+// //     p1.left=&n1; p1.right=&n2;
+// //     n1.left=&n3;n1.right=&n4;
+// //     n3.left=&n7;
+
+// //     n2.left=&n5;n2.right=&n6;
+// //     n5.right=&n8;
+
+
+// //     TreeNode p2(5),n_1(2);
+// //     p2.right=&n_1;
+// //     vector<int> res;
+// //     res=solu.PrintFromTopToBottom(&p1);
+// //     for(auto&da:res)
+// //         std::cout << da << '\n';
+// //     return 0;
+// // }*/
+
+// // /* ------------------ 判断序列是否是BST的后序输出  走了弯路  重做！  ----------------------------
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // #include<algorithm>
+// // struct TreeNode {
+// // 	int val;
+// // 	struct TreeNode *left;
+// // 	struct TreeNode *right;
+// // 	TreeNode(int x) :
+// // 			val(x), left(NULL), right(NULL) {
+// // 	}
+// // };
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     bool find(vector<int>list,int data)
+// //     {
+// //         vector<int>::iterator it=list.begin();
+// //         while(it != list.end())
+// // 	 {   
+// // 	      if(*it==data) break;
+// // 	      it++;
+// // 	 }
+// //      if(it==list.end()) return false;
+// //      return true;
+// //     }
+// //     bool VerifySquenceOfBST(vector<int> sequence) {
+// //         if(sequence.empty()) 
+// //         {
+// //             std::cout << "empty" << '\n';
+// //             return false;
+// //         }
+// //         if(sequence.size()==1) return true;
+
+// //         vector<int> mid_seq(sequence);
+// //         sort(mid_seq.begin(),mid_seq.end());
+// //         vector<int>left_tree,right_tree;
+// //         for(int i=0;i<mid_seq.size();i++)
+// //         {
+// //             if(mid_seq[i]<sequence.back())
+// //             {
+// //                 left_tree.push_back(mid_seq[i]);
+// //             }
+// //             else if(mid_seq[i]>sequence.back())
+// //             {
+// //                 right_tree.push_back(mid_seq[i]);
+// //             }
+// //         }
+// //         int root=sequence.back();
+// //         sequence.pop_back();
+// //         vector<int>left_tree_be,right_tree_be;
+// //         for(int i=0;i<right_tree.size();i++)
+// //         {
+// //             if(!find(right_tree, sequence.back()))
+// //                  return false;
+// //             if(sequence.back()<root) return false;
+// //             right_tree_be.insert(right_tree_be.begin(),sequence.back());
+// //             sequence.pop_back();
+// //         }
+// //         for(int i=0;i<left_tree.size();i++)
+// //         {
+// //             if(!find(left_tree, sequence.back()))
+// //                  return false;
+// //             if(sequence.back()>root) return false;
+// //             left_tree_be.insert(left_tree_be.begin(),sequence.back());
+// //             sequence.pop_back();
+// //         }
+// //         for(auto&da:left_tree_be) std::cout << da << " ";
+// //         std::cout << " || " ;
+// //         for(auto&da:right_tree_be) std::cout << da << "  ";
+
+
+// //         if(left_tree.empty())
+// //             {if(!VerifySquenceOfBST(right_tree_be)) return false;}
+// //         if(right_tree.empty())    
+// //             {if(!VerifySquenceOfBST(left_tree_be)) return false;}
+
+// //         if(!right_tree.empty()&&!left_tree.empty())
+// //         {if(!(VerifySquenceOfBST(left_tree_be)&&VerifySquenceOfBST(right_tree_be))) return false;}
+
+// //         return true;
+        
+// //     }
+// // };
+
+// // int main(void)
+// // {
+// //     Solution solu;
+// //     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
+    
+// //     p1.left=&n1; p1.right=&n2;
+// //     n1.left=&n3;n1.right=&n4;
+// //     n3.left=&n7;
+
+// //     n2.left=&n5;n2.right=&n6;
+// //     n5.right=&n8;
+
+
+// //     TreeNode p2(5),n_1(2);
+// //     p2.right=&n_1;
+// //     vector<int> res;
+
+// //     std::cout << solu.VerifySquenceOfBST({4,6,7,5}) << '\n';
+// //     // for(auto&da:res)
+// //     //     std::cout << da << '\n';
+// //     return 0;
+// // }*/
+
+// // /* ------------------ 特殊链表的复制 特殊链表的复制  ----------------------------
+
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // #include<algorithm>
+// // #include<stack>
+// // struct RandomListNode {
+// //     int label;
+// //     struct RandomListNode *next, *random;
+// //     RandomListNode(int x) :
+// //             label(x), next(NULL), random(NULL) {
+// //     }
+// // };
+
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     RandomListNode* Clone(RandomListNode* pHead)
+// //     {
+// //         if(pHead==nullptr) return nullptr;
+// //         RandomListNode *node=pHead;
+// //         while(node!=nullptr)
+// //         {
+// //             RandomListNode *currNode = new RandomListNode(node->label);
+// //             currNode->next = node->next;
+// //             node->next = currNode;
+// //             node = currNode->next;
+// //         }
+// //         node =pHead;
+// //         while(node!=nullptr)
+// //         {
+// //             if(node->random!=nullptr)
+// //                 node->next->random = node->random->next;
+            
+// //             node = node->next->next;
+// //         }
+// //         RandomListNode *pre = pHead->next;
+// //         RandomListNode *tmp ;
+// //         node=pHead;
+// //         while(node->next!=nullptr)
+// //         {
+// //             tmp = node->next;
+// //             node->next = tmp->next;
+// //             node = tmp;
+// //         }
+// //         return pre;
+// //     }
+// // };
+
+// // int main(void)
+// // {
+// //     Solution solu;
+
+// //     return 0;
+// // }*/
+
+// // /*---------------------- 空瓶换可乐----------------------
+
+// // #include <iostream>
+// // #include <cstdio>
+// // using namespace std;
+
+
+// // int coke(int bottle)
+// // {
+// //     if(bottle<3)
+// //     {
+// //         if(bottle<2) return 0;
+// //         else return 1;
+// //     }
+
+// //     return (bottle/3 + coke(bottle%3+bottle/3));
+// // }
+// // int main(void)
+// // {
+
+// //     int bottle;
+// //     while(scanf("%d",&bottle)!=EOF)
+// //     {
+// //         cout << coke(bottle) <<'\n';
+// //     }
+
+// //     return 0;
+// // } */
+
+// // /*---------------  将输入去重与排序  -----------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include<vector>
+// // #include <algorithm>
+// // using namespace std;
+
+// // int main(void)
+// // {
+
+// //     int n;
+// //     while(scanf("%d",&n)!=EOF)
+// //     {
+// //      vector<int> array;
+// //      int data;
+// //      for(int i=0;i<n;i++)
+// //         {
+// //             scanf("%d",&data);
+// //             if(array.empty()) array.push_back(data);
+// //             else
+// //             {
+// //                 int k=0;
+// //                 for(k=0;k<array.size();k++)
+// //                 {
+// //                     if(array[k]==data) break;
+// //                     if(array[k]>data)
+// //                     {
+// //                         array.insert(array.begin()+k,data);
+// //                         break;
+// //                     }
+// //                     if(k==array.size()-1)
+// //                     {
+// //                         array.insert(array.end(),data);
+// //                         break;
+// //                     }
+// //                 }
+              
+// //             }
+// //         }   
+// //         for(auto& da:array) std::cout << da << "\n";
+// //     }
+
+// //     return 0;
+// // }*/
+
+// // /*---------- 将输入十六进制(字符串)转换成十进制输出 -------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include<vector>
+// // #include <string>
+// // using namespace std;
+// // int po(int pow_)
+// // {
+// //     int res=1;
+// //     for(int i=0;i<pow_;i++)
+// //     {
+// //         res *= 16;
+// //     }
+// //     return res;
+// // }
+// // int hex2int(string hex)
+// // {
+// //     int res=0;
+// //     int pow_=1,num=0;
+// //     for(int k=hex.size()-1;k>=0;k--)
+// //     {
+// //         char hex_ = hex[k];
+// //         if((hex_=='x')||(hex_=='X')) return res;
+// //         int trans;
+// //         if((((int)hex_)>=48)&&(((int)hex_)<=57))
+// //         {
+// //             trans = ((int)hex_) - 48;
+// //         }
+// //         else  if((((int)hex_)>=97)&&(((int)hex_)<=102))
+// //         {
+// //             trans = ((int)hex_) - 87;
+// //         }
+// //         else  if((((int)hex_)>=65)&&(((int)hex_)<=70))
+// //         {
+// //             trans = ((int)hex_) - 55;
+// //         }
+
+// //         res += trans * pow_;
+// //         num++;
+// //         pow_ = po(num);
+// //     }
+// //     return res;
+// // }
+// // int main(void)
+// // {
+
+// //     string str;
+// //     while(getline(cin,str))
+// //     {
+// //         std::cout << hex2int(str) << '\n';
+// //     }
+// //     return 0;
+// // }*/
+
+// // /*--------- sort 自定义排序 （函数 + lamda）----------
+
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include <algorithm>
+// // using namespace std;
+// // bool compare(string s1,string s2)
+// // {
+// //     return s1.length()>s2.length();
+// // }
+// // int main(void)
+// // {
+
+// //     int n;
+// //     while(scanf("%d",&n)!=EOF)
+// //     {
+// //         string str;
+// //         vector<string> str_vec;
+// //         for(int k=0;k<n;k++)
+// //             {
+// //                 cin >> str;
+// //                 str_vec.push_back(str);
+// //             }
+// //             sort(str_vec.begin(),str_vec.end(),[](string s1,string s2){return s1.length()>s2.length();});
+// //             for(auto&da:str_vec) std::cout << da << '\n';
+// //     }
+
+// //     return 0;
+// // }*/
+
+
+// // /*---------------------- 输出字符串包含的字符集合 ------------------------
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include <algorithm>
+// // #include <queue>
+// // using namespace std;
+// // bool find(vector<char> vec,char ch)
+// // {
+// //     vector<char>::iterator it=vec.begin();
+// //     while(it!=vec.end())
+// //     {
+// //         if(*it==ch) return true;
+// //         it++;
+// //     }
+// //     return false;
+// // }
+// // vector<char> gather(string str)
+// // {
+// //     vector<char> res;
+// //     for(int k=0;k<str.size();k++)
+// //     {
+// //         char ch = str[k];
+// //         if(find(res,ch)) continue;
+// //         res.push_back(ch);
+// //     }
+// //     return res;
+// // }
+// // int main(void)
+// // {
+
+// //     int n;
+// //     string str;
+// //     while(getline(cin,str))
+// //     {
+// //         vector<char> res;
+// //         res = gather(str);
+// //         for(auto&ch:res) cout<< ch;
+// //         std::cout  << '\n';
+// //     }
+// //     return 0;
+// // } */
+// // /*
+// // 0 0 8 0 0 0 2 0 0
+// // 0 3 0 8 0 2 0 6 0
+// // 7 0 0 0 9 0 0 0 5
+// // 0 5 0 0 0 0 0 1 0
+// // 0 0 4 0 0 0 6 0 0
+// // 0 2 0 0 0 0 0 7 0
+// // 4 0 0 0 8 0 0 0 6
+// // 0 7 0 1 0 3 0 9 0
+// // 0 0 1 0 0 0 8 0 0
+// // */
+
+// // //scanf 如果是 %d、%f 读入数值类型，会自动跳过多余的空格和换行，
+// // //如果是  %s  遇到空格和换行会停止，如果是  %c  就可以读入空格和换行。
+
+// // /*--------------- 修改和查询学生成绩---------------
+
+// // #include <iostream>
+// // #include <cstdio>
+// // #include <vector>
+// // #include <algorithm>
+// // #include <queue>
+// // using namespace std;
+
+// // int main(void)
+// // {
+
+// //     int n,op;
+// //     while(scanf("%d%d",&n,&op)!=EOF)
+// //     {
+// //         vector<int> grades;
+// //         scanf("\n");
+// //         for(int i =0;i<n;i++)
+// //         {
+// //             int data;
+// //             scanf("%d",&data);
+// //             grades.push_back(data);
+ 
+// //         }
+// //         for(int i=0;i<op;i++)
+// //         {
+// //             char cmd;int arg1,arg2;
+// //             scanf("\n");
+// //             scanf("%c%d%d",&cmd,&arg1,&arg2);
+// //             if(cmd=='Q')
+// //             {
+// //                 int max=-1;
+// //                 if(arg1>arg2) swap(arg1,arg2);
+// //                 for(int k=arg1-1;k<arg2;k++)
+// //                 {
+// //                     if(grades[k]>max) max=grades[k];
+// //                 }
+// //                 std::cout <<max << '\n';
+// //             }
+// //             else if(cmd=='U')
+// //             {
+// //                 grades[arg1-1]=arg2;
+// //             }
+// //         }
+
+// //     }
+// //     return 0;
+// // }*/
+
+// // /*------------- 错误记录 读不确定行字符串 ---------------
+// // #include <map>
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<vector>
+// // #include<string>
+// // #include <algorithm>
+// // using namespace std;
+
+
+// // vector<pair<string,int>> pair_vec;
+
+// // void deal_input(string input)
+// // {
+// //     int k,depa=-1;
+// //     for(k=input.size()-1;k>=0;k--)
+// //     {
+// //         if(input[k]=='\\') break;
+// //         if(input[k]==' ')
+// //             if(depa==-1)
+// //             {
+// //                 depa=k;
+// //             }
+// //     }
+// //     string name = input.substr(k+1);
+
+// //     pair_vec.push_back(make_pair(name,1));
+
+// //     for (int i = 0; i<(pair_vec.size() - 1); i++){
+// //         if (pair_vec[i].first == name){
+// //             pair_vec[i].second++;
+// //             pair_vec.pop_back(); break;
+// //         }
+// //     }
+// // }
+// // bool cmp(pair<string,int>x,pair<string,int>y)
+// // {
+// //     return x.second>y.second;
+// // }
+
+// // int str2int(string input)
+// // {
+// //     int num=0,i=0;
+// //      for(int k=input.size()-1;k>=0;k--)
+// //      {
+// //          num += ((input[k]-48) *pow(10,i));
+// //          i++;
+// //      }
+// //      return num;
+// // }
+// // void deal(string input)
+// // {
+// //         int k,depa=-1;
+// //     for(k=input.size()-1;k>=0;k--)
+// //     {
+// //         if(input[k]=='\\') break;
+// //         if(input[k]==' ')
+// //             if(depa==-1)
+// //             {
+// //                 depa=k;
+// //             }
+// //     }
+// //     string name;
+// //     string out;
+// //     name = input.substr(k+1,depa-k-1);
+// //     if(name.size()>16)
+// //         {
+// //             out = name.substr(name.size()-16);
+// //             cout<< out<<" ";
+// //         }
+// //     else
+// //     cout<< name<<" ";
+// //     string num;
+// //     num = input.substr(depa+1);
+// //     cout<< str2int(num);
+// // }
+// // int main(void)
+// // {
+// //     string str;
+// //     vector<string> arr_str;
+// //     while (getline(cin, str))
+// //     {
+// //         if (str.size() == 0)
+// //             break;
+// //         deal_input(str);
+// //     }
+// //     sort(pair_vec.begin(),pair_vec.end(),cmp);
+// //     int i=0;
+// //     for(auto&da:pair_vec)
+// //     {
+// //         i++;
+// //         deal(da.first);
+// //         cout<<" "<<da.second << endl;
+// //         if(i==8) break;
+// //     }
+    
+// //     return 0;
+// // }*/
+
+// // /*------------  卡牌游戏  方法太笨--------------
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<string>
+// // #include<sstream>
+// // #include<vector>
+// // #include<math.h>
+// // #include<algorithm>
+// // using namespace std;
+// // typedef enum _type
+// // {
+// //     joke_boom,
+// //     com_4,
+// //     seq,
+// //     com_3,
+// //     com_2,
+// //     com_1,
+// //     non_type
+// // }car_type;
+// // typedef struct group
+// // {
+// //     car_type type=non_type;
+// //     string card_str;
+// //     vector<int>card_id;
+// // }group;
+// // int str2int(string input)
+// // {
+// //     int num=0,i=0;
+
+// //     if(input.compare("J")==0) return 11;
+// //     if(input.compare("Q")==0) return 12;
+// //     if(input.compare("K")==0) return 13;
+// //     if(input.compare("A")==0) return 14;
+// //     if(input.compare("2")==0) return 16;
+// //     else
+// //     {
+// //     for(int k=input.size()-1;k>=0;k--)
+// //      {
+// //          num += ((input[k]-48) *pow(10,i));
+// //          i++;
+// //      }
+// //     }
+// //      return num;
+// // }
+
+// // void check_type(group& card)
+// // {   
+// //     string card_st = card.card_str,word;
+// //     vector<int>s_card;
+// //     std::stringstream ss(card_st);
+// //     while(ss >> word)
+// //         {
+// //          if((word.compare("joker")==0)||(word.compare("JOKER")==0))
+// //           {
+// //             s_card.push_back(-1);
+// //           }
+// //         else
+// //             s_card.push_back(str2int(word));
+// //         }
+// //             sort(s_card.begin(),s_card.end());
+// //             card.card_id = s_card;
+
+// //     if(s_card.size()==1)
+// //     {
+// //         card.type=com_1;
+// //     }
+// //     else if(s_card.size()==2)
+// //     {
+// //         if((s_card[0]==-1)&&(s_card[1]==-1))
+// //         {
+// //             card.type=joke_boom;
+// //         }
+// //         else if(s_card[0]==s_card[1])
+// //         {
+// //             card.type=com_2;
+// //         }
+// //     }
+// //     else if(s_card.size()==3)
+// //     {
+// //         if(s_card[0]==s_card[1])
+// //         {
+// //             if(s_card[0]==s_card[2])
+// //                 card.type=com_3;
+// //         }
+// //     }
+// //     else if(s_card.size()==4)
+// //     {
+// //         if(s_card[0]==s_card[1])
+// //         {
+// //             if(s_card[0]==s_card[2])
+// //                 if(s_card[0]==s_card[3])
+// //                 card.type=com_4;
+// //         }
+// //     }
+// //     else if(s_card.size()==5)
+// //     {
+// //         if((s_card[4]-s_card[0])==4)
+// //             if((s_card[3]-s_card[0])==3)
+// //                 if((s_card[2]-s_card[0])==2)
+// //                     if((s_card[1]-s_card[0])==1)
+// //                         card.type=seq;
+// //     }
+    
+// // }
+// // bool depart_inpur(string input,group& a,group& b)
+// // {   
+// //     size_t found;
+// //     found = input.rfind("-");
+// //     if(found!=string::npos)
+// //     {
+// //         a.card_str = input.substr(0,found);
+// //         b.card_str = input.substr(found+1); 
+// //         check_type(a);
+// //         if(a.type==non_type) return true;
+// //         check_type(b);
+// //         return true;
+// //     }
+// //     return false;
+// // }
+// // int main(void)
+// // {
+// //     string input;
+// //     while(getline(cin,input))
+// //     {
+// //         group group_a,group_b;
+// //         if(depart_inpur(input,(group_a),(group_b))) 
+// //         {
+// //             if((group_a.type==non_type)||(group_b.type==non_type))
+// //             {
+// //                 cout<< "ERROR"<<endl;
+// //             }
+// //             else
+// //             {
+// //                 if(group_a.type==joke_boom)
+// //                 {
+// //                     cout<< group_a.card_str <<endl;
+// //                 }
+// //                 else if(group_b.type==joke_boom)
+// //                 {
+// //                     cout<< group_b.card_str <<endl;
+// //                 }            
+// //                 else 
+// //                 {
+// //                     //都不是对王
+// //                     if(group_b.type==com_4)
+// //                     {
+// //                         if(group_a.type==com_4)
+// //                         {
+// //                             if((group_b.card_id[0]>group_a.card_id[0]))
+// //                                 cout<< group_b.card_str <<endl;
+// //                             else cout<< group_a.card_str <<endl;
+// //                         }
+// //                         else  cout<< group_b.card_str <<endl;
+// //                     }
+// //                     else if(group_a.type==com_4)
+// //                     {
+// //                         cout<< group_a.card_str <<endl;
+// //                     }
+// //                     else if(group_b.type==com_3)
+// //                     {
+// //                             if(group_a.type==com_3)
+// //                         {
+// //                             if((group_b.card_id[0]>group_a.card_id[0]))
+// //                                 cout<< group_b.card_str <<endl;
+// //                             else cout<< group_a.card_str <<endl; 
+// //                         }
+// //                         else  cout<< "ERROR" <<endl;
+// //                     }
+// //                     else if(group_b.type==com_2)
+// //                     {
+// //                         if(group_a.type==com_2)
+// //                         {
+// //                             if((group_b.card_id[0]>group_a.card_id[0]))
+// //                                 cout<< group_b.card_str <<endl;
+// //                             else cout<< group_a.card_str <<endl;
+// //                         }
+// //                         else  cout<< "ERROR" <<endl;      
+// //                     }
+// //                     else if(group_b.type==com_1)
+// //                     {
+// //                         if(group_a.type==com_1)
+// //                         {
+// //                             if((group_b.card_id[0]>group_a.card_id[0]))
+// //                                 cout<< group_b.card_str <<endl;
+// //                             else cout<< group_a.card_str <<endl;
+// //                         }
+// //                         else  cout<< "ERROR" <<endl;                        
+// //                     }
+// //                     else if(group_b.type==seq)
+// //                     {
+// //                         if(group_a.type==seq)
+// //                         {
+// //                             if((group_b.card_id[0]>group_a.card_id[0]))
+// //                                 cout<< group_b.card_str <<endl;
+// //                             else cout<< group_a.card_str <<endl;
+// //                         }
+// //                         else  cout<< "ERROR" <<endl;
+// //                     }
+// //                 }
+// //             }
+            
+// //         }
+// //     }
+
+// //     return 0;
+// // }*/
+
+
+// // /*-------------  括号匹配 ------------
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<string>
+// // #include<sstream>
+// // #include<vector>
+// // #include<math.h>
+// // #include<algorithm>
+// // #include<stack>
+// // using namespace std;
+// // int main(void)
+// // {
+
+// //     string input;
+// //     while(getline(cin,input))
+// //     {
+// //             stack<char> sig;
+// //         for(int i=input.size()-1;i>=0;i--)
+// //         {
+// //             char ch = input[i];
+// //             if(ch=='}') sig.push('}');
+// //             else if(ch==']')  sig.push(']');
+// //             else if(ch==')') sig.push(')');
+
+// //             else if(ch=='{')
+// //             {
+// //                 if(sig.top()=='}')
+// //                 {
+// //                     sig.pop();
+// //                 }
+// //                 else 
+// //                 {
+// //                     std::cout << "False" << '\n';
+// //                     return 0;
+// //                 }
+// //             }
+// //             else if(ch=='[')
+// //             {
+// //                 if(sig.top()==']')
+// //                 {
+// //                     sig.pop();
+// //                 }
+// //                 else 
+// //                 {
+// //                     std::cout << "False" << '\n';
+// //                     return 0;
+// //                 }
+// //             }
+// //             else if(ch=='(')
+// //             {
+// //                 if(sig.top()==')')
+// //                 {
+// //                     sig.pop();
+// //                 }
+// //                 else 
+// //                 {
+// //                     std::cout << "False" << '\n';
+// //                     return 0;
+// //                 }
+// //             }
+// //         }
+// //         if(sig.empty()) std::cout << "True" << '\n';
+// //             else std::cout << "False" << '\n';
+// //     }
+
+// //     return 0;
+// // } */
+
+// // /*-------------桶排序问题----------------
+// // #include <iostream>
+// // #include<cstdio>
+// // #include<queue>
+// // using namespace std;
+// // void printOrder(const int input[], int len)
+// // {
+// //     queue<int> barrel[10];
+// //     for(int i=0;i<len;i++)
+// //     {
+// //         barrel[input[i]].push(i);
+// //     }
+// //     for(int i=9;i>0;i--)
+// //     {
+// //         if(!barrel[i].empty())
+// //         {
+// //             while(!barrel[i].empty())
+// //             {
+// //                 std::cout << barrel[i].front() << " ";
+// //                 barrel[i].pop();
+// //             }
+// //         }
+// //     }
+// //     cout<<'\n';
+// // }
+// // int main(void)
+// // {
+// //     int input[9]={9,3,5};
+// //     printOrder(input,9);
+
+// //     return 0;
+// // }*/
+
+
+// // /* ---------- 删除重复出现数字 ------------
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<sstream>
+// // #include<vector>
+// // #include<math.h>
+// // #include<algorithm>
+// // #include<map>
+// // using namespace std;
+// // int str_int(string input)
+// // {
+// //     int num=0,i=0;
+// //     if(input.compare("0")==0) return 0;
+// //      for(int k=input.size()-1;k>=0;k--)
+// //      {
+// //          num += ((input[k]-48) *pow(10,i));
+// //          i++;
+// //      }
+// //      return num;
+// // }
+// // bool cmp_1(const pair<unsigned int,unsigned int>a,const pair<unsigned int,unsigned int>b)
+// // {
+// //     return a.first<b.first;
+
+// //     // if(a.first!=b.first) return a.first<b.first;
+// //     // else return a.second<b.second;
+// // }
+// // bool cmp_2(const pair<unsigned int,unsigned int>a,const pair<unsigned int,unsigned int>b)
+// // {
+// //      return a.second<b.second;
+// // }
+// // int main(void)
+// // {
+
+// //     string input;
+
+// //     while(getline(cin,input))
+// //     {
+// //         string word;
+// //         vector<pair<unsigned int,unsigned int>>ch_vec;
+// //         std::stringstream ss(input);
+// //         int i=0;
+// //         if(input.empty()) continue;
+// //         while(ss >> word)
+// //         {
+// //             ch_vec.push_back(make_pair(str_int(word),i));
+// //             i++;
+// //         }
+// //         cout << '\n';
+// //         for(auto&da:ch_vec)
+// //           {
+// //               std::cout <<da.first<<"  下标： "<< da.second;
+// //             cout << '\n';
+// //           }  
+// // cout << '\n';
+// //         sort(ch_vec.begin(),ch_vec.end(),cmp_1);
+
+// //         for(auto&da:ch_vec)
+// //           {
+// //               std::cout <<da.first<<"  下标： "<< da.second;
+// //             cout << '\n';
+// //           }  
+
+// //         int base=ch_vec[0].first;
+// //         for(int i=1;i<ch_vec.size();i++)
+// //         {
+// //             if(ch_vec[i].first==base)
+// //             {
+// //                 ch_vec.erase(ch_vec.begin()+i);
+// //                 i--;
+// //             }
+// //             else
+// //             {
+// //                 base = ch_vec[i].first;
+// //                 // 1 1 2 3 3 2 4 5 1 8 4 2 7 3 6 4 5 1 
+// //             }
+            
+// //         }
+// //         sort(ch_vec.begin(),ch_vec.end(),cmp_2);
+// //         cout <<endl;
+// //         for(auto &num:ch_vec)
+// //             std::cout << num.first << " ";
+// //     }
+
+
+
+// //     return 0;
+// // }*/
+
+// // /* --------剑指offer 回溯法 字符串的全排列 （递归） ------------
+// // // tips:字符串的 字典序 要逐个字符比对 不相等处停止！！
+
+// // #include <stdio.h>
+// // #include <stdlib.h>
+// // #include <string.h>
+// // #include<algorithm>
+// // #include<iostream>
+// // #include<vector>
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     vector<string> res;
+// //     vector<char> has_ex;
+// //     vector<string> Permutation(string str) { 
+// //        Permutation_helper(str,0,str.size());  
+// //        sort(res.begin(),res.end());
+// //        return res;   
+// //     }
+// //     void Permutation_helper(string str,int begin,int end)
+// //     {
+// //         if(begin == end-1)
+// //         {
+// //             //实现n个字符的全排列 只需排好后面的n-1个字符
+// //             // 再将排好的n-1个字符与其做交换（不相等的情况下）
+// //             res.push_back(str);
+// //         }
+// //         else
+// //         {
+// //             for(int k=begin;k<end;k++)
+// //             {
+// //                 swap(str[k],str[begin]);
+
+// //                 if((k!=begin)&&(str[k]==str[begin])) ;
+// //                 else
+// //                     Permutation_helper(str,begin+1,end);
+// //                 swap(str[k],str[begin]);
+// //             }           
+// //         }
+
+// //     }
+// // };
+
+// // int main()
+// // {
+
+// //     Solution solu;
+// //     string input;
+
+// //     while (getline(cin,input)) {
+
+// //         vector<string> res = solu.Permutation(input);
+
+// //         for(auto &str:res)
+// //             std::cout << str << '\n';
+// //     }       
+ 
+// //     return 0;
+// // }*/
+
+
+// // /*-----------  剑指offer 数组中出现次数超过一半的数字 --------------
+// // //如果用了排序直接 取中间就可以！！！！
+// // // 复杂度主要在用了排序算法 非最优
+// // //最优复杂度： n
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<vector>
+// // #include<algorithm>
+// // using namespace std;
+// // class Solution {
+// // public:
+// //     int MoreThanHalfNum_Solution(vector<int> numbers) {
+// //         if(numbers.size()==1) return numbers[0];
+
+// //         int half_min=numbers.size()/2;
+// //         int left=0,right=numbers.size()-1;
+
+// //         sort(numbers.begin(),numbers.end());
+
+// //         while(left<=right-half_min)
+// //         {
+// //             if(numbers[left]!=numbers[left+half_min])
+// //             {
+// //                 ++left;
+// //             }
+// //             else return numbers[left]; 
+// //             if(numbers[right]!=numbers[right-half_min])
+// //             {
+// //                 --right;
+// //             }
+// //             else return numbers[left]; 
+// //         }
+// //         return 0;
+// //     }
+// // };
+// // int main(void)
+// // {
+
+// //     Solution solu;
+
+// //     cout <<solu.MoreThanHalfNum_Solution({1,2,3,2,4,2,5,2,3});
+
+// //     return 0;
+// // }*/
+
+
+
+// // /*-----------  剑指offer 最小的k个数 -------------- 
+// // //复杂度： lgn
+// // //这个办法不行
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<vector>
+// // #include<algorithm>
+// // using namespace std;
+// // class Solution {
+// // public:
+// //    // 我的方法 最坏nlogn
+// //     vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
+// //         vector<int> res;
+// //         if(input.size()<k) return res; 
+// //         res=input;
+// //         while(res.size()>k)
+// //         {
+// //             for(int i=0;i<res.size();i++)
+// //             {
+// //                 if(i+1>=res.size()) continue;
+// //                 if(res[i]>res[i+1])
+// //                 {
+// //                     res.erase(res.begin()+i);
+// //                     i--;
+// //                 }
+// //                 else
+// //                 {
+// //                     res.erase(res.begin()+i+1);
+// //                 }
+// //             }
+// //         }
+ 
+// //         sort(res.begin(),res.end());
+// //         return res;
+// //     }
+// //     // 别人的方法 nlgk
+// //     vector<int> GetLeastNumbers_Solution_2(vector<int> input, int k) {
+        
+// //         if(input.size()<k) return vector<int>(); 
+// //         vector<int> res(input.begin(),input.begin()+k);
+// //         // 建堆 将最大元素上浮
+// //         make_heap(res.begin(),res.end());
+        
+// //         //留出前k个位置
+// //         for(int i=k;i<input.size();i++)
+// //         {
+// //             if(input[i]<res[0])
+// //             {
+// //                 //删除堆顶 （最大值）
+// //                 res.erase(res.begin());
+
+// //                 res.push_back(input[i]);
+// //                 // 将最大值上浮
+// //                 push_heap(res.begin(),res.end());
+// //             }
+// //         }
+// //         // sort_heap(res.begin(),res.end());
+// //         return res;
+// //     }
+// // };
+// // int main(void)
+// // {
+
+// //     Solution solu;
+// //     vector<int> test =  solu.GetLeastNumbers_Solution_2({4,5,1,6,2,7,3,8},3);
+
+// //     for(auto&data:test)
+// //         std::cout << data << '\n';
+
+// //     return 0;
+// // }*/
+
+// // /*----------- 剑指offer 连续子数组的最大和 ---------------
+
+// // // MAX[i] = max{MAX[i-1] + A[i],MAX[i-1]}；
+
+// // // F（i）：以array[i]为末尾元素的子数组的和的最大值，子数组的元素的相对位置不变
+// // // F（i）=max（F（i-1）+array[i] ， array[i]）
+// // // res：所有子数组的和的最大值
+// // // res=max（res，F（i））
+
+// // #include<iostream>
+// // #include<cstdio>
+// // #include<vector>
+// // using namespace std;
+// // class Solution {
+// // public:
+// // //暴力 求解效率极低
+// //     int FindGreatestSumOfSubArray(vector<int> array) {
+// //         int max=-100;
+
+// //         for(int left=0;left<array.size();left++)
+// //         {
+// //             int sum=0;
+// //             for(int right=left;right<array.size();right++)
+// //             {
+// //                 sum += array[right];
+// //                 if(sum > max) max=sum;
+// //             }
+// //         }
+
+// //         return max;
+// //     }
+// // //dp动态规划 并输出了 区间
+// //     int FindGreatestSumOfSubArray_2(vector<int> array) {
+// //         int max=-100;
+// //         int sum=0;
+// //         int left=0,right=0;
+// //         bool clear=false;
+// //         for(int i=0;i<array.size();i++)
+// //         {
+// //             sum += array[i];
+// //             if(sum>max) 
+// //             {
+// //                 max=sum;
+// //                 if(clear)
+// //                 {
+// //                     left = right =i;
+// //                 }
+// //                 else
+// //                 {
+// //                     right=i;
+// //                 }
+// //                 clear = false;
+// //             }
+// //             if(sum<0) 
+// //             {
+// //                 sum=0;
+// //                 clear = true;
+// //             }
+// //         }
+// //         cout<< left <<" "<< right <<endl;
+// //         return max;
+// //     }
+// // };
+// // int main(void)
+// // {
+
+
+// //     Solution solu;
+// //     cout << solu.FindGreatestSumOfSubArray_2({-4,6,-3,-1,-1,-2,7,-15,1,2,2})<<endl;
+
+// //     return 0;
+// // } */
+
+
+
+
 // #include <iostream>
 // #include <cstdio>
 // #include <vector>
-// #include<string>
-// #include<unistd.h>
-// #include<queue>
+// #include <math.h>
+// #include <algorithm>
+// #include <set>
+// #include <stack>
+// #include <queue>
+// #include <string.h>
 // using namespace std;
-// struct ListNode {
+// class Solution {
+// public:
+// /* ----------- 剑指offer 0～n十进制 1出现的次数 ----------------*/
+//     int NumberOf1Between1AndN_Solution(int n)
+//     {
+//         int cnt=0;
+
+//         // 硬算
+//         // 
+//         // for(int i=1;i<=n;i++)
+//         // {
+//         //     int num=i;
+//         //     while(num!=0)
+//         //     {
+//         //         if(num%10==1) cnt++ ;
+//         //         num = num / 10;
+//         //     }
+//         // }
+
+
+        
+
+//         return cnt;
+//     }
+
+// /* ----------- 剑指offer 把数组排成最小的数 ----------------*/
+// // 本质是个排序问题 又走了弯路。。。
+//     static bool cmp(string a1,string b1)  //true： 替换a1
+//     {
+//        int len = ((a1.size() > b1.size())?: b1.size(),a1.size());
+//        int i;
+
+//        for(i=0;i<len;i++)
+//        {
+//            if(a1[i] > b1[i]) 
+//            { 
+//                return false;
+//            }
+//        }
+//        while(i<b1.size())  
+//        {
+//            if(b1[i]<b1[0]) return false;
+//            i++;
+//        }     
+           
+//        return true;
+//     }
+
+//     string PrintMinNumber(vector<int> numbers) {
+//         if(numbers.empty()) return "";
+//         vector<string> str_array;
+
+//         for(int i=0;i<numbers.size();i++)
+//         {
+//             str_array.push_back(to_string(numbers[i]));
+//         }
+
+
+//         if(str_array.size()==1) return str_array[0];
+//         string res;
+//         sort(str_array.begin(),str_array.end(),cmp);
+
+//         for(auto&data:str_array)
+//             res +=data;
+
+
+//          // 牛客网解法 
+
+//     //  static bool cmp(int a,int b){
+//     //      string A="";
+//     //      string B="";
+//     //      A+=to_string(a);
+//     //      A+=to_string(b);
+//     //      B+=to_string(b);
+//     //      B+=to_string(a);
+          
+//     //      return A<B;
+//     //  }
+//     //  string PrintMinNumber(vector<int> numbers) {
+//     //      string  answer="";
+//     //      sort(numbers.begin(),numbers.end(),cmp);
+//     //      for(int i=0;i<numbers.size();i++){
+//     //          answer+=to_string(numbers[i]);
+//     //      }
+//     //      return answer;
+//     //  }
+
+//         //第一次写出的程序：
+//         // while(str_array.size()!=1)
+//         // {
+//         //     string suit = str_array[0];
+//         //     int del=0;
+//         //     for(int i=1;i<str_array.size();i++)
+//         //     {
+//         //      if(cmp(suit,str_array[i]))
+//         //      {
+//         //          del = i ;
+//         //          suit = str_array[i];
+//         //      } 
+//         //     }
+//         //     res += suit;
+//         //     str_array.erase(str_array.begin()+del);
+//         // }
+//         // res += str_array[0];
+//         return res;
+//     }
+
+// /* ----------- 剑指offer 丑数 ----------------*/
+// //暴力求解 自己的方法空间造成浪费 复杂度也非最优
+//      int GetUglyNumber_Solution(int index) {
+//         if(index==0) return 0;
+//         set<int> seq;
+//         seq.insert(1);
+//         int ugly[3]={2,3,5};
+//         int k=0;
+//         set<int>::iterator it = seq.begin();
+//         while(it!=seq.end())
+//         {
+//             k++;
+//             for(int i=0;i<3;i++)
+//             {
+//                 if(seq.count((*it)*ugly[i])==0)
+//                     {
+//                         seq.insert((*it)*ugly[i]);  
+//                     }
+//             }
+//             if(k==index) 
+//             {
+//                 for(auto &da:seq )
+//                     std::cout << da << std::endl;
+//                 return *it;
+//             }
+//             it++;
+//         }
+
+//         return 1;
+//     }
+//     /* ----------- 剑指offer 字符串找到第一个只出现一次的字符 ----------------*/
+//     int FirstNotRepeatingChar(string str) {
+//         //用map是不是会更快 ？ ？ ？
+//         for(int i=0;i<str.size();i++)
+//         {
+//             if(str.find(str[i])==str.rfind(str[i]))
+//                 return i;
+//         }
+//         return -1;
+//     }
+//     /* ----------- 剑指offer 数组中的逆序对 对1000000007取模的结果输出----------------*/
+//     int InversePairs(vector<int> data) {
+//         int cnt=0;
+//             for(int j=data.size()-2;j>=0;j--)
+//             {
+//                 if(data[j]>data[j+1])
+//                 {
+//                     if(cnt==0)
+//                     {
+//                         for(int i=j+1;i<data.size();i++)
+//                         {
+//                             if(data[j]>=data[i])
+//                             {
+//                                 break;
+//                             }
+//                             else
+//                             {
+//                                 cnt++;
+//                                 // if(cnt==1000000007) cnt=0;
+//                             }
+                            
+//                         }  
+//                     }
+//                     else
+//                     {
+//                         for(int i=j+1;i<data.size();i++)
+//                         {
+//                             if(data[j]>data[i])
+//                             {
+//                                 cnt++;
+//                                 // if(cnt==1000000007) cnt=0;
+//                             }
+//                         }
+//                     }
+                    
+//                 }
+//                 else if(data[j]==data[j+1])
+//                 {
+//                     int temp = cnt;
+//                     cnt ++;
+//                     // if(cnt==1000000007) cnt=0;
+//                 }
+//                 else
+//                 {
+//                     for(int i=j+2;i<data.size();i++)
+//                     {
+//                         if(data[j]>data[i])
+//                         {
+//                             cnt++;
+//                             // if(cnt==1000000007) cnt=0;
+//                         }
+//                     }
+//                 }
+//             }
+//         return (cnt%1000000007);
+//     }
+
+//     /* ----------- 剑指offer 两个链表的第一个公共节点 ----------------*/
+//     struct ListNode {
 // 	int val;
 // 	struct ListNode *next;
 // 	ListNode(int x) :
 // 			val(x), next(NULL) {
 // 	}
-// };
-// class Solution {
-// public:
-//     ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
-//         if(pHead1==nullptr)  return pHead2;
-//         else if(pHead2==nullptr)  return pHead1;
-        
-//         ListNode* out_head=nullptr;
-//         ListNode* out_pre=nullptr;
-        
-//         ListNode* node1 = pHead1;
-//         ListNode* node2 = pHead2;
+//     };
+//     ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
+//     // 自己写的 非最优查找
 
-//         while(node1!=nullptr && node2!=nullptr)
+//     // 长度相同有公共结点，第一次就遍历到；没有公共结点，走到尾部NULL相遇，返回NULL
+//     // 长度不同有公共结点，第一遍差值就出来了，第二遍一起到公共结点；没有公共，一起到结尾NULL。
+
+//         ListNode* p1 = pHead1;
+
+//         while(p1!=nullptr)
 //         {
-//             if(node2->val>node1->val)
+//             ListNode* p2 = pHead2;
+//             while(p2!=nullptr)
 //             {
-//                 if(out_pre!=nullptr)
-//                 {
-//                     out_pre->next = node1;
-//                     out_pre = out_pre->next;
-//                 }
-//                 else
-//                 {
-//                     out_pre= node1;
-//                     out_head= out_pre;
-//                 }
-//                 node1 = node1->next;
+//                 if(p1->val == p2->val) return p2;
+
+//                 p2 = p2->next ;
 //             }
-//             else
-//             {
-//                 if(out_pre!=nullptr)
-//                 {
-//                     out_pre->next = node2;
-//                     out_pre = out_pre->next;
-//                 }
-//                 else
-//                 {
-//                     out_pre= node2;
-//                     out_head= out_pre;
-//                 }
-//                 node2 =node2->next;
-//             }
+//             p1 = p1->next;
 //         }
-//         if(node1 == nullptr)
-//         {
-//             while(node2!=nullptr)
-//             {
-//                 out_pre->next = node2;
-//                 out_pre = out_pre->next;
-//                 node2= node2->next;
-//             }
-//         }
-//         if(node2 == nullptr)
-//         {
-//             while(node1!=nullptr)
-//             {
-//                 out_pre->next = node1;
-//                 out_pre = out_pre->next;
-//                 node1= node1->next;
-//             }
-//         }
-//         return out_head;
+//         return nullptr;
 //     }
-// };
-// int main(void)
-// {
-//     Solution solu;
 
-//     ListNode head(6);
-//     ListNode node1(7);
-//     ListNode node2(8);
-//     ListNode node3(9);
-//     ListNode rear(10);
+//     /* ----------- 剑指offer 统计一个数字在排序数组中出现的次数----------------*/
+//     int GetNumberOfK(vector<int> data ,int k) {
+//         int left= 0;
+//         int right = data.size()-1;
+        
+//         while(left<=right)
+//         {
+//             int mid=(left+right)/2;
+            
+//             if(data[mid]==k){
+//                left = right = mid;
+//                for(int i=1;;i++)
+//                 {
+//                     if((mid+i)<data.size())
+//                     {
+//                         if(data[mid+i]==k) 
+//                             right ++;
+//                     }
+//                     if(mid - i>=0)
+//                     {
+//                         if(data[mid-i]==k) 
+//                             left --;
+//                     }
+//                 if(((mid+i)>=data.size())&&(mid-i<0))   break;
+//                 }
 
-//     ListNode head1(5);
-//     ListNode node11(8);
-//     ListNode node21(9);
-//     ListNode node210(10);
-//     ListNode node211(12);
-//     ListNode node31(13);
-//     ListNode rear1(16);
+//                break;
+//             }   
+//             else if(data[mid]>k)  right = mid - 1; 
+//             else if(data[mid]<k)  left = mid + 1;
+//         }
 
-//     head.next = & node1;
-//     node1.next = & node2;
-//     node2.next = & node3;
-//     node3.next = & rear;
+//         if(left>right) return 0;
+//         return (right-left+1); 
+//     }
 
-//     head1.next = & node11;
-//     node11.next = & node21;
-//     node21.next = & node210;
-//     node210.next = & node211;
-//     node211.next = & node31;
-//     node31.next = & rear1;
-
-//     ListNode* result;
-//     result = solu.Merge(&head,&head1);
+//     /* ----------- 剑指offer 输入一棵二叉树，求该树的深度 （最长路径的长度）----------------*/
+//     struct TreeNode {
+//         int val;
+//         struct TreeNode *left;
+//         struct TreeNode *right;
+//         TreeNode(int x) :
+//                 val(x), left(NULL), right(NULL) {
+//         }
+//     };
     
-//     while(result!=nullptr)
+//     int TreeDepth(TreeNode* pRoot)
 //     {
-//         std::cout <<result->val << '\n';
-//         result = result->next ;
-//     }
-// //6 -1 0 1 2 -1 -4 
-//     return 0;
-// } */
 
-
-// /* ------------------（递归）  合成两个有序链表为一个有序链表 ----------------------------
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include<string>
-// #include<unistd.h>
-// #include<queue>
-// using namespace std;
-// struct TreeNode {
-// 	int val;
-// 	struct TreeNode *left;
-// 	struct TreeNode *right;
-// 	TreeNode(int x) :
-// 			val(x), left(NULL), right(NULL) {
-// 	}
-// };
-// class Solution {
-// public:
-//     TreeNode* reConstructBinaryTree(vector<int> pre,vector<int> vin) {
-//         if(pre.empty()) return NULL;
-//         TreeNode* root =new TreeNode(pre[0]);
-
-//         int offset=0;
-//         for(auto& data:vin)
+//         if(pRoot == nullptr) return 0;
+        
+//         queue<TreeNode*> seq;
+//         seq.push(pRoot);
+//         int depth=0,layer_count=1,count=0;
+//         while(!seq.empty())
 //         {
-//             if(data==root->val) break;
-//             offset++;
+//             count++;
+//             if(seq.front()->left!=nullptr) 
+//                 seq.push(seq.front()->left);
+
+//             if(seq.front()->right!=nullptr) 
+//                 seq.push(seq.front()->right);
+
+//             seq.pop();
+//             if(count==layer_count)
+//             {
+//                 count =0;
+//                 depth ++;
+//                 layer_count = seq.size();
+//             }
 //         }
-//         vector<int> left_vin(vin.begin(),vin.begin()+offset);
-//         vector<int> right_vin(vin.begin()+offset+1,vin.end());
 
-//         vector<int> left_pre(pre.begin()+1,pre.begin()+offset+1);
-//         vector<int> right_pre(pre.begin()+offset+1,pre.end());
-
-//          root->left = reConstructBinaryTree(left_pre,left_vin);
-//          root->right = reConstructBinaryTree(right_pre,right_vin);
-
-//         return root;
+//         return depth;
 //     }
+//     /* ----------- 剑指offer 数组中有两个数字只出现一次，其他数字则出现了两次，找出这两个数----------------*/
+//     bool FindNumsAppearOnce(vector<int> data) {
+//         int res=data[0];
+//         for(int i=1;i<data.size();i++){   
+//             res = res ^ data[i];
+//         }
+//         int k=0;
+//         while(res!=0){
+//             k++;
+//             res = res/2 ;
+//         }
+//         int check = 1<<(k-1);
 
-
-//     bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
-//     {
-//         if(pRoot2==nullptr) return false;
+//         int num1=0,num2=0;
+//         for(int i=0;i<data.size();i++){
+//             if((data[i]&check)==check) 
+//                 num1 ^= data[i];
+//             else
+//                 num2 ^= data[i];
+//         }
+//         cout << num1 <<" " <<num2 <<endl;
 //         return true;
 //     }
-// };
 
-// int main(void)
-// {
-//     Solution solu;
-//     vector<int> pre={1,2,4,7,3,5,6,8};
-//     vector<int> vin={4,7,2,1,5,3,8,6};
-
-//     vector<int> pre2={1,2,4,7,3,5,6,8};
-//     vector<int> vin2={4,7,2,1,5,3,8,6};
-
-//     TreeNode* tree1 = solu.reConstructBinaryTree(pre,vin);
-//     TreeNode* tree2 = solu.reConstructBinaryTree(pre2,vin2);
-//     cout << solu.HasSubtree(tree1,tree2) << '\n';
-// //6 -1 0 1 2 -1 -4 
-//     return 0;
-// } */
-
-
-// /* ------------------ 输入两个二叉树链表A、B 判断子树  ----------------------------
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-// struct TreeNode {
-// 	int val;
-// 	struct TreeNode *left;
-// 	struct TreeNode *right;
-// 	TreeNode(int x) :
-// 			val(x), left(NULL), right(NULL) {
-// 	}
-// };
-
-// using namespace std;
-// class Solution {
-// public:
-//     bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
+//     /* ----------- 剑指offer 判断一颗二叉树是否是平衡二叉树----------------*/
+//     // 自己的思路： 所有叶节点高度差 不超过2
+//     // 最优思路： 后序遍历
+//     bool check_leaf(TreeNode* node)
 //     {
-//         if(pRoot2==nullptr) return false;
-//         if(pRoot1==nullptr) return false;
-
-//         TreeNode* p1 = pRoot1;
-//         TreeNode* p2 = pRoot2;
-//         queue<TreeNode*> ver;
-//         ver.push(p1);
-//         while(!ver.empty())
-//         {
-//             TreeNode* cur = ver.front();
-//             cout<< cur->val << ' ';
-//             if(cur->val==p2->val)
-//             {
-//                //左子树 右子树也重合  则输出true
-//                 if (((p2->left==nullptr) || HasSubtree(cur->left,p2->left))
-//                        && ((p2->right==nullptr) || HasSubtree(cur->right,p2->right)))
-//                     return true;
-//             }
-//             if(cur->left!=nullptr) ver.push(cur->left);
-//             if(cur->right!=nullptr) ver.push(cur->right);
-//             ver.pop();
-//         }
-
+//         if((node->left==nullptr)&&(node->right==nullptr)) return true;
 //         return false;
 //     }
-// };
-// int main(void)
-// {
-//     Solution solu;
-//     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
-    
-//     p1.left=&n1; p1.right=&n2;
-//     n1.left=&n3;n1.right=&n4;
-//     n3.left=&n7;
+//     bool IsBalanced_Solution(TreeNode* pRoot) {
 
-//     n2.left=&n5;n2.right=&n6;
-//     n5.right=&n8;
+//         if(pRoot==nullptr) return true;
+//         vector<int> layers;
+//         queue<TreeNode*> node;
+//         node.push(pRoot);
+//         int depth=0,layer_count=1,count=0;
+//         while(!node.empty())
+//         {
+//             count++;
+//             if(node.front()->left!=nullptr) 
+//                 node.push(node.front()->left);
 
+//             if(node.front()->right!=nullptr) 
+//                 node.push(node.front()->right);
 
-//     TreeNode p2(5),n_1(2);
-//     p2.right=&n_1;
-//     std::cout << '\n' << solu.HasSubtree(&p1,&p2) << '\n';
+//             if(check_leaf(node.front()))
+//                 layers.push_back(depth);
 
-//     return 0;
-// } */
-
-// /* ------------------  将二叉树链表镜像输出  ----------------------------
-
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-// struct TreeNode {
-// 	int val;
-// 	struct TreeNode *left;
-// 	struct TreeNode *right;
-// 	TreeNode(int x) :
-// 			val(x), left(NULL), right(NULL) {
-// 	}
-// };
-
-// using namespace std;
-// class Solution {
-// public:
-// public:
-//     void Mirror(TreeNode *pRoot) {
-//         if((pRoot == nullptr) ) return;
-
-//         swap(pRoot->left,pRoot->right);
-        
-//         Mirror(pRoot->left);
-//         Mirror(pRoot->right);
+//             node.pop();
+//             if(count==layer_count)
+//             {
+//                 count =0;
+//                 depth ++;
+//                 layer_count = node.size();
+//             }
+//         }
+//         sort(layers.begin(),layers.end());
+//         if(layers.size()==1)
+//         {
+//             if(depth==2) return true;
+//             else return false;
+//         }
+//         if(abs(*layers.end() - layers[0])>=2) return false;    
+//         return true;
 //     }
-// };
-// int main(void)
-// {
-//     Solution solu;
-//     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
-    
-//     p1.left=&n1; p1.right=&n2;
-//     n1.left=&n3;n1.right=&n4;
-//     n3.left=&n7;
+//     /*----------- 剑指offer 和为S 的正数序列 -----------*/
+//     //写的有点累赘  用双指针思想最好
+//     vector<vector<int> > FindContinuousSequence(int sum) {
+//         const int start=(sum-1)/2;
+//         volatile int s1=1;
+//         vector<vector<int>> res;
 
-//     n2.left=&n5;n2.right=&n6;
-//     n5.right=&n8;
+//         volatile int i=2;
+//         while(s1<=start)
+//         {
+//             int add_sum = ((2*s1+i-1)*i/2) ;
+//             if(add_sum==sum)
+//             {
+//                  vector<int>temp;
+//                 for(int p=0;p<i;p++)
+//                     temp.push_back(s1+p);
+//                 res.push_back(temp);
+//                 if((++s1)>start) break;
+//                 else 
+//                 {   
+//                     i=2;
+//                     continue;
+//                 }
+//             }
+//             else if(add_sum>sum) 
+//             {
+//                 if((++s1)>start) break;
+//                 else 
+//                 {
+//                     i=2;
+//                     continue;
+//                 }
+//             }
+//             else i++;
+//         }
+//     return res;
+//     }
+//     /*----------- 剑指offer 和为S 的两个数字 -----------*/
+//     // 证明 相隔越远 乘积越小！！！！
+//     vector<int> FindNumbersWithSum(vector<int> array,int sum) {
+//         if(array.size()<=1) return vector<int>();
 
-
-//     TreeNode p2(5),n_1(2);
-//     p2.right=&n_1;
-//     solu.Mirror(&p1) ;
-//     std::cout << n2.right->val << '\n';
-//     return 0;
-// }  */
-
-
-// /* ------------------  顺时针打印矩阵  好tm无聊的题目 ----------------------------
-
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-
-// using namespace std;
-// class Solution {
-// public:
-//     vector<int> printMatrix(vector<vector<int>>& matrix) {
-//        vector<int> out ;
-
-//        if(matrix.empty()) return out;
-
-//         int row = matrix.size();
-//         int col = matrix[0].size();
-//         int left_i=0,left_j=0;
-//         int right_i=row-1,right_j=col-1;
-       
-//     while((left_i<=right_i)&&(left_j<=right_j))
+//         vector<int>res;
+//         int left =0 ,right = array.size()-1,min=10000;
+//         while(left<right)
+//         {
+//             int add = array[left]+array[right] ;
+//             if(add==sum)
+//             {
+//                 // if((array[left] * array[right])<min)
+//                 {
+//                     // min = array[left] * array[right];
+//                     res.resize(2);
+//                     res[0]= array[left] ;
+//                     res[1] = array[right];
+//                 }
+//                 break;
+//                 // --left;--right;
+//             }
+//             else if(add>sum) --right;
+//             else ++left;
+//         }
+//         return res;
+//     }
+//     /*----------- 剑指offer 左旋转字符串 -----------*/
+//     string LeftRotateString(string str, int n) {
+//         string res;
+//         int spe = n%str.size();
+//         for(int i=spe;i<str.size();i++)
+//             res+=str[i];
+//         for(int i=0;i<spe;i++)
+//             res+=str[i];
+//         return res;
+//     }
+//     /*----------- 剑指offer 翻转单词顺序列 ----------- */
+//     string ReverseSentence(string str) {
+//         if(str.empty()) return str;
+//         string ori_str=str;
+//         int ori_size=str.size();
+//         int right=str.size();
+//         for(int i=ori_size-1;i>=0;i--)
+//         {
+//             if(ori_str[i]==' ')
+//                 {
+//                     //
+//                     str+= (ori_str.substr(i+1,right-i-1));
+//                     str+=' ';
+//                     right = i;  
+//                 }
+//         }
+//         str+= ori_str.substr(0,right);   
+//         str+='\n';
+//      return    str.substr(ori_size,ori_size);
+//     }
+//     /*----------- 剑指offer 判断是否是顺子 ----------- */
+//     // 不用开辟一个桶！！！！！ 可以用移位实现存储
+//     bool IsContinuous( vector<int> numbers ) {
+//         if(numbers.size()!=5) return false;
+//         vector<int> tong(14);
+//         int min=20,max=-20;
+//         for(int i=0;i<numbers.size();i++)
+//         {
+//             if(numbers[i]!=0)
+//             {
+//                 if(tong[numbers[i]]==1 ) return false;
+                
+//                 if(numbers[i]<min) min=numbers[i];
+//                 else if(numbers[i]>max) max=numbers[i];
+//             }
+//             tong[numbers[i]]++;
+//         }
+//         if(max-min <=4) return true;
+//         return false;
+//     }
+//     /*----------- 剑指offer 围圈数数 最后剩下的那个 ----------- */
+//     // 
+//     int LastRemaining_Solution(int n, int m)
 //     {
-//        for( int k=left_j;k<=right_j;k++)
-//         out.push_back(matrix[left_i][k]);
         
-//         if(left_i==right_i) return out;
-        
-//        for( int k=left_i+1;k<=right_i;k++)
-//         out.push_back(matrix[k][right_j]);
-
-//        if(left_j==right_j) return out;
-
-//        for( int k=right_j-1;k>=left_j;k--)
-//         out.push_back(matrix[right_i][k]);
-
-//        for( int k=right_i-1;k>left_i;k--)
-//         out.push_back(matrix[k][left_j]);
-            
-//        left_i ++; left_j ++;
-//        right_i--; right_j--;
 //     }
-//     return out;
-//     }
-// };
-// int main(void)
-// {
-//     Solution solu;
-//     int dim;
-//    while(~scanf("%d",&dim)!=EOF)
-//    {
-//           int num=0;
-//        vector<vector<int>> mat;
-//        vector<int> res;
-//        for(int i=0;i<dim;i++)
-//        {
-//         vector<int> row;
-//          for(int k=0;k<dim;k++)
-//             {
-//                 num++;
-//                 row.push_back(num);
-//             }
-//             mat.push_back(row);
-//        }
-
-//      res =  solu.printMatrix(mat);
-//      for(auto&data:res)
-//         std::cout << data << '\n';
-//    }
+//     /*----------- 剑指offer 最简 求阶乘  ----------- */
     
-//     return 0;
-// }*/
+//     int Sum_Solution(int n) {
 
-// /* ------------------  包含min功能的栈 有点简单 ----------------------------
+//         //最简：
+//         int ans=n;
+//         ans && (ans+=Sum_Solution(ans-1));
+//         return ans;
 
-// #include<iostream>
-// #include <stdio.h>
-// #include<stack>
-// class Solution {
-// public:
-//     std::stack<int> min_st;
-//     std::stack<int> st2;
-//     void push(int value) {
-//         st2.push(value);
-//         if(min_st.empty())
+//         // static int res=0;
+//         // res+=n;
+//         // int ans = (n>1 && Sum_Solution(n-1));
+//         // return res;
+//     }
+//     /*----------- 剑指offer 不用加减乘除做加法 ----------- */
+//     int Add(int num1, int num2)
+//     {   
+//         //递归 最简洁
+//         // return num2 ? Add(num1^num2, (num1&num2)<<1) : num1;
+
+//         //迭代 逻辑性最好
+
+//         // while (num2!=0) {
+//         //     int temp = num1^num2;
+//         //     num2 = (num1&num2)<<1;
+//         //     num1 = temp;
+//         // }
+//         // return num1;
+
+//         int temp = 1,res=0;
+//         bool add_flag=false;
+//         while(true)
 //         {
-//             min_st.push(value);
+//                 if( (num1&temp)==temp && (num2&temp) ==temp)  // 1 1
+//                     (add_flag)?res|=temp:(res|=0,add_flag=!add_flag) ;
+//                 else if (((num1&temp)|(num2&temp))==temp)       // 0 1
+//                     (add_flag)?res|=0:res|=temp  ;
+//                 else                                           //0 0
+//                     (add_flag)?(res|=temp,add_flag=!add_flag):res|=0 ;
+//             if(temp&(1<<31)) break;
+//             temp = (temp <<1); 
 //         }
-//         else
+//         return res;
+//     }
+//     /*----------- 剑指offer 转字符串为数字 ----------- */
+//     int StrToInt(string str) {
+//         long long res=0; //long long 为64位
+//         for(int i=str.size()-1;i>=0;i--)
 //         {
-//             if(value<=min_st.top())
+//             if(str[i]<=57 && str[i]>=48)
+//             {
+//                 res += ((str[i]-48)* pow(10,str.size()-i-1));
+//             }
+//             else if(str[i]=='+'||str[i]=='-')
+//             {
+//                 if(i!=0) return 0;
+//                 if(str[i]=='-') return (0-res);
+//                 return res;
+//             }
+//             else return 0;
+//         }
+//         return res;
+//     }
+//     /*----------- 剑指offer 数组中重复的数字 ----------- */
+//     // 桶排序
+//     bool duplicate(int numbers[], int length, int* duplication) {
+
+//         for(int i=0;i<length;i++)
+//         {
+//             if(i!=numbers[i]) 
+//             {
+//                 if(numbers[numbers[i]]==numbers[i])
 //                 {
-//                     min_st.push(value);
+//                     (*duplication) = numbers[i];
+//                     return true;
 //                 }
-//         }
-//     }
-//     void pop() {
-//         //若弹出最小数据
-//         if(!min_st.empty()) 
-//             if(st2.top()==min_st.top())
-//                  min_st.pop();
-//         st2.pop();
-//     }
-//     int top() {
-//         return st2.top();
-//     }
-//     int min() {
-//         return min_st.top();
-//     }
-// };  
-// int main(int argc, char* argv[])  
-// {  
-//     Solution solu;
-
-
-
-//     return 0;  
-// }  */
-
-// /* ------------------  判断 栈的压入、弹出序列 自己的写法好蠢，没考虑逆向思维----------------------------
-
-// #include<iostream>
-// #include <stdio.h>
-// #include<stack>
-// #include<vector>
-// using namespace std;
-// class Solution {
-// public:
-//     bool IsPopOrder(vector<int> pushV,vector<int> popV) {
-//         if(popV.empty()) return false;
-//         if(popV.size()!=pushV.size()) return false;
-//         vector<int> vis;
-//         int i,pos_pre=-1;
-//         for( i=0;i<pushV.size();i++)
-//         {
-//             vis.push_back(0);
-//             if(popV[0]==pushV[i]) 
-//             {
-//                 pos_pre=i;
-//                 vis[i]=1;
+//                 swap(numbers[numbers[i]],numbers[i]) ;
 //             }
 //         }
-//         if(pos_pre==-1) return false;
+//         return false;
+//     }
+//     /*----------- 剑指offer 构建乘积数组 ----------- */
 
-//         for(int k=1;k<popV.size();k++)
-//         {
-//             int i;
-//             bool left_find=false;
-//             for(i=pos_pre-1;i>=0;i--)
-//             {
-//               if(vis[i]==0)
-//               {
-//                   if(popV[k]==pushV[i])
-//                   {
-//                       vis[i]=1;
-//                       pos_pre = i;
-//                       left_find=true;
-//                       break;
-//                   }
-//                   break;
-//               }
-//             }
-//             if(left_find) continue;
-            
-//             for(i=pos_pre+1;i<pushV.size();i++)
-//             {
-//                 if(popV[k]==pushV[i])
-//                 {
-//                     pos_pre = i;
-//                     vis[i]=1;
-//                     break;
-//                 }
-//             }
-//             if(i!=pushV.size()) continue;
+//     int beh(vector<vector<int>>&st,int k)
+//     {
+//         if(st[k][2]==-1)
+//             st[k][2] = st[k+1][1]*beh(st,k+1);
+        
+//         return st[k][2];
+//     }
+//     int fro(vector<vector<int>>&st,int k)
+//     {
+//         if(st[k][0]==-1)
+//             st[k][0] = st[k-1][1]*fro(st,k-1);
+
+//         return st[k][0];
+//     }
+//     vector<int> multiply(const vector<int>& A) {
+//     if(A.empty()) return A;
+//     vector<vector<int>>store(A.size(),vector<int>(3));
+    
+//     for(int i=0;i<A.size();i++){
+//         store[i][0]=store[i][2]=-1;
+//         store[i][1] = A[i];
+//     }
+//     store[0][0]=store[A.size()-1][2]=1;
+    
+//     beh(store,0);
+//     fro(store,(A.size()-1));
+//     vector<int> res(A.size());
+
+//     for(int i=0;i<store.size();i++)
+//         res[i]=store[i][0]*store[i][2];
+//     return res;
+//     }
+//     /*----------- 剑指offer 匹配正则表达式 ----------- */
+//     /* 逻辑设计 与 递归 ！ */
+//     bool match(char* str, char* pattern)
+//     {
+//         if( *str=='\0' && *pattern=='\0')     return true;
+//         if(*str!='\0' && *pattern=='\0')      return false;
+
+//         if((*pattern=='.'&& *str!='\0')|| *str == *pattern){
+//             if( *(pattern+1)=='*') 
+//                 return (match(str,pattern+2) || match(str+1,pattern));
+//             else 
+//                 return match(str+1,pattern+1);
+//         }
+//         else{
+//             if( *(pattern+1)=='*') 
+//                 return match(str,pattern+2) ;
 //             else 
 //                 return false;
 //         }
-//         return true;
 //     }
-// }; 
-// int main(int argc, char* argv[])  
-// {  
-//     Solution solu;
-//     cout << solu.IsPopOrder({1,2,3,4,5},{3,5,4,2,1});
-
-
-//     return 0;  
-// } */
-
-// /* ------------------  层序遍历 （迭代方法）----------------------------
-
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-// struct TreeNode {
-// 	int val;
-// 	struct TreeNode *left;
-// 	struct TreeNode *right;
-// 	TreeNode(int x) :
-// 			val(x), left(NULL), right(NULL) {
-// 	}
-// };
-
-// using namespace std;
-// class Solution {
-// public:
-//     vector<int> PrintFromTopToBottom(TreeNode* root) {
-//         vector<int> out;
-//         queue<TreeNode*> ver;
-//         ver.push(root);
-//         while(!ver.empty())
-//         {
-//             out.push_back(ver.front()->val) ;
-//             if(ver.front()->left!=nullptr) ver.push(ver.front()->left);
-//             if(ver.front()->right!=nullptr) ver.push(ver.front()->right);
-//             ver.pop();
-//         }
-
-//         return out;
-//     }
-// };
-// int main(void)
-// {
-//     Solution solu;
-//     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
+//     /*----------- 剑指offer 用来判断字符串是否表示数值（包括整数和小数） ----------- */
     
-//     p1.left=&n1; p1.right=&n2;
-//     n1.left=&n3;n1.right=&n4;
-//     n3.left=&n7;
-
-//     n2.left=&n5;n2.right=&n6;
-//     n5.right=&n8;
-
-
-//     TreeNode p2(5),n_1(2);
-//     p2.right=&n_1;
-//     vector<int> res;
-//     res=solu.PrintFromTopToBottom(&p1);
-//     for(auto&da:res)
-//         std::cout << da << '\n';
-//     return 0;
-// }*/
-
-// /* ------------------ 判断序列是否是BST的后序输出  走了弯路  重做！  ----------------------------
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-// #include<algorithm>
-// struct TreeNode {
-// 	int val;
-// 	struct TreeNode *left;
-// 	struct TreeNode *right;
-// 	TreeNode(int x) :
-// 			val(x), left(NULL), right(NULL) {
-// 	}
-// };
-
-// using namespace std;
-// class Solution {
-// public:
-//     bool find(vector<int>list,int data)
+//     bool isNumeric(char* string)
 //     {
-//         vector<int>::iterator it=list.begin();
-//         while(it != list.end())
-// 	 {   
-// 	      if(*it==data) break;
-// 	      it++;
-// 	 }
-//      if(it==list.end()) return false;
-//      return true;
+
 //     }
-//     bool VerifySquenceOfBST(vector<int> sequence) {
-//         if(sequence.empty()) 
+//     /*----------- 剑指offer 找出字符流中第一个只出现一次的字符 ----------- */
+//   //Insert one char from stringstream
+//     int cnt[256];
+//     queue<char> buffer;
+//     void Insert(char ch)
+//     {
+//         cnt[ch]++;
+//         buffer.push(ch);
+//         while (!buffer.empty() && cnt[buffer.front()]>1)
 //         {
-//             std::cout << "empty" << '\n';
-//             return false;
+//             buffer.pop();
 //         }
-//         if(sequence.size()==1) return true;
-
-//         vector<int> mid_seq(sequence);
-//         sort(mid_seq.begin(),mid_seq.end());
-//         vector<int>left_tree,right_tree;
-//         for(int i=0;i<mid_seq.size();i++)
-//         {
-//             if(mid_seq[i]<sequence.back())
-//             {
-//                 left_tree.push_back(mid_seq[i]);
-//             }
-//             else if(mid_seq[i]>sequence.back())
-//             {
-//                 right_tree.push_back(mid_seq[i]);
-//             }
-//         }
-//         int root=sequence.back();
-//         sequence.pop_back();
-//         vector<int>left_tree_be,right_tree_be;
-//         for(int i=0;i<right_tree.size();i++)
-//         {
-//             if(!find(right_tree, sequence.back()))
-//                  return false;
-//             if(sequence.back()<root) return false;
-//             right_tree_be.insert(right_tree_be.begin(),sequence.back());
-//             sequence.pop_back();
-//         }
-//         for(int i=0;i<left_tree.size();i++)
-//         {
-//             if(!find(left_tree, sequence.back()))
-//                  return false;
-//             if(sequence.back()>root) return false;
-//             left_tree_be.insert(left_tree_be.begin(),sequence.back());
-//             sequence.pop_back();
-//         }
-//         for(auto&da:left_tree_be) std::cout << da << " ";
-//         std::cout << " || " ;
-//         for(auto&da:right_tree_be) std::cout << da << "  ";
-
-
-//         if(left_tree.empty())
-//             {if(!VerifySquenceOfBST(right_tree_be)) return false;}
-//         if(right_tree.empty())    
-//             {if(!VerifySquenceOfBST(left_tree_be)) return false;}
-
-//         if(!right_tree.empty()&&!left_tree.empty())
-//         {if(!(VerifySquenceOfBST(left_tree_be)&&VerifySquenceOfBST(right_tree_be))) return false;}
-
-//         return true;
         
+//     }
+//   //return the first appearence once char in current stringstream
+//     char FirstAppearingOnce()
+//     {
+//         if(!buffer.empty())
+//             return buffer.front();
+//         else return '#';
 //     }
 // };
 
 // int main(void)
 // {
-//     Solution solu;
-//     TreeNode p1(3),n1(5),n2(7),n3(6),n4(2),n5(1),n6(4),n7(11),n8(10);
     
-//     p1.left=&n1; p1.right=&n2;
-//     n1.left=&n3;n1.right=&n4;
-//     n3.left=&n7;
-
-//     n2.left=&n5;n2.right=&n6;
-//     n5.right=&n8;
-
-
-//     TreeNode p2(5),n_1(2);
-//     p2.right=&n_1;
-//     vector<int> res;
-
-//     std::cout << solu.VerifySquenceOfBST({4,6,7,5}) << '\n';
-//     // for(auto&da:res)
-//     //     std::cout << da << '\n';
-//     return 0;
-// }*/
-
-// /* ------------------ 特殊链表的复制 特殊链表的复制  ----------------------------
-
-// #include<iostream>
-// #include<cstdio>
-// #include<queue>
-// #include<algorithm>
-// #include<stack>
-// struct RandomListNode {
-//     int label;
-//     struct RandomListNode *next, *random;
-//     RandomListNode(int x) :
-//             label(x), next(NULL), random(NULL) {
-//     }
-// };
-
-// using namespace std;
-// class Solution {
-// public:
-//     RandomListNode* Clone(RandomListNode* pHead)
-//     {
-//         if(pHead==nullptr) return nullptr;
-//         RandomListNode *node=pHead;
-//         while(node!=nullptr)
-//         {
-//             RandomListNode *currNode = new RandomListNode(node->label);
-//             currNode->next = node->next;
-//             node->next = currNode;
-//             node = currNode->next;
-//         }
-//         node =pHead;
-//         while(node!=nullptr)
-//         {
-//             if(node->random!=nullptr)
-//                 node->next->random = node->random->next;
-            
-//             node = node->next->next;
-//         }
-//         RandomListNode *pre = pHead->next;
-//         RandomListNode *tmp ;
-//         node=pHead;
-//         while(node->next!=nullptr)
-//         {
-//             tmp = node->next;
-//             node->next = tmp->next;
-//             node = tmp;
-//         }
-//         return pre;
-//     }
-// };
-
-// int main(void)
-// {
-//     Solution solu;
-
-//     return 0;
-// }*/
-
-// /*---------------------- 空瓶换可乐----------------------
-
-// #include <iostream>
-// #include <cstdio>
-// using namespace std;
-
-
-// int coke(int bottle)
-// {
-//     if(bottle<3)
-//     {
-//         if(bottle<2) return 0;
-//         else return 1;
-//     }
-
-//     return (bottle/3 + coke(bottle%3+bottle/3));
-// }
-// int main(void)
-// {
-
-//     int bottle;
-//     while(scanf("%d",&bottle)!=EOF)
-//     {
-//         cout << coke(bottle) <<'\n';
-//     }
-
-//     return 0;
-// } */
-
-// /*---------------  将输入去重与排序  -----------
-// #include <iostream>
-// #include <cstdio>
-// #include<vector>
-// #include <algorithm>
-// using namespace std;
-
-// int main(void)
-// {
-
-//     int n;
-//     while(scanf("%d",&n)!=EOF)
-//     {
-//      vector<int> array;
-//      int data;
-//      for(int i=0;i<n;i++)
-//         {
-//             scanf("%d",&data);
-//             if(array.empty()) array.push_back(data);
-//             else
-//             {
-//                 int k=0;
-//                 for(k=0;k<array.size();k++)
-//                 {
-//                     if(array[k]==data) break;
-//                     if(array[k]>data)
-//                     {
-//                         array.insert(array.begin()+k,data);
-//                         break;
-//                     }
-//                     if(k==array.size()-1)
-//                     {
-//                         array.insert(array.end(),data);
-//                         break;
-//                     }
-//                 }
-              
-//             }
-//         }   
-//         for(auto& da:array) std::cout << da << "\n";
-//     }
-
-//     return 0;
-// }*/
-
-// /*---------- 将输入十六进制(字符串)转换成十进制输出 -------------
-// #include <iostream>
-// #include <cstdio>
-// #include<vector>
-// #include <string>
-// using namespace std;
-// int po(int pow_)
-// {
-//     int res=1;
-//     for(int i=0;i<pow_;i++)
-//     {
-//         res *= 16;
-//     }
-//     return res;
-// }
-// int hex2int(string hex)
-// {
-//     int res=0;
-//     int pow_=1,num=0;
-//     for(int k=hex.size()-1;k>=0;k--)
-//     {
-//         char hex_ = hex[k];
-//         if((hex_=='x')||(hex_=='X')) return res;
-//         int trans;
-//         if((((int)hex_)>=48)&&(((int)hex_)<=57))
-//         {
-//             trans = ((int)hex_) - 48;
-//         }
-//         else  if((((int)hex_)>=97)&&(((int)hex_)<=102))
-//         {
-//             trans = ((int)hex_) - 87;
-//         }
-//         else  if((((int)hex_)>=65)&&(((int)hex_)<=70))
-//         {
-//             trans = ((int)hex_) - 55;
-//         }
-
-//         res += trans * pow_;
-//         num++;
-//         pow_ = po(num);
-//     }
-//     return res;
-// }
-// int main(void)
-// {
-
-//     string str;
-//     while(getline(cin,str))
-//     {
-//         std::cout << hex2int(str) << '\n';
-//     }
-//     return 0;
-// }*/
-
-// /*--------- sort 自定义排序 （函数 + lamda）----------
-
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include <algorithm>
-// using namespace std;
-// bool compare(string s1,string s2)
-// {
-//     return s1.length()>s2.length();
-// }
-// int main(void)
-// {
-
-//     int n;
-//     while(scanf("%d",&n)!=EOF)
-//     {
-//         string str;
-//         vector<string> str_vec;
-//         for(int k=0;k<n;k++)
-//             {
-//                 cin >> str;
-//                 str_vec.push_back(str);
-//             }
-//             sort(str_vec.begin(),str_vec.end(),[](string s1,string s2){return s1.length()>s2.length();});
-//             for(auto&da:str_vec) std::cout << da << '\n';
-//     }
-
-//     return 0;
-// }*/
-
-
-// /*---------------------- 输出字符串包含的字符集合 ------------------------
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include <algorithm>
-// #include <queue>
-// using namespace std;
-// bool find(vector<char> vec,char ch)
-// {
-//     vector<char>::iterator it=vec.begin();
-//     while(it!=vec.end())
-//     {
-//         if(*it==ch) return true;
-//         it++;
-//     }
-//     return false;
-// }
-// vector<char> gather(string str)
-// {
-//     vector<char> res;
-//     for(int k=0;k<str.size();k++)
-//     {
-//         char ch = str[k];
-//         if(find(res,ch)) continue;
-//         res.push_back(ch);
-//     }
-//     return res;
-// }
-// int main(void)
-// {
-
-//     int n;
-//     string str;
-//     while(getline(cin,str))
-//     {
-//         vector<char> res;
-//         res = gather(str);
-//         for(auto&ch:res) cout<< ch;
-//         std::cout  << '\n';
-//     }
-//     return 0;
-// } */
-// /*
-// 0 0 8 0 0 0 2 0 0
-// 0 3 0 8 0 2 0 6 0
-// 7 0 0 0 9 0 0 0 5
-// 0 5 0 0 0 0 0 1 0
-// 0 0 4 0 0 0 6 0 0
-// 0 2 0 0 0 0 0 7 0
-// 4 0 0 0 8 0 0 0 6
-// 0 7 0 1 0 3 0 9 0
-// 0 0 1 0 0 0 8 0 0
-// */
-
-// //scanf 如果是 %d、%f 读入数值类型，会自动跳过多余的空格和换行，
-// //如果是  %s  遇到空格和换行会停止，如果是  %c  就可以读入空格和换行。
-
-// /*--------------- 修改和查询学生成绩---------------
-
-// #include <iostream>
-// #include <cstdio>
-// #include <vector>
-// #include <algorithm>
-// #include <queue>
-// using namespace std;
-
-// int main(void)
-// {
-
-//     int n,op;
-//     while(scanf("%d%d",&n,&op)!=EOF)
-//     {
-//         vector<int> grades;
-//         scanf("\n");
-//         for(int i =0;i<n;i++)
-//         {
-//             int data;
-//             scanf("%d",&data);
-//             grades.push_back(data);
- 
-//         }
-//         for(int i=0;i<op;i++)
-//         {
-//             char cmd;int arg1,arg2;
-//             scanf("\n");
-//             scanf("%c%d%d",&cmd,&arg1,&arg2);
-//             if(cmd=='Q')
-//             {
-//                 int max=-1;
-//                 if(arg1>arg2) swap(arg1,arg2);
-//                 for(int k=arg1-1;k<arg2;k++)
-//                 {
-//                     if(grades[k]>max) max=grades[k];
-//                 }
-//                 std::cout <<max << '\n';
-//             }
-//             else if(cmd=='U')
-//             {
-//                 grades[arg1-1]=arg2;
-//             }
-//         }
-
-//     }
-//     return 0;
-// }*/
-
-// /*------------- 错误记录 读不确定行字符串 ---------------
-// #include <map>
-// #include<iostream>
-// #include<cstdio>
-// #include<vector>
-// #include<string>
-// #include <algorithm>
-// using namespace std;
-
-
-// vector<pair<string,int>> pair_vec;
-
-// void deal_input(string input)
-// {
-//     int k,depa=-1;
-//     for(k=input.size()-1;k>=0;k--)
-//     {
-//         if(input[k]=='\\') break;
-//         if(input[k]==' ')
-//             if(depa==-1)
-//             {
-//                 depa=k;
-//             }
-//     }
-//     string name = input.substr(k+1);
-
-//     pair_vec.push_back(make_pair(name,1));
-
-//     for (int i = 0; i<(pair_vec.size() - 1); i++){
-//         if (pair_vec[i].first == name){
-//             pair_vec[i].second++;
-//             pair_vec.pop_back(); break;
-//         }
-//     }
-// }
-// bool cmp(pair<string,int>x,pair<string,int>y)
-// {
-//     return x.second>y.second;
-// }
-
-// int str2int(string input)
-// {
-//     int num=0,i=0;
-//      for(int k=input.size()-1;k>=0;k--)
-//      {
-//          num += ((input[k]-48) *pow(10,i));
-//          i++;
-//      }
-//      return num;
-// }
-// void deal(string input)
-// {
-//         int k,depa=-1;
-//     for(k=input.size()-1;k>=0;k--)
-//     {
-//         if(input[k]=='\\') break;
-//         if(input[k]==' ')
-//             if(depa==-1)
-//             {
-//                 depa=k;
-//             }
-//     }
-//     string name;
-//     string out;
-//     name = input.substr(k+1,depa-k-1);
-//     if(name.size()>16)
-//         {
-//             out = name.substr(name.size()-16);
-//             cout<< out<<" ";
-//         }
-//     else
-//     cout<< name<<" ";
-//     string num;
-//     num = input.substr(depa+1);
-//     cout<< str2int(num);
-// }
-// int main(void)
-// {
-//     string str;
-//     vector<string> arr_str;
-//     while (getline(cin, str))
-//     {
-//         if (str.size() == 0)
-//             break;
-//         deal_input(str);
-//     }
-//     sort(pair_vec.begin(),pair_vec.end(),cmp);
-//     int i=0;
-//     for(auto&da:pair_vec)
-//     {
-//         i++;
-//         deal(da.first);
-//         cout<<" "<<da.second << endl;
-//         if(i==8) break;
-//     }
+//     // Solution solu;
+//     char *str="e16";
+//     char *pattern="asfahfia";
+//     // std::cout << Numeric(str) << std::endl;
     
 //     return 0;
-// }*/
-
-// /*------------  卡牌游戏  方法太笨--------------
-// #include<iostream>
-// #include<cstdio>
-// #include<string>
-// #include<sstream>
-// #include<vector>
-// #include<math.h>
-// #include<algorithm>
-// using namespace std;
-// typedef enum _type
-// {
-//     joke_boom,
-//     com_4,
-//     seq,
-//     com_3,
-//     com_2,
-//     com_1,
-//     non_type
-// }car_type;
-// typedef struct group
-// {
-//     car_type type=non_type;
-//     string card_str;
-//     vector<int>card_id;
-// }group;
-// int str2int(string input)
-// {
-//     int num=0,i=0;
-
-//     if(input.compare("J")==0) return 11;
-//     if(input.compare("Q")==0) return 12;
-//     if(input.compare("K")==0) return 13;
-//     if(input.compare("A")==0) return 14;
-//     if(input.compare("2")==0) return 16;
-//     else
-//     {
-//     for(int k=input.size()-1;k>=0;k--)
-//      {
-//          num += ((input[k]-48) *pow(10,i));
-//          i++;
-//      }
-//     }
-//      return num;
 // }
-
-// void check_type(group& card)
-// {   
-//     string card_st = card.card_str,word;
-//     vector<int>s_card;
-//     std::stringstream ss(card_st);
-//     while(ss >> word)
-//         {
-//          if((word.compare("joker")==0)||(word.compare("JOKER")==0))
-//           {
-//             s_card.push_back(-1);
-//           }
-//         else
-//             s_card.push_back(str2int(word));
-//         }
-//             sort(s_card.begin(),s_card.end());
-//             card.card_id = s_card;
-
-//     if(s_card.size()==1)
-//     {
-//         card.type=com_1;
-//     }
-//     else if(s_card.size()==2)
-//     {
-//         if((s_card[0]==-1)&&(s_card[1]==-1))
-//         {
-//             card.type=joke_boom;
-//         }
-//         else if(s_card[0]==s_card[1])
-//         {
-//             card.type=com_2;
-//         }
-//     }
-//     else if(s_card.size()==3)
-//     {
-//         if(s_card[0]==s_card[1])
-//         {
-//             if(s_card[0]==s_card[2])
-//                 card.type=com_3;
-//         }
-//     }
-//     else if(s_card.size()==4)
-//     {
-//         if(s_card[0]==s_card[1])
-//         {
-//             if(s_card[0]==s_card[2])
-//                 if(s_card[0]==s_card[3])
-//                 card.type=com_4;
-//         }
-//     }
-//     else if(s_card.size()==5)
-//     {
-//         if((s_card[4]-s_card[0])==4)
-//             if((s_card[3]-s_card[0])==3)
-//                 if((s_card[2]-s_card[0])==2)
-//                     if((s_card[1]-s_card[0])==1)
-//                         card.type=seq;
-//     }
-    
-// }
-// bool depart_inpur(string input,group& a,group& b)
-// {   
-//     size_t found;
-//     found = input.rfind("-");
-//     if(found!=string::npos)
-//     {
-//         a.card_str = input.substr(0,found);
-//         b.card_str = input.substr(found+1); 
-//         check_type(a);
-//         if(a.type==non_type) return true;
-//         check_type(b);
-//         return true;
-//     }
-//     return false;
-// }
-// int main(void)
-// {
-//     string input;
-//     while(getline(cin,input))
-//     {
-//         group group_a,group_b;
-//         if(depart_inpur(input,(group_a),(group_b))) 
-//         {
-//             if((group_a.type==non_type)||(group_b.type==non_type))
-//             {
-//                 cout<< "ERROR"<<endl;
-//             }
-//             else
-//             {
-//                 if(group_a.type==joke_boom)
-//                 {
-//                     cout<< group_a.card_str <<endl;
-//                 }
-//                 else if(group_b.type==joke_boom)
-//                 {
-//                     cout<< group_b.card_str <<endl;
-//                 }            
-//                 else 
-//                 {
-//                     //都不是对王
-//                     if(group_b.type==com_4)
-//                     {
-//                         if(group_a.type==com_4)
-//                         {
-//                             if((group_b.card_id[0]>group_a.card_id[0]))
-//                                 cout<< group_b.card_str <<endl;
-//                             else cout<< group_a.card_str <<endl;
-//                         }
-//                         else  cout<< group_b.card_str <<endl;
-//                     }
-//                     else if(group_a.type==com_4)
-//                     {
-//                         cout<< group_a.card_str <<endl;
-//                     }
-//                     else if(group_b.type==com_3)
-//                     {
-//                             if(group_a.type==com_3)
-//                         {
-//                             if((group_b.card_id[0]>group_a.card_id[0]))
-//                                 cout<< group_b.card_str <<endl;
-//                             else cout<< group_a.card_str <<endl; 
-//                         }
-//                         else  cout<< "ERROR" <<endl;
-//                     }
-//                     else if(group_b.type==com_2)
-//                     {
-//                         if(group_a.type==com_2)
-//                         {
-//                             if((group_b.card_id[0]>group_a.card_id[0]))
-//                                 cout<< group_b.card_str <<endl;
-//                             else cout<< group_a.card_str <<endl;
-//                         }
-//                         else  cout<< "ERROR" <<endl;      
-//                     }
-//                     else if(group_b.type==com_1)
-//                     {
-//                         if(group_a.type==com_1)
-//                         {
-//                             if((group_b.card_id[0]>group_a.card_id[0]))
-//                                 cout<< group_b.card_str <<endl;
-//                             else cout<< group_a.card_str <<endl;
-//                         }
-//                         else  cout<< "ERROR" <<endl;                        
-//                     }
-//                     else if(group_b.type==seq)
-//                     {
-//                         if(group_a.type==seq)
-//                         {
-//                             if((group_b.card_id[0]>group_a.card_id[0]))
-//                                 cout<< group_b.card_str <<endl;
-//                             else cout<< group_a.card_str <<endl;
-//                         }
-//                         else  cout<< "ERROR" <<endl;
-//                     }
-//                 }
-//             }
-            
-//         }
-//     }
-
-//     return 0;
-// }*/
-
-
-// /*-------------  括号匹配 ------------
-// #include<iostream>
-// #include<cstdio>
-// #include<string>
-// #include<sstream>
-// #include<vector>
-// #include<math.h>
-// #include<algorithm>
-// #include<stack>
-// using namespace std;
-// int main(void)
-// {
-
-//     string input;
-//     while(getline(cin,input))
-//     {
-//             stack<char> sig;
-//         for(int i=input.size()-1;i>=0;i--)
-//         {
-//             char ch = input[i];
-//             if(ch=='}') sig.push('}');
-//             else if(ch==']')  sig.push(']');
-//             else if(ch==')') sig.push(')');
-
-//             else if(ch=='{')
-//             {
-//                 if(sig.top()=='}')
-//                 {
-//                     sig.pop();
-//                 }
-//                 else 
-//                 {
-//                     std::cout << "False" << '\n';
-//                     return 0;
-//                 }
-//             }
-//             else if(ch=='[')
-//             {
-//                 if(sig.top()==']')
-//                 {
-//                     sig.pop();
-//                 }
-//                 else 
-//                 {
-//                     std::cout << "False" << '\n';
-//                     return 0;
-//                 }
-//             }
-//             else if(ch=='(')
-//             {
-//                 if(sig.top()==')')
-//                 {
-//                     sig.pop();
-//                 }
-//                 else 
-//                 {
-//                     std::cout << "False" << '\n';
-//                     return 0;
-//                 }
-//             }
-//         }
-//         if(sig.empty()) std::cout << "True" << '\n';
-//             else std::cout << "False" << '\n';
-//     }
-
-//     return 0;
-// } */
-
-// /*-------------桶排序问题----------------
-// #include <iostream>
-// #include<cstdio>
-// #include<queue>
-// using namespace std;
-// void printOrder(const int input[], int len)
-// {
-//     queue<int> barrel[10];
-//     for(int i=0;i<len;i++)
-//     {
-//         barrel[input[i]].push(i);
-//     }
-//     for(int i=9;i>0;i--)
-//     {
-//         if(!barrel[i].empty())
-//         {
-//             while(!barrel[i].empty())
-//             {
-//                 std::cout << barrel[i].front() << " ";
-//                 barrel[i].pop();
-//             }
-//         }
-//     }
-//     cout<<'\n';
-// }
-// int main(void)
-// {
-//     int input[9]={9,3,5};
-//     printOrder(input,9);
-
-//     return 0;
-// }*/
-
-
-// /* ---------- 删除重复出现数字 ------------
-// #include<iostream>
-// #include<cstdio>
-// #include<sstream>
-// #include<vector>
-// #include<math.h>
-// #include<algorithm>
-// #include<map>
-// using namespace std;
-// int str_int(string input)
-// {
-//     int num=0,i=0;
-//     if(input.compare("0")==0) return 0;
-//      for(int k=input.size()-1;k>=0;k--)
-//      {
-//          num += ((input[k]-48) *pow(10,i));
-//          i++;
-//      }
-//      return num;
-// }
-// bool cmp_1(const pair<unsigned int,unsigned int>a,const pair<unsigned int,unsigned int>b)
-// {
-//     return a.first<b.first;
-
-//     // if(a.first!=b.first) return a.first<b.first;
-//     // else return a.second<b.second;
-// }
-// bool cmp_2(const pair<unsigned int,unsigned int>a,const pair<unsigned int,unsigned int>b)
-// {
-//      return a.second<b.second;
-// }
-// int main(void)
-// {
-
-//     string input;
-
-//     while(getline(cin,input))
-//     {
-//         string word;
-//         vector<pair<unsigned int,unsigned int>>ch_vec;
-//         std::stringstream ss(input);
-//         int i=0;
-//         if(input.empty()) continue;
-//         while(ss >> word)
-//         {
-//             ch_vec.push_back(make_pair(str_int(word),i));
-//             i++;
-//         }
-//         cout << '\n';
-//         for(auto&da:ch_vec)
-//           {
-//               std::cout <<da.first<<"  下标： "<< da.second;
-//             cout << '\n';
-//           }  
-// cout << '\n';
-//         sort(ch_vec.begin(),ch_vec.end(),cmp_1);
-
-//         for(auto&da:ch_vec)
-//           {
-//               std::cout <<da.first<<"  下标： "<< da.second;
-//             cout << '\n';
-//           }  
-
-//         int base=ch_vec[0].first;
-//         for(int i=1;i<ch_vec.size();i++)
-//         {
-//             if(ch_vec[i].first==base)
-//             {
-//                 ch_vec.erase(ch_vec.begin()+i);
-//                 i--;
-//             }
-//             else
-//             {
-//                 base = ch_vec[i].first;
-//                 // 1 1 2 3 3 2 4 5 1 8 4 2 7 3 6 4 5 1 
-//             }
-            
-//         }
-//         sort(ch_vec.begin(),ch_vec.end(),cmp_2);
-//         cout <<endl;
-//         for(auto &num:ch_vec)
-//             std::cout << num.first << " ";
-//     }
-
-
-
-//     return 0;
-// }*/
-
-// /* --------剑指offer 回溯法 字符串的全排列 （递归） ------------
-// // tips:字符串的 字典序 要逐个字符比对 不相等处停止！！
-
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-// #include<algorithm>
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// class Solution {
-// public:
-//     vector<string> res;
-//     vector<char> has_ex;
-//     vector<string> Permutation(string str) { 
-//        Permutation_helper(str,0,str.size());  
-//        sort(res.begin(),res.end());
-//        return res;   
-//     }
-//     void Permutation_helper(string str,int begin,int end)
-//     {
-//         if(begin == end-1)
-//         {
-//             //实现n个字符的全排列 只需排好后面的n-1个字符
-//             // 再将排好的n-1个字符与其做交换（不相等的情况下）
-//             res.push_back(str);
-//         }
-//         else
-//         {
-//             for(int k=begin;k<end;k++)
-//             {
-//                 swap(str[k],str[begin]);
-
-//                 if((k!=begin)&&(str[k]==str[begin])) ;
-//                 else
-//                     Permutation_helper(str,begin+1,end);
-//                 swap(str[k],str[begin]);
-//             }           
-//         }
-
-//     }
-// };
-
-// int main()
-// {
-
-//     Solution solu;
-//     string input;
-
-//     while (getline(cin,input)) {
-
-//         vector<string> res = solu.Permutation(input);
-
-//         for(auto &str:res)
-//             std::cout << str << '\n';
-//     }       
- 
-//     return 0;
-// }*/
-
-
-// /*-----------  剑指offer 数组中出现次数超过一半的数字 --------------
-// //如果用了排序直接 取中间就可以！！！！
-// // 复杂度主要在用了排序算法 非最优
-// //最优复杂度： n
-// #include<iostream>
-// #include<cstdio>
-// #include<vector>
-// #include<algorithm>
-// using namespace std;
-// class Solution {
-// public:
-//     int MoreThanHalfNum_Solution(vector<int> numbers) {
-//         if(numbers.size()==1) return numbers[0];
-
-//         int half_min=numbers.size()/2;
-//         int left=0,right=numbers.size()-1;
-
-//         sort(numbers.begin(),numbers.end());
-
-//         while(left<=right-half_min)
-//         {
-//             if(numbers[left]!=numbers[left+half_min])
-//             {
-//                 ++left;
-//             }
-//             else return numbers[left]; 
-//             if(numbers[right]!=numbers[right-half_min])
-//             {
-//                 --right;
-//             }
-//             else return numbers[left]; 
-//         }
-//         return 0;
-//     }
-// };
-// int main(void)
-// {
-
-//     Solution solu;
-
-//     cout <<solu.MoreThanHalfNum_Solution({1,2,3,2,4,2,5,2,3});
-
-//     return 0;
-// }*/
-
-
-
-// /*-----------  剑指offer 最小的k个数 -------------- 
-// //复杂度： lgn
-// //这个办法不行
-// #include<iostream>
-// #include<cstdio>
-// #include<vector>
-// #include<algorithm>
-// using namespace std;
-// class Solution {
-// public:
-//    // 我的方法 最坏nlogn
-//     vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
-//         vector<int> res;
-//         if(input.size()<k) return res; 
-//         res=input;
-//         while(res.size()>k)
-//         {
-//             for(int i=0;i<res.size();i++)
-//             {
-//                 if(i+1>=res.size()) continue;
-//                 if(res[i]>res[i+1])
-//                 {
-//                     res.erase(res.begin()+i);
-//                     i--;
-//                 }
-//                 else
-//                 {
-//                     res.erase(res.begin()+i+1);
-//                 }
-//             }
-//         }
- 
-//         sort(res.begin(),res.end());
-//         return res;
-//     }
-//     // 别人的方法 nlgk
-//     vector<int> GetLeastNumbers_Solution_2(vector<int> input, int k) {
-        
-//         if(input.size()<k) return vector<int>(); 
-//         vector<int> res(input.begin(),input.begin()+k);
-//         // 建堆 将最大元素上浮
-//         make_heap(res.begin(),res.end());
-        
-//         //留出前k个位置
-//         for(int i=k;i<input.size();i++)
-//         {
-//             if(input[i]<res[0])
-//             {
-//                 //删除堆顶 （最大值）
-//                 res.erase(res.begin());
-
-//                 res.push_back(input[i]);
-//                 // 将最大值上浮
-//                 push_heap(res.begin(),res.end());
-//             }
-//         }
-//         // sort_heap(res.begin(),res.end());
-//         return res;
-//     }
-// };
-// int main(void)
-// {
-
-//     Solution solu;
-//     vector<int> test =  solu.GetLeastNumbers_Solution_2({4,5,1,6,2,7,3,8},3);
-
-//     for(auto&data:test)
-//         std::cout << data << '\n';
-
-//     return 0;
-// }*/
-
-// /*----------- 剑指offer 连续子数组的最大和 ---------------
-
-// // MAX[i] = max{MAX[i-1] + A[i],MAX[i-1]}；
-
-// // F（i）：以array[i]为末尾元素的子数组的和的最大值，子数组的元素的相对位置不变
-// // F（i）=max（F（i-1）+array[i] ， array[i]）
-// // res：所有子数组的和的最大值
-// // res=max（res，F（i））
-
-// #include<iostream>
-// #include<cstdio>
-// #include<vector>
-// using namespace std;
-// class Solution {
-// public:
-// //暴力 求解效率极低
-//     int FindGreatestSumOfSubArray(vector<int> array) {
-//         int max=-100;
-
-//         for(int left=0;left<array.size();left++)
-//         {
-//             int sum=0;
-//             for(int right=left;right<array.size();right++)
-//             {
-//                 sum += array[right];
-//                 if(sum > max) max=sum;
-//             }
-//         }
-
-//         return max;
-//     }
-// //dp动态规划 并输出了 区间
-//     int FindGreatestSumOfSubArray_2(vector<int> array) {
-//         int max=-100;
-//         int sum=0;
-//         int left=0,right=0;
-//         bool clear=false;
-//         for(int i=0;i<array.size();i++)
-//         {
-//             sum += array[i];
-//             if(sum>max) 
-//             {
-//                 max=sum;
-//                 if(clear)
-//                 {
-//                     left = right =i;
-//                 }
-//                 else
-//                 {
-//                     right=i;
-//                 }
-//                 clear = false;
-//             }
-//             if(sum<0) 
-//             {
-//                 sum=0;
-//                 clear = true;
-//             }
-//         }
-//         cout<< left <<" "<< right <<endl;
-//         return max;
-//     }
-// };
-// int main(void)
-// {
-
-
-//     Solution solu;
-//     cout << solu.FindGreatestSumOfSubArray_2({-4,6,-3,-1,-1,-2,7,-15,1,2,2})<<endl;
-
-//     return 0;
-// } */
-
-
-
-
-#include <iostream>
-#include <cstdio>
-#include <vector>
-#include <math.h>
-#include <algorithm>
-#include <set>
-#include <stack>
-#include <queue>
-using namespace std;
-class Solution {
-public:
-/* ----------- 剑指offer 0～n十进制 1出现的次数 ----------------*/
-    int NumberOf1Between1AndN_Solution(int n)
-    {
-        int cnt=0;
-
-        // 硬算
-        // 
-        // for(int i=1;i<=n;i++)
-        // {
-        //     int num=i;
-        //     while(num!=0)
-        //     {
-        //         if(num%10==1) cnt++ ;
-        //         num = num / 10;
-        //     }
-        // }
-
-
-        
-
-        return cnt;
-    }
-
-/* ----------- 剑指offer 把数组排成最小的数 ----------------*/
-// 本质是个排序问题 又走了弯路。。。
-    static bool cmp(string a1,string b1)  //true： 替换a1
-    {
-       int len = ((a1.size() > b1.size())?: b1.size(),a1.size());
-       int i;
-
-       for(i=0;i<len;i++)
-       {
-           if(a1[i] > b1[i]) 
-           { 
-               return false;
-           }
-       }
-       while(i<b1.size())  
-       {
-           if(b1[i]<b1[0]) return false;
-           i++;
-       }     
-           
-       return true;
-    }
-
-    string PrintMinNumber(vector<int> numbers) {
-        if(numbers.empty()) return "";
-        vector<string> str_array;
-
-        for(int i=0;i<numbers.size();i++)
-        {
-            str_array.push_back(to_string(numbers[i]));
-        }
-
-
-        if(str_array.size()==1) return str_array[0];
-        string res;
-        sort(str_array.begin(),str_array.end(),cmp);
-
-        for(auto&data:str_array)
-            res +=data;
-
-
-         // 牛客网解法 
-
-    //  static bool cmp(int a,int b){
-    //      string A="";
-    //      string B="";
-    //      A+=to_string(a);
-    //      A+=to_string(b);
-    //      B+=to_string(b);
-    //      B+=to_string(a);
-          
-    //      return A<B;
-    //  }
-    //  string PrintMinNumber(vector<int> numbers) {
-    //      string  answer="";
-    //      sort(numbers.begin(),numbers.end(),cmp);
-    //      for(int i=0;i<numbers.size();i++){
-    //          answer+=to_string(numbers[i]);
-    //      }
-    //      return answer;
-    //  }
-
-        //第一次写出的程序：
-        // while(str_array.size()!=1)
-        // {
-        //     string suit = str_array[0];
-        //     int del=0;
-        //     for(int i=1;i<str_array.size();i++)
-        //     {
-        //      if(cmp(suit,str_array[i]))
-        //      {
-        //          del = i ;
-        //          suit = str_array[i];
-        //      } 
-        //     }
-        //     res += suit;
-        //     str_array.erase(str_array.begin()+del);
-        // }
-        // res += str_array[0];
-        return res;
-    }
-
-/* ----------- 剑指offer 丑数 ----------------*/
-//暴力求解 自己的方法空间造成浪费 复杂度也非最优
-     int GetUglyNumber_Solution(int index) {
-        if(index==0) return 0;
-        set<int> seq;
-        seq.insert(1);
-        int ugly[3]={2,3,5};
-        int k=0;
-        set<int>::iterator it = seq.begin();
-        while(it!=seq.end())
-        {
-            k++;
-            for(int i=0;i<3;i++)
-            {
-                if(seq.count((*it)*ugly[i])==0)
-                    {
-                        seq.insert((*it)*ugly[i]);  
-                    }
-            }
-            if(k==index) 
-            {
-                for(auto &da:seq )
-                    std::cout << da << std::endl;
-                return *it;
-            }
-            it++;
-        }
-
-        return 1;
-    }
-    /* ----------- 剑指offer 字符串找到第一个只出现一次的字符 ----------------*/
-    int FirstNotRepeatingChar(string str) {
-        //用map是不是会更快 ？ ？ ？
-        for(int i=0;i<str.size();i++)
-        {
-            if(str.find(str[i])==str.rfind(str[i]))
-                return i;
-        }
-        return -1;
-    }
-    /* ----------- 剑指offer 数组中的逆序对 对1000000007取模的结果输出----------------*/
-    int InversePairs(vector<int> data) {
-        int cnt=0;
-            for(int j=data.size()-2;j>=0;j--)
-            {
-                if(data[j]>data[j+1])
-                {
-                    if(cnt==0)
-                    {
-                        for(int i=j+1;i<data.size();i++)
-                        {
-                            if(data[j]>=data[i])
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                cnt++;
-                                // if(cnt==1000000007) cnt=0;
-                            }
-                            
-                        }  
-                    }
-                    else
-                    {
-                        for(int i=j+1;i<data.size();i++)
-                        {
-                            if(data[j]>data[i])
-                            {
-                                cnt++;
-                                // if(cnt==1000000007) cnt=0;
-                            }
-                        }
-                    }
-                    
-                }
-                else if(data[j]==data[j+1])
-                {
-                    int temp = cnt;
-                    cnt ++;
-                    // if(cnt==1000000007) cnt=0;
-                }
-                else
-                {
-                    for(int i=j+2;i<data.size();i++)
-                    {
-                        if(data[j]>data[i])
-                        {
-                            cnt++;
-                            // if(cnt==1000000007) cnt=0;
-                        }
-                    }
-                }
-            }
-        return (cnt%1000000007);
-    }
-
-    /* ----------- 剑指offer 两个链表的第一个公共节点 ----------------*/
-    struct ListNode {
-	int val;
-	struct ListNode *next;
-	ListNode(int x) :
-			val(x), next(NULL) {
-	}
-    };
-    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
-    // 自己写的 非最优查找
-
-    // 长度相同有公共结点，第一次就遍历到；没有公共结点，走到尾部NULL相遇，返回NULL
-    // 长度不同有公共结点，第一遍差值就出来了，第二遍一起到公共结点；没有公共，一起到结尾NULL。
-
-        ListNode* p1 = pHead1;
-
-        while(p1!=nullptr)
-        {
-            ListNode* p2 = pHead2;
-            while(p2!=nullptr)
-            {
-                if(p1->val == p2->val) return p2;
-
-                p2 = p2->next ;
-            }
-            p1 = p1->next;
-        }
-        return nullptr;
-    }
-
-    /* ----------- 剑指offer 统计一个数字在排序数组中出现的次数----------------*/
-    int GetNumberOfK(vector<int> data ,int k) {
-        int left= 0;
-        int right = data.size()-1;
-        
-        while(left<=right)
-        {
-            int mid=(left+right)/2;
-            
-            if(data[mid]==k){
-               left = right = mid;
-               for(int i=1;;i++)
-                {
-                    if((mid+i)<data.size())
-                    {
-                        if(data[mid+i]==k) 
-                            right ++;
-                    }
-                    if(mid - i>=0)
-                    {
-                        if(data[mid-i]==k) 
-                            left --;
-                    }
-                if(((mid+i)>=data.size())&&(mid-i<0))   break;
-                }
-
-               break;
-            }   
-            else if(data[mid]>k)  right = mid - 1; 
-            else if(data[mid]<k)  left = mid + 1;
-        }
-
-        if(left>right) return 0;
-        return (right-left+1); 
-    }
-
-    /* ----------- 剑指offer 输入一棵二叉树，求该树的深度 （最长路径的长度）----------------*/
-    struct TreeNode {
-        int val;
-        struct TreeNode *left;
-        struct TreeNode *right;
-        TreeNode(int x) :
-                val(x), left(NULL), right(NULL) {
-        }
-    };
-    
-    int TreeDepth(TreeNode* pRoot)
-    {
-
-        if(pRoot == nullptr) return 0;
-        
-        queue<TreeNode*> seq;
-        seq.push(pRoot);
-        int depth=0,layer_count=1,count=0;
-        while(!seq.empty())
-        {
-            count++;
-            if(seq.front()->left!=nullptr) 
-                seq.push(seq.front()->left);
-
-            if(seq.front()->right!=nullptr) 
-                seq.push(seq.front()->right);
-
-            seq.pop();
-            if(count==layer_count)
-            {
-                count =0;
-                depth ++;
-                layer_count = seq.size();
-            }
-        }
-
-        return depth;
-    }
-    /* ----------- 剑指offer 数组中有两个数字只出现一次，其他数字则出现了两次，找出这两个数----------------*/
-    bool FindNumsAppearOnce(vector<int> data) {
-        int res=data[0];
-        for(int i=1;i<data.size();i++){   
-            res = res ^ data[i];
-        }
-        int k=0;
-        while(res!=0){
-            k++;
-            res = res/2 ;
-        }
-        int check = 1<<(k-1);
-
-        int num1=0,num2=0;
-        for(int i=0;i<data.size();i++){
-            if((data[i]&check)==check) 
-                num1 ^= data[i];
-            else
-                num2 ^= data[i];
-        }
-        cout << num1 <<" " <<num2 <<endl;
-        return true;
-    }
-
-    /* ----------- 剑指offer 判断一颗二叉树是否是平衡二叉树----------------*/
-    // 自己的思路： 所有叶节点高度差 不超过2
-    // 最优思路： 后序遍历
-    bool check_leaf(TreeNode* node)
-    {
-        if((node->left==nullptr)&&(node->right==nullptr)) return true;
-        return false;
-    }
-    bool IsBalanced_Solution(TreeNode* pRoot) {
-
-        if(pRoot==nullptr) return true;
-        vector<int> layers;
-        queue<TreeNode*> node;
-        node.push(pRoot);
-        int depth=0,layer_count=1,count=0;
-        while(!node.empty())
-        {
-            count++;
-            if(node.front()->left!=nullptr) 
-                node.push(node.front()->left);
-
-            if(node.front()->right!=nullptr) 
-                node.push(node.front()->right);
-
-            if(check_leaf(node.front()))
-                layers.push_back(depth);
-
-            node.pop();
-            if(count==layer_count)
-            {
-                count =0;
-                depth ++;
-                layer_count = node.size();
-            }
-        }
-        sort(layers.begin(),layers.end());
-        if(layers.size()==1)
-        {
-            if(depth==2) return true;
-            else return false;
-        }
-        if(abs(*layers.end() - layers[0])>=2) return false;    
-        return true;
-    }
-    /*----------- 剑指offer 和为S 的正数序列 -----------*/
-    //写的有点累赘  用双指针思想最好
-    vector<vector<int> > FindContinuousSequence(int sum) {
-        const int start=(sum-1)/2;
-        volatile int s1=1;
-        vector<vector<int>> res;
-
-        volatile int i=2;
-        while(s1<=start)
-        {
-            int add_sum = ((2*s1+i-1)*i/2) ;
-            if(add_sum==sum)
-            {
-                 vector<int>temp;
-                for(int p=0;p<i;p++)
-                    temp.push_back(s1+p);
-                res.push_back(temp);
-                if((++s1)>start) break;
-                else 
-                {   
-                    i=2;
-                    continue;
-                }
-            }
-            else if(add_sum>sum) 
-            {
-                if((++s1)>start) break;
-                else 
-                {
-                    i=2;
-                    continue;
-                }
-            }
-            else i++;
-        }
-    return res;
-    }
-    /*----------- 剑指offer 和为S 的两个数字 -----------*/
-    // 证明 相隔越远 乘积越小！！！！
-    vector<int> FindNumbersWithSum(vector<int> array,int sum) {
-        if(array.size()<=1) return vector<int>();
-
-        vector<int>res;
-        int left =0 ,right = array.size()-1,min=10000;
-        while(left<right)
-        {
-            int add = array[left]+array[right] ;
-            if(add==sum)
-            {
-                // if((array[left] * array[right])<min)
-                {
-                    // min = array[left] * array[right];
-                    res.resize(2);
-                    res[0]= array[left] ;
-                    res[1] = array[right];
-                }
-                break;
-                // --left;--right;
-            }
-            else if(add>sum) --right;
-            else ++left;
-        }
-        return res;
-    }
-    /*----------- 剑指offer 左旋转字符串 -----------*/
-    string LeftRotateString(string str, int n) {
-        string res;
-        int spe = n%str.size();
-        for(int i=spe;i<str.size();i++)
-            res+=str[i];
-        for(int i=0;i<spe;i++)
-            res+=str[i];
-        return res;
-    }
-    /*----------- 剑指offer 翻转单词顺序列 ----------- */
-    string ReverseSentence(string str) {
-        if(str.empty()) return str;
-        string ori_str=str;
-        int ori_size=str.size();
-        int right=str.size();
-        for(int i=ori_size-1;i>=0;i--)
-        {
-            if(ori_str[i]==' ')
-                {
-                    //
-                    str+= (ori_str.substr(i+1,right-i-1));
-                    str+=' ';
-                    right = i;  
-                }
-        }
-        str+= ori_str.substr(0,right);   
-        str+='\n';
-     return    str.substr(ori_size,ori_size);
-    }
-    /*----------- 剑指offer 判断是否是顺子 ----------- */
-    // 不用开辟一个桶！！！！！ 可以用移位实现存储
-    bool IsContinuous( vector<int> numbers ) {
-        if(numbers.size()!=5) return false;
-        vector<int> tong(14);
-        int min=20,max=-20;
-        for(int i=0;i<numbers.size();i++)
-        {
-            if(numbers[i]!=0)
-            {
-                if(tong[numbers[i]]==1 ) return false;
-                
-                if(numbers[i]<min) min=numbers[i];
-                else if(numbers[i]>max) max=numbers[i];
-            }
-            tong[numbers[i]]++;
-        }
-        if(max-min <=4) return true;
-        return false;
-    }
-    /*----------- 剑指offer 围圈数数 最后剩下的那个 ----------- */
-    // 
-    int LastRemaining_Solution(int n, int m)
-    {
-        
-    }
-    /*----------- 剑指offer 最简 求阶乘  ----------- */
-    
-    int Sum_Solution(int n) {
-
-        //最简：
-        int ans=n;
-        ans && (ans+=Sum_Solution(ans-1));
-        return ans;
-
-        // static int res=0;
-        // res+=n;
-        // int ans = (n>1 && Sum_Solution(n-1));
-        // return res;
-    }
-    /*----------- 剑指offer 不用加减乘除做加法 ----------- */
-    int Add(int num1, int num2)
-    {   
-        //递归 最简洁
-        // return num2 ? Add(num1^num2, (num1&num2)<<1) : num1;
-
-        //迭代 逻辑性最好
-
-        // while (num2!=0) {
-        //     int temp = num1^num2;
-        //     num2 = (num1&num2)<<1;
-        //     num1 = temp;
-        // }
-        // return num1;
-
-        int temp = 1,res=0;
-        bool add_flag=false;
-        while(true)
-        {
-                if( (num1&temp)==temp && (num2&temp) ==temp)  // 1 1
-                    (add_flag)?res|=temp:(res|=0,add_flag=!add_flag) ;
-                else if (((num1&temp)|(num2&temp))==temp)       // 0 1
-                    (add_flag)?res|=0:res|=temp  ;
-                else                                           //0 0
-                    (add_flag)?(res|=temp,add_flag=!add_flag):res|=0 ;
-            if(temp&(1<<31)) break;
-            temp = (temp <<1); 
-        }
-        return res;
-    }
-    /*----------- 剑指offer 转字符串为数字 ----------- */
-    int StrToInt(string str) {
-        long long res=0; //long long 为64位
-        for(int i=str.size()-1;i>=0;i--)
-        {
-            if(str[i]<=57 && str[i]>=48)
-            {
-                res += ((str[i]-48)* pow(10,str.size()-i-1));
-            }
-            else if(str[i]=='+'||str[i]=='-')
-            {
-                if(i!=0) return 0;
-                if(str[i]=='-') return (0-res);
-                return res;
-            }
-            else return 0;
-        }
-        return res;
-    }
-    /*----------- 剑指offer 数组中重复的数字 ----------- */
-    // 桶排序
-    bool duplicate(int numbers[], int length, int* duplication) {
-
-        for(int i=0;i<length;i++)
-        {
-            if(i!=numbers[i]) 
-            {
-                if(numbers[numbers[i]]==numbers[i])
-                {
-                    (*duplication) = numbers[i];
-                    return true;
-                }
-                swap(numbers[numbers[i]],numbers[i]) ;
-            }
-        }
-        return false;
-    }
-    /*----------- 剑指offer 构建乘积数组 ----------- */
-
-    int beh(vector<vector<int>>&st,int k)
-    {
-        if(st[k][2]==-1)
-            st[k][2] = st[k+1][1]*beh(st,k+1);
-        
-        return st[k][2];
-    }
-    int fro(vector<vector<int>>&st,int k)
-    {
-        if(st[k][0]==-1)
-            st[k][0] = st[k-1][1]*fro(st,k-1);
-
-        return st[k][0];
-    }
-    vector<int> multiply(const vector<int>& A) {
-    if(A.empty()) return A;
-    vector<vector<int>>store(A.size(),vector<int>(3));
-    
-    for(int i=0;i<A.size();i++){
-        store[i][0]=store[i][2]=-1;
-        store[i][1] = A[i];
-    }
-    store[0][0]=store[A.size()-1][2]=1;
-    
-    beh(store,0);
-    fro(store,(A.size()-1));
-    vector<int> res(A.size());
-
-    for(int i=0;i<store.size();i++)
-        res[i]=store[i][0]*store[i][2];
-    return res;
-    }
-    /*----------- 剑指offer 匹配正则表达式 ----------- */
-    /* 逻辑设计 与 递归 ！ */
-    bool match(char* str, char* pattern)
-    {
-
-    }
-    /*----------- 剑指offer 用来判断字符串是否表示数值（包括整数和小数） ----------- */
-    
-    bool isNumeric(char* string)
-    {
-        
-    }
-    /*----------- 剑指offer 找出字符流中第一个只出现一次的字符 ----------- */
-  //Insert one char from stringstream
-    string stream='\0';
-    void Insert(char ch)
-    {
-        
-    }
-  //return the first appearence once char in current stringstream
-    char FirstAppearingOnce()
-    {
-        
-    }
-};
-int main(void)
-{
-    Solution solu;
-    
-    
-    
-    return 0;
-}
