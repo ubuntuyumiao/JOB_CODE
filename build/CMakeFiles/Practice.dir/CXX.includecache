@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ym/Music/JOB_CODE/Practice/./lib/io.hpp
+/home/robotyu/Music/VScode2/Practice/./lib/io.hpp
 iostream
 -
 stdio.h
@@ -19,8 +19,10 @@ vector
 -
 stack
 -
+deque
+-
 
-/home/ym/Music/JOB_CODE/Practice/data_struct.cpp
+/home/robotyu/Music/VScode2/Practice/data_struct.cpp
 iostream
 -
 cstdio
@@ -116,7 +118,7 @@ cstdio
 vector
 -
 
-/home/ym/Music/JOB_CODE/Practice/interview.cpp
+/home/robotyu/Music/VScode2/Practice/interview.cpp
 iostream
 -
 vector
@@ -140,9 +142,9 @@ iostream
 stdio.h
 -
 
-/home/ym/Music/JOB_CODE/Practice/leetcode.cpp
+/home/robotyu/Music/VScode2/Practice/leetcode.cpp
 ./lib/io.hpp
-/home/ym/Music/JOB_CODE/Practice/./lib/io.hpp
+/home/robotyu/Music/VScode2/Practice/./lib/io.hpp
 
-/home/ym/Music/JOB_CODE/Practice/nowcoder.cpp
+/home/robotyu/Music/VScode2/Practice/nowcoder.cpp
 

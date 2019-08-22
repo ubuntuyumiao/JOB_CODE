@@ -312,10 +312,46 @@ class Solution
         {
             // 
             if(ex_dir){
-
+                vector<int>tmp;
+                while(!next_layer.empty())
+                {
+                TreeNode* node = next_layer.top();
+                // std::cout << node->val << " ";
+                tmp.push_back( node->val );
+                next_layer.pop();
+                if(node->left!=nullptr) vis.push_back(node->left);
+                if(node->right!=nullptr) vis.push_back(node->right);
+                }
+                // std::cout  << std::endl;
+                res.push_back(tmp);
+                while(!vis.empty())
+                {
+                TreeNode* node = vis.front();
+                vis.pop_front();
+                next_layer.push(node);
+                }
+                ex_dir = !ex_dir;
             }
             else{
-
+                vector<int>tmp;
+                while(!next_layer.empty())
+                {
+                TreeNode* node = next_layer.top();
+                // std::cout << node->val << " ";
+                tmp.push_back( node->val );
+                next_layer.pop();
+                if(node->right!=nullptr) vis.push_back(node->right);
+                if(node->left!=nullptr) vis.push_back(node->left);
+                }
+                // std::cout  << std::endl;
+                res.push_back(tmp);
+                while(!vis.empty())
+                {
+                TreeNode* node = vis.front();
+                vis.pop_front();
+                next_layer.push(node);
+                }
+                ex_dir = !ex_dir;
             }
 
         }

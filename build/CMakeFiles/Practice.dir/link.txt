@@ -1,1 +1,1 @@
-/usr/bin/c++    -O3 -Wall -std=c++11   CMakeFiles/Practice.dir/data_struct.cpp.o CMakeFiles/Practice.dir/interview.cpp.o CMakeFiles/Practice.dir/leetcode.cpp.o CMakeFiles/Practice.dir/nowcoder.cpp.o  -o /home/ym/Music/JOB_CODE/bin/Practice -rdynamic 
+/usr/bin/c++   -O3 -Wall -std=c++11  -rdynamic CMakeFiles/Practice.dir/data_struct.cpp.o CMakeFiles/Practice.dir/interview.cpp.o CMakeFiles/Practice.dir/leetcode.cpp.o CMakeFiles/Practice.dir/nowcoder.cpp.o  -o /home/robotyu/Music/VScode2/bin/Practice 
