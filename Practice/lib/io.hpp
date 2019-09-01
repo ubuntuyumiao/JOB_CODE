@@ -5,6 +5,7 @@
 #include <vector>
 #include <stack>
 #include <deque>
+#include <string>
 using namespace std;
 
 // 二叉树结构体
@@ -283,7 +284,7 @@ class Solution
     }
     
 
-// 每年六一儿童节,牛客都会准备一些小礼物去看 1望孤儿院的小朋友,今年亦是如此。
+// 每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。
 // HF作为牛客的资深元老,自然也准备了一些小游戏。其中,有个游戏是这样的:
 // 首先,让小朋友们围成一个大圈。然后,他随机指定一个数m,让编号为0的小朋友开始报数。
 // 每次喊到m-1的那个小朋友要出列唱首歌,然后可以在礼品箱中任意的挑选礼物,并且不再回到圈中,
@@ -292,7 +293,28 @@ class Solution
 // 请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友的编号是从0到n-1)
     int LastRemaining_Solution(int n, int m)
     {
-        
+// version 1.o by yu 
+        // if(n<=0) return -1;
+        // queue<int> loop;
+        // for(int i=0;i<n;i++) loop.push(i);
+
+        // while(loop.size()!=1){
+        //     for(int k=0;k<m-1;k++){
+        //         int tmp = loop.front();
+        //         loop.pop();
+        //         loop.push(tmp);
+        //     }
+        //     loop.pop();
+        // }
+        // return loop.front();
+//version 1.5 链表法模拟游戏规则
+
+//version 2.0   约瑟夫环 Pn = （Pn-1 + m）% n；
+        int res ;
+        if(n==1) res=0;
+        else res = (LastRemaining_Solution(n-1,m)+m)%n ;
+        std::cout <<n<<" "<<m<<" "<< res << std::endl;
+        return res;
     }
 
 // 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，
@@ -366,7 +388,29 @@ class Solution
 // 序列化的结果是一个字符串，序列化时通过 某种符号表示空节点（#），以 ！ 表示一个结点值的结束（value!）。
 // 二叉树的反序列化是指：根据某种遍历顺序得到的序列化字符串结果str，重构二叉树
     char* Serialize(TreeNode *root) {    
-        
+          string res;
+          queue<TreeNode*> vis ;
+          if(root==nullptr) return nullptr;
+          vector<string> out;
+          vis.push(root);
+          while (!vis.empty())
+          {
+              TreeNode* node = vis.front();
+              vis.pop();
+              if(node!=nullptr){
+                  vis.push(node->left);
+                  vis.push(node->right);
+                //   out.push_back(to_string(node->val));
+                  res += to_string(node->val) ;
+                  res += ',';
+              } 
+              else{
+                  res += "#," ;
+                //   out.push_back("#");
+              }
+          }
+         cout<< res << " ";
+        return nullptr;
     }
     TreeNode* Deserialize(char *str) {
     
@@ -376,9 +420,54 @@ class Solution
 // 每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入
 // 该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串"bccced"的路径，但是矩阵中不包含"abcb"路径，
 // 因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子
+    int r_;
+    int c_;
     bool hasPath(char* matrix, int rows, int cols, char* str)
     {
+        vector<char>matrix_copy(rows*cols);
+        
+        vector<char>str_copy;
+        r_ = rows;
+        c_ = cols;
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+            matrix_copy[i*cols+j] = *(matrix+i*cols+j);
+            }
+        }
+        while (*str != '\0')
+        {
+            str_copy.push_back(*str);
+            str ++;
+        }
+
+        // bool res = has_path(matrix_copy,rows,cols,str_copy);
+        for(int i=0;i<rows;i++)
+            for(int j=0;j<cols;j++){
+                vector<char>vis(rows*cols,'0');
+                if(matrix_copy[i*c_+j]==str_copy[0]){    
+                    if(match(matrix_copy,i,j,str_copy,0,vis)) return true;
+                    else  continue;
+                }  
+                }
+
+        return false;
+    }
     
+    bool match(vector<char>matrix,int x,int y,vector<char> str,int str_inex,vector<char>&vis)
+    {
+        if(str_inex == str.size()) return true;
+
+        //最后一个字符匹配成功 不需要往下递归 直接返回true
+        if(matrix[x*c_+y]==str[str_inex]) {
+            vis[x*c_+y]='1';
+            if(str_inex == str.size()-1) return true;
+        } 
+            else return false;
+
+        return ((x-1>=0 && vis[(x-1)*c_+y]=='0' &&match(matrix,x-1 ,y,str,str_inex+1,vis)) ||
+                (x+1<r_ &&vis[(x+1)*c_+y]=='0' &&match(matrix,x+1 ,y,str,str_inex+1,vis)) ||
+                (y-1>=0 &&vis[x*c_+y-1]=='0' &&match(matrix,x , y-1,str,str_inex+1,vis))||
+                (y+1<c_ &&vis[x*c_+y+1]=='0' &&match(matrix,x , y+1,str,str_inex+1,vis)));
     }
 
 // 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，
@@ -386,6 +475,39 @@ class Solution
 // 因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？
     int movingCount(int threshold, int rows, int cols)
     {
-        
+        int max_step=0,step=0;
+        bool* flag=new bool[rows*cols];
+        for(int i=0;i<rows*cols;i++)
+            flag[i]=false;
+        vector<vector<int>> vis(rows,vector<int>(cols,0));
+        int res = go(threshold,rows,cols,0,0,step,&max_step,flag);
+        return res;
     }
+    int go(int threshold, int rows, int cols,int i,int j,int step,int* max,bool* flag)
+    {
+
+    if (i < 0 || i >= rows || j < 0 || j >= cols || trans(i,j)>threshold ||flag[i*cols+j]) return 0;
+
+    flag[i*cols+j]=true;
+    step++;
+    if(step>(*max)) (*max) = (step);
+    cout << i<<'-'<<j << " "<<step<<endl;
+    int t1=go(threshold,rows,cols,i-1,j,step,max,flag);  // 以上面一点为下一点能走多少
+    int t2=go(threshold,rows,cols,i,j-1,step,max,flag);  // 以左边一点为下一点能走多少
+    int t3=go(threshold,rows,cols,i+1,j,step,max,flag);  // 以下面一点为下一点能走多少
+    int t4=go(threshold,rows,cols,i,j+1,step,max,flag);  // 以右边一点为下一点能走多少
+    return  t1+t2+t3+t4+1;
+    }
+    int trans(int rows,int cols){
+        int sum=0;
+        while (rows!=0 || cols!=0)
+        {
+            if(rows!=0)  {sum += rows%10; rows = rows/10;}
+            if(cols!=0)  {sum += cols%10; cols = cols/10;}
+        }
+
+        return sum;
+    }
+
+
 };

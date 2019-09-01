@@ -2733,3 +2733,932 @@
     
 //     return 0;
 // }
+
+
+
+
+// 从字符串string开始完整匹配子串sub，返回匹配到的字符个数。
+
+// sub中如果出现'?'表示可以匹配一到三个除'\0'以外的任意字符。
+// 如果sub还有找不到匹配的字符，则说明不能完整匹配。
+
+// 如果能完整匹配，返回匹配到的字符个数，如果有多种匹配方式，返回匹配字符数最少的那个，如果不能完整匹配，返回-1
+/*
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int match_num;
+int sign_use=0;
+bool match(string input,string sub,int in_index,int sub_index)
+{
+    if(sub_index==0&&sub[sub_index]=='?') return false;
+    if(sub_index==sub.size()) return true;
+    else if(in_index==input.size()) return false;
+
+    if(sub[sub_index]!='?'&&sub[sub_index]==input[in_index])    
+        {
+            sign_use=0;
+            match_num++;
+            return match(input,sub,in_index+1,sub_index+1);
+        }
+    else if(sub[sub_index]=='?'){
+        match_num++;
+        sign_use++;
+        if(sign_use>3) return false;
+        return match(input,sub,in_index+1,sub_index+1)||match(input,sub,in_index+1,sub_index);
+    }
+    else return false;
+}
+
+int main(int argc, char const *argv[])
+{
+    string input;
+    string sub;   
+    while(getline(cin,input)){
+        getline(cin,sub);
+        match_num=0;
+        if(match(input,sub,0,0))
+            cout << match_num << endl;
+        else
+            cout << -1 << endl;
+        
+    }
+    return 0;
+}
+*/
+
+
+// 有K种颜色的小球(K<=10)，每种小球有若干个，总数小于100个。
+// 现在有一个小盒子，能放N个小球(N<=8)，现在要从这些小球里挑出N个小球，放满盒子。
+// 想知道有哪些挑选方式。注：每种颜色的小球之间没有差别。
+
+// 请按数字递增顺序输出挑选小球的所有方式。
+
+// 如有3种颜色，每种颜色小球的个数分别为a:1,b:2,c:3，挑出3个小球的挑法有：
+// 003,012,021,102,111,120
+
+/* #include<iostream>
+#include<cstdio>
+#include <map>
+#include <vector>
+using namespace std;
+
+vector<int>give;
+
+void  group(map<int,int>ball,int ball_cls,int sum,int cur,int need){
+
+    
+    for(int ball_give=0;ball_give<=ball[cur-1];ball_give++)
+    {
+        if(cur==ball_cls){
+            give.push_back(ball_give);
+            int index=0;
+            int has=0;
+
+            for(index=0;index<ball_cls;index++){
+                if(ball[index]>=give[index]) { has +=give[index]; continue;}
+                else break;
+            }
+
+            if(index==ball_cls&&has==need){
+                for(auto ball_:give){
+                    cout << ball_ << " ";
+                }
+            cout << endl;
+            }
+        }
+        else{
+            give.push_back(ball_give);
+            group(ball,ball_cls,sum-ball_give,cur+1,need);
+        }
+        give.pop_back(); 
+    }
+}
+int main(int argc, char const *argv[])
+{
+    int K,N;
+    map<int,int>ball;
+    while(scanf("%d %d",&K,&N)!=EOF){
+        for(int i=0;i<K;i++){
+            int num;
+            scanf("%d",&num);
+            ball.insert(pair<int,int>(i,num));
+        }
+
+        group(ball,K ,N,1,N);
+
+    }
+    
+
+    return 0;
+}
+ */
+
+// 一个长方体，长宽高分别为x,y,z，都为自然数。
+// 现在要把若干个相同的长方体摆成高为N的一根柱形体。
+// 每层摆1个，如果两种摆法的高度是一样的，则认为这两种摆法等价，所以每层只有三种摆法。
+// 求一共有多少种摆法。
+/* #include <iostream>
+#include <cstdio>
+#include <map>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int opre_kinds=0;
+vector<int> size;
+int sum;
+void comb(int cur){
+
+    if(cur==sum){
+        opre_kinds++;
+        return ;
+    }
+    else if(cur>sum){
+        return ;
+    }
+    for(int i=0;i<size.size();i++){
+            comb(cur+size[i]);
+    }
+}
+int main(int argc, char const *argv[])
+{
+    int N;
+    int x,y,z;
+
+    while (scanf("%d",&N)!=EOF)
+    {
+        opre_kinds=0;
+        size.clear();
+        scanf("%d %d %d",&x,&y,&z);
+        size.push_back(x);
+        if(y!=x) 
+            size.push_back(y);
+        if(z!=x && z!=y) 
+            size.push_back(z);
+
+        std::sort(size.begin(),size.end());
+ 
+        sum = N;
+        comb(0);
+        cout << opre_kinds <<endl;
+    }
+    return 0;
+}
+ */
+
+// 一个数字段由首尾两个数字标识，表示一个自然数集合，
+// 比如数字段[beg, end)表示从beg到end之间的所有自然数，
+// 包含beg，但不包含end。
+
+// 有若干个数字段，这些数字段之间可能有重叠，
+// 怎么把这些数字段合并去重，用最少个数的数字段来表示。
+
+// 合并前后，整个集合包含的数字不发生变化。
+// 合并去重后形成的数字段集合，按升序排列。
+// #include <iostream>
+// #include <cstdio>
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
+
+// bool cmp(vector<int>p1,vector<int>p2){
+//     return p1[0]<p2[0];
+// }
+
+// void store(vector<int>p1,vector<vector<int>>&all){
+//     if(all.empty()) all.push_back(p1);
+//     else{
+//         int i;
+//         for(i=0;i<all.size();i++){
+//             //看区间段里是否有段相交 或包括
+//             // 有则只需更新该段
+//             if(all[i][0]<=p1[0]&&all[i][1]>=p1[0]){
+//                 all[i][1]= (all[i][1]>p1[1]?all[i][1]:p1[1]);
+//                 break;
+//             }
+//             else if (all[i][0]<=p1[1]&&all[i][1]>=p1[1])
+//             {
+//                 all[i][0]= (all[i][0]<p1[0]?all[i][0]:p1[0]);
+//                 break;
+//             }
+//             if((all[i][0]>=p1[0]&&all[i][1]<=p1[1]) || all[i][0]<=p1[1]&&all[i][1]>=p1[1]){
+//                 // 并包
+//                 all[i][0]= (all[i][0]<p1[0]?all[i][0]:p1[0]);
+//                 all[i][1]= (all[i][1]>p1[1]?all[i][1]:p1[1]);
+//                 break;
+//             }
+//         }
+//         if(i==all.size()){
+//             all.push_back(p1);
+//         }
+//         else{
+//             vector<int> tmp = all[i];
+//             all.erase(all.begin()+i);
+//             store(tmp,all);
+//         }
+//     }
+// }
+// int main(int argc, char const *argv[])
+// {
+//     int N;
+//     while(scanf("%d",&N)!=EOF){
+//         vector<vector<int>> input;
+//         for(int i=0;i<N;i++){
+//             int begin,end;
+//             vector<int>part;
+//             scanf("%d %d",&begin,&end);
+            
+//             part.push_back(begin);part.push_back(end);
+//             input.push_back(part);
+//         }
+//         vector<vector<int>> all;
+//         for(int i=0;i<input.size();i++){
+//             store(input[i],all);
+//         }
+//         sort(all.begin(),all.end(),cmp);
+//         for(int i=0;i<all.size();i++){
+//             cout << all[i][0]<<" "<<all[i][1]<<endl;
+//         }
+//     }
+    
+//     return 0;
+// }
+
+
+// 输入一个正整数，表示小电视君需要的N个扭蛋。
+
+// 输出一个字符串，每个字符表示扭蛋机，字符只能包含"2"和"3"。
+
+// 题目精髓： 逆向思维 ！ ！
+// #include <iostream>
+// #include <cstdio>
+// #include <vector>
+// using namespace std;
+// vector<int>num;
+// vector<vector<int>>all;
+// int push_time=0;
+// void get(int sum){
+
+//     if(sum==0){
+//         all.push_back(num);
+//         return ;
+//     }
+//     else if(sum<0){
+//         return ;
+//     }
+//     else{
+//         if(sum%2==0){
+//             num.push_back(3);
+//             get(sum/2-1);
+//             num.pop_back();
+//         }
+//         else{
+//             num.push_back(2);
+//             get((sum-1)/2);
+//             num.pop_back();
+//         }
+//     }
+// }
+
+// int main(int argc, char const *argv[])
+// {
+    
+//     int n;
+//     while(scanf("%d",&n)!=EOF){
+//         all.clear();
+//         num.clear();
+//         get(n);
+//         for(int i=all[0].size()-1;i>=0;i--) cout << all[0][i] ;
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+// 输入有多行，每行是一个表达式，输入以END作为结束
+/* #include<iostream>
+#include <string>
+#include <vector>
+#include <math.h>
+using namespace std;
+int str2int(string str){
+    if(str.empty()) {
+        cout << "NO STR" << endl;
+        return 0;
+    }
+    int out=0;
+    int add=0;
+    
+    for(int i=str.size()-1;i>=0;i--){
+        out += ((str[i]-'0')*pow(10,add));
+        add++;
+    }
+
+    return out;
+}
+int solution(string express){
+
+    if(express.find('+')!=string::npos){       // 有+ 可以分割
+        int pos=express.find('+');
+        int left = solution(express.substr(0,pos)) ;
+        int right = solution(express.substr(pos+1,express.size()-pos-1)) ;
+        // cout << left <<"+"<<right<<" "<<(left+right)<<endl;
+        return (left+right);
+    }
+    else if(express.find('-')!=string::npos){  // 有- 可以分割
+        int pos=express.find('-');
+        int left = solution(express.substr(0,pos));
+        for(int i=pos;i<express.size();i++){
+            if(express[i]=='+') express[i]='-';
+            if(express[i]=='-') express[i]='+';
+        }
+        int right = solution(express.substr(pos+1,express.size()-pos-1));
+        // cout << left <<"-"<<right<<" "<<(left-right)<<endl;
+        return (left-right);
+    }
+    else if(express.find('*')!=string::npos){  // 只有乘法符号
+        int pos=express.find('*');
+        int left = solution(express.substr(0,pos));
+        int right = solution(express.substr(pos+1,express.size()-pos-1));
+        // cout << left <<"*"<<right<<" "<<(left*right)<<endl;
+        return (left*right);
+    }
+    else{// 无 + - × 返回数字
+    
+        return str2int(express);
+    }
+}
+int main(int argc, char const *argv[])
+{
+    string express;
+    vector<int> dis;
+    while(getline(cin,express)){
+        if(express=="END"){
+            for(auto data:dis) cout << data << endl;
+            dis.clear();
+            continue;
+        }
+       int out = solution(express);
+       dis.push_back(out);
+       
+    }
+
+    return 0;
+}
+ */
+
+// 并查集 经典 ！！ 
+
+/* #include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+int n,ix,m;
+vector<int>parent;
+int find(int x){
+    return x==parent[x]?x:parent[x]=find(parent[x]);
+}
+int main(void){
+    cin>>n>>ix>>m;
+    parent=vector<int>(n);
+    for(int i=0;i<n;i++)
+        parent[i]=i;
+
+    int ans=0,b=0;
+
+    while(m--){
+        int one,two;
+        scanf("%d,%d",&one,&two);
+        if(one==ix||two==ix) b++;
+
+        int fx=find(one),fy=find(two);
+
+        if(fx!=fy) parent[fx]=fy;
+    }
+    for(int i=0;i<n;i++){
+        if(find(ix)==find(i)) ans++;
+    }
+    cout<<ans-b-1<<endl;
+    return 0;
+ 
+} */
+
+/* #include<iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int call(vector<int>has,vector<vector<int>>dur){
+    if(has.size()<3) return 0;
+        int res=0;
+        for(int i=0;i<dur.size();i++){
+            vector<int>temp(has.begin()+dur[i][0]-1,has.begin()+dur[i][1]);
+
+            if(temp.size()<3) continue;
+
+            sort(temp.begin(),temp.end());
+
+            for(int i=2;i<temp.size();i++){
+                if(temp[i]<(temp[i-1]+temp[i-2])){
+
+                    res++;
+                    break;
+                }
+            }
+            
+
+        }
+
+    return res;
+}
+int main(int argc, char const *argv[])
+{
+    int n;
+    vector<int> has;
+    vector<vector<int>> dur;
+    vector<int> tmp(2);
+    while(scanf("%d",&n)!=EOF){
+        has.clear();
+        dur.clear();
+        int len,per,l,r;
+        int ex=0;
+        for(int i=0;i<n;i++){
+            scanf("%d",&len);
+            has.push_back(len);
+        }
+        scanf("%d",&per);
+        for(int i=0;i<per;i++){
+            scanf("%d %d",&l,&r);
+            if((r-l)>=2){
+                tmp[0]=l;tmp[1]=r;
+                dur.push_back(tmp);
+            }
+            else if(l-r+1 > 47){
+                ex++;
+        
+            }
+        }
+
+        int res = call(has,dur);
+        cout << res+ex << endl;
+    }
+
+    return 0;
+} */
+
+
+/* #include <iostream>
+#include <math.h>
+using namespace std;
+int str2int(string str){
+    if(str.empty()) {
+        cout << "NO STR" << endl;
+        return 0;
+    }
+    int out=0;
+    int add=0;
+    
+    for(int i=str.size()-1;i>=0;i--){
+        out += ((str[i]-'0')*pow(10,add));
+        add++;
+    }
+
+    return out;
+}
+int cmp(string v1,string v2){
+
+    if(v1.empty()&&!v2.empty()) return -1;
+    if(v2.empty()&&!v1.empty()) return 1;  
+    int r_v1=str2int(v1);
+    int r_v2=str2int(v2);
+    if(r_v1>r_v2) return 1;
+    else if(r_v1<r_v2) return -1;
+    return 0;
+}
+int main(int argc, char const *argv[])
+{
+    
+    string input;
+    while(getline(cin,input)){
+
+        int space = input.find(' ');
+        string ver1=input.substr(0,space),
+                ver2 = input.substr(space+1,input.size()-space-1);
+        
+        int start=0;
+
+        while(start<ver1.size()&&start<ver2.size()){
+            string ver1_sub = ver1.substr(start,ver1.size()-start);
+            string ver2_sub = ver2.substr(start,ver2.size()-start);
+            
+            int pos1=ver1_sub.find('.');
+            int pos2=ver2_sub.find('.');
+     
+            if(pos1!=string::npos&&pos2!=string::npos){
+                // 字段1 大于 字段2   输出 1 break
+                int res=cmp(ver1_sub.substr(0,pos1),ver2_sub.substr(0,pos2));
+                if(res!=0) {
+                    cout <<  res << endl;
+                    break;
+                }
+                // 相等 start 移动 continue;
+                start += pos1+1;
+                
+            }
+            else{
+                    if(pos1==string::npos && pos2==string::npos){
+                        int res=cmp(ver1_sub,ver2_sub);
+                        
+                        cout <<  res << endl;
+                        break;
+                    }
+                    else if(pos1==string::npos){
+                        int res=cmp(ver1_sub,ver2_sub.substr(0,pos2));
+                        if(res==0) res=-1;
+                        cout <<  res << endl;
+                        break;
+                    }
+                    else{
+                        int res=cmp(ver1_sub.substr(0,pos1),ver2_sub);
+                        if(res==0) res=1;
+                        cout <<  res << endl;
+                        break;
+                    }
+            }
+        }
+   
+    }
+
+    return 0;
+} */
+
+
+//  迷宫问题 最小权值路径
+//  回溯法超内存 应该使用动态规划 DP
+/* #include <iostream>
+#include <vector>
+using namespace std;
+int min_slow=-1;
+vector<vector<int>> vis;
+int size_;
+void find(vector<vector<int>> vis,int cur_i,int cur_j,int slow){
+
+    if(vis[cur_i][cur_j]==-1) return;
+    slow += vis[cur_i][cur_j];
+    if(min_slow!=-1 && slow>min_slow) return;
+    vis[cur_i][cur_j]=-1;
+    if(cur_i==vis.size()-1 && cur_j==vis.size()-1){
+        if(min_slow==-1) min_slow=slow;
+        else{
+            if(slow<min_slow) min_slow=slow;
+        }
+        return;
+    }
+    // 上
+    if(cur_i-1>=0&&cur_i-1<vis.size())
+        find(vis,cur_i-1,cur_j,slow) ;
+    // 下
+    if(cur_i+1>=0&&cur_i+1<vis.size())
+        find(vis,cur_i+1,cur_j,slow) ;
+    // 左
+    if(cur_j-1>=0&&cur_j-1<vis.size())
+        find(vis,cur_i,cur_j-1,slow) ;
+    // 右
+    if(cur_j+1>=0&&cur_j+1<vis.size())
+        find(vis,cur_i,cur_j+1,slow) ;
+
+}
+int main(int argc, char const *argv[])
+{
+    int n;
+    while(scanf("%d",&n)!=EOF){
+        vis.clear();
+        // vector<vector<int>> vis;
+        min_slow=-1;
+        int block;
+        for(int i=0;i<n;i++){
+            vector<int> temp;
+            for(int j=0;j<n;j++){
+                if(j!=n-1) scanf("%d,",&block);
+                else scanf("%d",&block);
+                temp.push_back(block);
+            }
+            size_=n;
+            vis.push_back(temp);
+            // vis.push_back(vector<int>(n,0));
+        }
+        find(vis,0,0,0); 
+        cout << min_slow << endl;
+    }
+    
+    return 0;
+} */
+
+
+
+// 对每一个样例，输出所有可能的搭配方案，如果有多种方案，请按每个方案的第一杯 B 型血剂量的大小升序排列。
+// 如果无法找到任何一种满足大小姐的方案，输出"NO"(不包括引号)并换行。
+/* #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+bool get_another(vector<int>dose,int l,int r,int find){
+
+    while(l<=r){
+        int mid=(l+r)/2;
+        if(dose[mid]==find) return true;
+        if(dose[mid]>find) {r=mid-1;}
+        else if(dose[mid]<find){l=mid+1;}
+    }
+    return false;
+}
+int main(int argc, char const *argv[])
+{
+    
+    int has;
+    while (scanf("%d",&has)!=EOF)
+    {
+        vector<int> dose;
+        int dose_;
+        for(int i=0;i<has;i++){
+            scanf("%d",&dose_);
+
+            dose.push_back(dose_);
+            // 插入排序
+
+            for(int i=dose.size()-2;i>=0;i--){
+                if(dose[i+1]<dose[i]) swap(dose[i+1],dose[i]);
+                else break;
+            }
+            
+        }
+
+        int need;
+        scanf("%d",&need);
+        // sort(dose.begin(),dose.end());
+        bool find=false;
+        
+        // 暴力求解  O(n*n)
+        // for(int i=0;i<dose.size();i++)
+        //     for(int j=i+1;j<dose.size();j++){
+        //         if(dose[i]+dose[j]==need){
+        //             find=true;
+        //             cout << dose[i]<<" "<<dose[j] <<endl;
+        //         }
+        //     }
+
+        
+
+        // 二分查找  need-dose[i] O(n*lgn)
+        // for(int i=dose.size()-1;i>=0;i--){
+        //     if(dose[i]>need) continue;
+        //     if(get_another(dose,0,i-1,need-dose[i])){
+        //         find=true;
+        //         cout <<need- dose[i]<<" "<<dose[i] <<endl;
+        //     }
+        // }
+
+        // start end 双指针求和查找
+
+        int start=0,end=dose.size()-1;
+        while(start<end){
+
+            if(dose[start]+dose[end]==need) {
+                 cout << dose[start] <<" "<< dose[end] <<endl;find=true;
+                 start++;
+                 }
+            else if(dose[start]+dose[end]>need) end--;
+            else start++;
+        }
+
+        if(!find) cout << "NO" << endl;
+
+    }
+
+    return 0;
+} */
+
+
+
+// #include<iostream>
+// #include <vector>
+// #include <math.h>
+// using namespace std;
+// struct node{
+//     int val;
+//     struct node *next;
+// };
+// int str2int(string str){
+//     if(str.empty()) {
+//         cout << "NO STR" << endl;
+//         return 0;
+//     }
+//     int out=0;
+//     int add=0;
+    
+//     for(int i=str.size()-1;i>=0;i--){
+//         out += ((str[i]-'0')*pow(10,add));
+//         add++;
+//     }
+
+//     return out;
+// }
+// int main(int argc, char const *argv[])
+// {
+//     string seq;
+//     while (getline(cin,seq))
+//     {
+//         string sub = seq;
+//         vector<int> numic;
+//         node* p;
+//         node* header=nullptr;
+//         int num;
+//         /* 将输入创建成链表 */
+//         while(sub.find(',')!=string::npos){
+//             num =str2int(sub.substr(0,sub.find(',')));
+//             sub = sub.substr(sub.find(',')+1,sub.size()-sub.find(',')-1);
+            
+//             if(!header){
+//                 header = (node*) malloc(sizeof(node));
+//                 p = header;
+//                 header->val = num;
+//                 header->next = nullptr;
+//             }
+//             else{
+//                 p->next = (node*) malloc(sizeof(node));
+//                 p = p->next;
+//                 p->val = num;
+//                 p->next = nullptr;
+//             }
+//         }
+//         num =str2int(sub);
+//         if(!header){
+//             header = (node*) malloc(sizeof(node));
+//             p = header;
+//             header->val = num;
+//             header->next = nullptr;
+//         }
+//         else{
+//             p->next = (node*) malloc(sizeof(node));
+//             p = p->next;
+//             p->val = num;
+//             p->next = nullptr;
+//         }
+        
+//         /* header 为输入链表头指针  */
+
+//         node* last_sec;
+        
+//         node* new_p = header;
+//         while (new_p!=nullptr)
+//         {
+//             // 找倒数第二个节点
+//             node* tmp = new_p->next;
+//             node* tmp_ =tmp;
+//             while (tmp!=nullptr)
+//             {
+//                 if( tmp->next!=nullptr && tmp->next->next==nullptr) {
+//                     // 找到倒数第二个节点 将其后也就是最后一个节点插入到当前节点后 
+//                     tmp->next->next= new_p->next;
+//                     new_p->next = tmp->next;
+
+//                     //这个倒数第二个节点变为尾节点
+//                     tmp->next=nullptr;
+
+//                     break;
+//                 }
+//                 tmp = tmp->next;
+                
+//             }
+
+//             new_p = tmp_;
+//             // 只剩下 一个节点 翻转完成 不退出的话 ->next->next 出错
+//             if(new_p->next==nullptr) break;
+//         }
+        
+//         // 输出
+//         while(header!=nullptr){
+//             if(header->next==nullptr) cout << header->val<<endl ;
+//             else cout << header->val <<",";
+//             header=header->next;
+//         }
+   
+//     }
+    
+    
+
+//     return 0;
+// }
+
+
+// 三数之和是否存在  两数之和 的升级版
+
+/* #include <iostream>
+#include <string>
+#include <math.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int str2int(string str){
+    if(str.empty()) {
+        cout << "NO STR" << endl;
+        return 0;
+    }
+    int out=0;
+    int add=0;
+    
+    for(int i=str.size()-1;i>=0;i--){
+        out += ((str[i]-'0')*pow(10,add));
+        add++;
+    }
+
+    return out;
+}
+bool find(int need,vector<int>ele,int l_l,int l_r,int r_l,int r_r){
+       
+        int start=l_l,end=r_r;
+        while(start<=l_r&&end>=r_l){
+
+            if(ele[start]+ele[end]==need) {
+                 return true;
+                 }
+            else if(ele[start]+ele[end]>need) end--;
+            else start++;
+        }
+        return false;
+}
+bool exist(vector<int>ele,int need){
+
+    for(int i=1;i<ele.size();i++){
+        // 找二元组 和为need-ele[i]  左边元素 [0,i-1] 右边元素[i+1,ele.size()-1]
+     if(ele[i]>=need) break;
+     if(find(need-ele[i],ele,0,i-1,i+1,ele.size()-1)) return true;   
+    }
+    return false;
+}
+
+int main(int argc, char const *argv[])
+{
+    string seq;
+    while (getline(cin,seq))
+    {
+        int num;
+        string sub = seq;
+        vector<int> ele;
+         while(sub.find(' ')!=string::npos){
+            num =str2int(sub.substr(0,sub.find(' ')));
+            sub = sub.substr(sub.find(' ')+1,sub.size()-sub.find(' ')-1);
+            ele.push_back(num);
+            if(sub.find(' ')==string::npos&&sub.find(',')!=string::npos){
+                num = str2int(sub.substr(0,sub.find(',')));
+                sub = sub.substr(sub.find(',')+1,sub.size()-sub.find(',')-1);
+                ele.push_back(num);
+                break;
+            }
+            
+         }
+        int need = str2int(sub);
+        if(ele.size()<3) {cout << "False"<<endl;continue;}
+        sort(ele.begin(),ele.end());
+        if(exist(ele,need)==false) cout << "False" << endl;
+            else cout << "True" << endl;
+    }
+    
+    return 0;
+} */
+
+
+#include <iostream>
+#include<math.h>
+#include<vector>
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    int num;
+ 
+    while (scanf("%d",&num)!=EOF)
+    {
+        int left = -90;
+        int right=90;
+           vector<int>out;
+        while(out.size()<6){
+
+            int mid=(left+right)/2;
+            if(num<mid){
+                out.push_back(0);
+                
+                right = mid;
+            }
+            
+            else{
+                out.push_back(1);
+                left = mid;
+            }
+        }
+        for(auto da:out) cout<<da;
+        cout << endl;
+    }
+
+    return 0;
+}
+
